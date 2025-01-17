@@ -1,5 +1,6 @@
 import React from "react"
 import dayjs from "dayjs"
+import { useRouter } from "next/router"
 import InfoIcon from "@heroicons/react/20/solid/InformationCircleIcon"
 import {
   t,
@@ -387,4 +388,18 @@ export const downloadExternalPDF = async (fileURL: string, fileName: string) => 
 
 export const isFeatureFlagOn = (jurisdiction: Jurisdiction, featureFlag: string) => {
   return jurisdiction.featureFlags?.some((flag) => flag.name === featureFlag && flag.active)
+}
+
+// RenderIf component to render content based on language (used in markdown components)
+export const RenderIf = (props: { language: string; children: JSX.Element }) => {
+  const router = useRouter()
+
+  if (
+    props.language == "all" ||
+    props.language == router.locale ||
+    (router.locale == "en" && props.language == "default")
+  ) {
+    return props.children
+  }
+  return null
 }
