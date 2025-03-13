@@ -81,7 +81,6 @@ SET "region" = CAST("region_TEMP" AS "property_region_enum_new");
 ALTER TABLE "property"
 DROP COLUMN "region_TEMP";
 
--- ALTER TABLE "listings" ALTER COLUMN "region" TYPE "property_region_enum_new" USING ("region"::text::"property_region_enum_new");
 ALTER TYPE "property_region_enum" RENAME TO "property_region_enum_old";
 ALTER TYPE "property_region_enum_new" RENAME TO "property_region_enum";
 DROP TYPE "property_region_enum_old";
@@ -423,7 +422,7 @@ SET "application_mailing_address_type" = CAST(CAST("application_mailing_address_
 ALTER TABLE "listings"
 DROP COLUMN "application_mailing_address_type_TEMP";
 
-UPDATE "listings" 
+UPDATE "listings"  "l"
 SET "accessibility" = "property"."accessibility", 
 "amenities" = "property"."amenities",
 "building_total_units" = "property"."building_total_units",
@@ -439,7 +438,8 @@ SET "accessibility" = "property"."accessibility",
 "year_built" = "property"."year_built",
 "building_address_id" = "property"."building_address_id",
 "region" = "property"."region"
-FROM "property" INNER JOIN "listings" "l" ON "l"."property_id" = "property"."id";
+FROM "property"
+WHERE "l"."property_id" = "property"."id";
 
 ALTER TABLE "listings"
 DROP COLUMN "property_id";
