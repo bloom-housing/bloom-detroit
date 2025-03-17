@@ -276,6 +276,8 @@ ALTER TABLE "generated_listing_translations" ADD COLUMN "language" "languages_en
 UPDATE "generated_listing_translations"
 SET "language" = CAST("language_TEMP" as "languages_enum");
 
+ALTER TABLE "generated_listing_translations" ALTER COLUMN "language" SET NOT NULL;
+
 ALTER TABLE "generated_listing_translations"
 DROP COLUMN "language_TEMP";
 
@@ -333,6 +335,9 @@ DROP COLUMN "languages_TEMP";
 ALTER TABLE "listing_events" RENAME CONSTRAINT "PK_a9a209828028e14e2caf8def25c" TO "listing_events_pkey";
 ALTER TABLE "listing_events" ADD COLUMN     "start_date" TIMESTAMPTZ(6);
 ALTER TABLE "listing_events" ALTER COLUMN "updated_at" DROP DEFAULT;
+
+UPDATE "listing_events"
+SET "start_date" = "start_time";
 
 -- AlterTable
 ALTER TABLE "listing_features" RENAME CONSTRAINT "PK_88e4fe3e46d21d8b4fdadeb7599" TO "listing_features_pkey";
@@ -464,6 +469,8 @@ ALTER TABLE "paper_applications" ADD COLUMN "language" "languages_enum";
 UPDATE "paper_applications"
 SET "language" = CAST("language_TEMP" AS "languages_enum");
 
+ALTER TABLE "paper_applications" ALTER COLUMN "language" SET NOT NULL;
+
 ALTER TABLE "paper_applications"
 DROP COLUMN "language_TEMP";
 
@@ -487,6 +494,8 @@ ALTER TABLE "translations" ADD COLUMN "language" "languages_enum";
 
 UPDATE "translations"
 SET "language" = CAST("language_TEMP" AS "languages_enum");
+
+ALTER TABLE "translations" ALTER COLUMN "language" SET NOT NULL;
 
 ALTER TABLE "translations"
 DROP COLUMN "language_TEMP";
@@ -540,6 +549,8 @@ ALTER TABLE "unit_rent_types" ADD COLUMN "name" "unit_rent_type_enum";
 UPDATE "unit_rent_types"
 SET "name" = CAST("name_TEMP" AS "unit_rent_type_enum");
 
+ALTER TABLE "unit_rent_types" ALTER COLUMN "name" SET NOT NULL;
+
 ALTER TABLE "unit_rent_types"
 DROP COLUMN "name_TEMP";
 
@@ -559,6 +570,8 @@ ALTER TABLE "unit_types" ADD COLUMN "name" "unit_type_enum";
 
 UPDATE "unit_types"
 SET "name" = CAST("name_TEMP" AS "unit_type_enum");
+
+ALTER TABLE "unit_types" ALTER COLUMN "name" SET NOT NULL;
 
 ALTER TABLE "unit_types"
 DROP COLUMN "name_TEMP";
