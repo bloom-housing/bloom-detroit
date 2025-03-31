@@ -24,6 +24,10 @@
       border-radius: var(--seeds-rounded-xl);
       padding: var(--seeds-s8);
 
+      @media (--sm-only) {
+        padding: var(--seeds-s6);
+      }
+      
       .heading {
         font-family: var(--seeds-font-alt-sans);
         font-size: var(--seeds-font-size-5xl);
