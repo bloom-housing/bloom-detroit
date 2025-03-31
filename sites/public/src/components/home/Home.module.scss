@@ -2,14 +2,20 @@
   font-family: var(--seeds-font-alt-sans);
   .hero-container {
     background-color: var(--seeds-bg-color-surface-primary-inverse);
-    padding-block: var(--seeds-s24);
     background-image: url("/images/hero-main.jpg");
     background-size: cover;
     background-position: center;
+    margin-inline: var(--seeds-s4);
+    padding-block: var(--seeds-s24);
+    padding-inline: var(--seeds-s12);
+    border-radius: var(--seeds-rounded-xl);
     --max-width-layout-desktop-margin-block: 0;
     --max-width-layout-mobile-margin-block: 0;
     @media (--sm-only) {
-      padding-block: var(--seeds-s8);
+      margin-inline: 0;
+      padding-block: var(--seeds-s6);
+      padding-inline: var(--seeds-s4);
+      border-radius: 0;
     }
     .hero {
       max-width: var(--seeds-screen-sm);
