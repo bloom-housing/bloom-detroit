@@ -118,10 +118,7 @@
   "t.unfavorited": "unfavorited",
   "t.unitInformation": "Unit Information",
   "welcome.heroText": "Your resource to find multi-family housing based on your income and household needs",
-  "welcome.seeMoreOpportunitiesTruncated": "See more affordable housing resources and services",
   "welcome.seeRentalListings": "See all rentals",
-  "welcome.signUp": "Get alerts whenever a new listing is posted",
   "welcome.subTitle": "Click the button below to find rental housing based on your income and household needs",
-  "welcome.underConstructionButton": "See all under construction",
-  "welcome.viewAdditionalHousingTruncated": "View resources"
+  "welcome.underConstructionButton": "See all under construction"
 }
