@@ -1,4 +1,4 @@
-import { Card, Icon, Button } from "@bloom-housing/ui-seeds"
+import { Card, Icon } from "@bloom-housing/ui-seeds"
 import { PlayCircleIcon } from "@heroicons/react/16/solid"
 import styles from "./VideoCard.module.scss"
 
