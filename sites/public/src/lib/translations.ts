@@ -19,6 +19,7 @@ export const translations = {
   tl: tagalogTranslations,
   bn: bengaliTranslations,
   ar: arabicTranslations,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
 } as Record<string, any>
 
 export const overrideTranslations = {
@@ -26,4 +27,5 @@ export const overrideTranslations = {
   es: additionalSpanishTranslations,
   bn: additionalBengaliTranslations,
   ar: additionalArabicTranslations,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
 } as Record<string, any>
