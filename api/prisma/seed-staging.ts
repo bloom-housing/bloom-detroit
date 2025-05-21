@@ -89,6 +89,7 @@ export const stagingSeed = async (
         FeatureFlagEnum.disableJurisdictionalAdmin,
         FeatureFlagEnum.swapCommunityTypeWithPrograms,
         FeatureFlagEnum.enableListingFavoriting,
+        FeatureFlagEnum.disableCommonApplication,
       ],
     }),
   });
@@ -198,7 +199,11 @@ export const stagingSeed = async (
     data: translationFactory(mainJurisdiction.id, mainJurisdiction.name),
   });
   await prismaClient.translations.create({
-    data: translationFactory(undefined, undefined, LanguagesEnum.es),
+    data: translationFactory(
+      mainJurisdiction.id,
+      mainJurisdiction.name,
+      LanguagesEnum.es,
+    ),
   });
   await prismaClient.translations.create({
     data: translationFactory(),
@@ -873,7 +878,7 @@ export const stagingSeed = async (
           },
           email: `partner-user-${savedListing.name
             .toLowerCase()
-            .replace(' ', '')}@example.com`,
+            .replaceAll(' ', '-')}@example.com`,
           confirmedAt: new Date(),
           jurisdictionIds: [savedListing.jurisdictionId],
           acceptedTerms: true,
