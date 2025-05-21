@@ -1,8 +1,10 @@
 import React, { useEffect, useContext } from "react"
-import { MarkdownSection, PageHeader, t } from "@bloom-housing/ui-components"
 import { PageView, pushGtmEvent, AuthContext } from "@bloom-housing/shared-helpers"
-import { UserStatus } from "../lib/constants"
+import { t } from "@bloom-housing/ui-components"
 import Layout from "../layouts/application"
+import MaxWidthLayout from "../layouts/max-width"
+import { UserStatus } from "../lib/constants"
+import { PageHeaderLayout } from "../patterns/PageHeaderLayout"
 
 const About = () => {
   const { profile } = useContext(AuthContext)
@@ -17,14 +19,21 @@ const About = () => {
 
   return (
     <Layout>
-      <PageHeader title={t("pageTitle.about")} inverse />
-      <MarkdownSection>
-        <p>{t("about.body1")}</p>
-        <p>{t("about.body2")}</p>
-        <p>{t("about.moreInfoContact")}</p>
-        <p>{t("about.thankYouPartners")}</p>
-        <p>{t("about.partnersList")}</p>
-      </MarkdownSection>
+      <PageHeaderLayout heading={t("pageTitle.about")} inverse>
+        <MaxWidthLayout>
+          <>
+            <p>{t("about.body1")}</p>
+            <br />
+            <p>{t("about.body2")}</p>
+            <br />
+            <p>{t("about.moreInfoContact")}</p>
+            <br />
+            <p>{t("about.thankYouPartners")}</p>
+            <br />
+            <p>{t("about.partnersList")}</p>
+          </>
+        </MaxWidthLayout>
+      </PageHeaderLayout>
     </Layout>
   )
 }
