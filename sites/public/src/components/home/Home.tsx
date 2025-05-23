@@ -69,7 +69,7 @@ export const Home = (props: HomeProps) => {
         )}
         <MaxWidthLayout className={styles["resource-container"]}>
           <Grid spacing="lg">
-            <Grid.Row columns={2}>
+            <Grid.Row>
               {props.jurisdiction && props.jurisdiction.notificationsSignUpUrl && (
                 <Grid.Cell>
                   <BloomCard
