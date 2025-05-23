@@ -114,6 +114,27 @@ export const Home = (props: HomeProps) => {
                   </Card.Section>
                 </BloomCard>
               </Grid.Cell>
+              <Grid.Cell>
+                <BloomCard
+                  iconSymbol="questionMark"
+                  title={t("welcome.learnHousingBasics")}
+                  variant={"block"}
+                  headingPriority={2}
+                  className={styles["resource"]}
+                  iconClass={styles["resource-icon"]}
+                >
+                  <Card.Section>
+                    <Button
+                      key={"housing-basics"}
+                      href="/housing-basics"
+                      variant="primary-outlined"
+                      size={"sm"}
+                    >
+                      {t("t.learnMore")}
+                    </Button>
+                  </Card.Section>
+                </BloomCard>
+              </Grid.Cell>
             </Grid.Row>
           </Grid>
         </MaxWidthLayout>
