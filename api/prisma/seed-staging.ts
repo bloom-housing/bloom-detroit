@@ -62,6 +62,7 @@ export const stagingSeed = async (
         FeatureFlagEnum.enablePartnerSettings,
         FeatureFlagEnum.enableListingsPagination,
         FeatureFlagEnum.enableListingFavoriting,
+        FeatureFlagEnum.enableCompanyWebsite,
       ],
     }),
   });
@@ -89,6 +90,7 @@ export const stagingSeed = async (
         FeatureFlagEnum.disableJurisdictionalAdmin,
         FeatureFlagEnum.swapCommunityTypeWithPrograms,
         FeatureFlagEnum.enableListingFavoriting,
+        FeatureFlagEnum.enableCompanyWebsite,
         FeatureFlagEnum.disableCommonApplication,
       ],
     }),
@@ -878,7 +880,7 @@ export const stagingSeed = async (
           },
           email: `partner-user-${savedListing.name
             .toLowerCase()
-            .replace(' ', '')}@example.com`,
+            .replaceAll(' ', '-')}@example.com`,
           confirmedAt: new Date(),
           jurisdictionIds: [savedListing.jurisdictionId],
           acceptedTerms: true,

@@ -1,5 +1,5 @@
 import React from "react"
-import { Application, Profile } from "./CustomIcons"
+import { Application, Door, Profile } from "./CustomIcons"
 import LockClosedIcon from "@heroicons/react/24/solid/LockClosedIcon"
 import ChevronLeftIcon from "@heroicons/react/20/solid/ChevronLeftIcon"
 import Clock from "@heroicons/react/24/outline/ClockIcon"
@@ -9,10 +9,13 @@ import HomeModernIcon from "@heroicons/react/24/outline/HomeModernIcon"
 import HouseIcon from "@heroicons/react/24/outline/HomeIcon"
 import EnvelopeIcon from "@heroicons/react/24/outline/EnvelopeIcon"
 import MapPinIcon from "@heroicons/react/24/outline/MapPinIcon"
+import ListBulletIcon from "@heroicons/react/24/outline/ListBulletIcon"
+import QuestionMarkIcon from "@heroicons/react/24/outline/QuestionMarkCircleIcon"
 
 export const CustomIconMap = {
   application: Application,
   profile: Profile,
+  door: Door,
   lockClosed: <LockClosedIcon />,
   chevronLeft: <ChevronLeftIcon />,
   clock: <Clock />,
@@ -22,6 +25,8 @@ export const CustomIconMap = {
   envelope: <EnvelopeIcon />,
   mapPin: <MapPinIcon />,
   house: <HouseIcon />,
+  listBullet: <ListBulletIcon />,
+  questionMark: <QuestionMarkIcon></QuestionMarkIcon>,
 }
 
 export type CustomIconType = keyof typeof CustomIconMap
