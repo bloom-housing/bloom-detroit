@@ -2261,28 +2261,6 @@ export class ScriptRunnerService {
     })
   }
   /**
-   * A script that pulls data from one source into the current db
-   */
-  dataTransfer(
-    params: {
-      /** requestBody */
-      body?: DataTransferDTO
-    } = {} as any,
-    options: IRequestOptions = {}
-  ): Promise<SuccessDTO> {
-    return new Promise((resolve, reject) => {
-      let url = basePath + "/scriptRunner/dataTransfer"
-
-      const configs: IRequestConfig = getConfigs("put", "application/json", url, options)
-
-      let data = params.body
-
-      configs.data = data
-
-      axios(configs, resolve, reject)
-    })
-  }
-  /**
    * A script that resends application confirmations to applicants of a listing
    */
   bulkApplicationResend(
@@ -2472,6 +2450,22 @@ export class ScriptRunnerService {
   addFeatureFlags(options: IRequestOptions = {}): Promise<SuccessDTO> {
     return new Promise((resolve, reject) => {
       let url = basePath + "/scriptRunner/addFeatureFlags"
+
+      const configs: IRequestConfig = getConfigs("put", "application/json", url, options)
+
+      let data = null
+
+      configs.data = data
+
+      axios(configs, resolve, reject)
+    })
+  }
+  /**
+   * A script that moves preferences and programs to multiselect questions in Detroit db
+   */
+  migrateDetroitToMultiselectQuestions(options: IRequestOptions = {}): Promise<SuccessDTO> {
+    return new Promise((resolve, reject) => {
+      let url = basePath + "/scriptRunner/migrateDetroitToMultiselectQuestions"
 
       const configs: IRequestConfig = getConfigs("put", "application/json", url, options)
 
@@ -3939,6 +3933,9 @@ export interface Listing {
   leasingAgentTitle?: string
 
   /**  */
+  managementWebsite?: string
+
+  /**  */
   name: string
 
   /**  */
@@ -4578,6 +4575,9 @@ export interface ListingCreate {
   leasingAgentTitle?: string
 
   /**  */
+  managementWebsite?: string
+
+  /**  */
   name: string
 
   /**  */
@@ -4886,6 +4886,9 @@ export interface ListingUpdate {
 
   /**  */
   leasingAgentTitle?: string
+
+  /**  */
+  managementWebsite?: string
 
   /**  */
   name: string
@@ -6733,11 +6736,6 @@ export interface MapLayer {
   jurisdictionId: string
 }
 
-export interface DataTransferDTO {
-  /**  */
-  connectionString: string
-}
-
 export interface BulkApplicationResendDTO {
   /**  */
   listingId: string
@@ -7085,10 +7083,10 @@ export enum UserRoleEnum {
 }
 
 export enum FeatureFlagEnum {
-  "example" = "example",
   "disableCommonApplication" = "disableCommonApplication",
   "disableJurisdictionalAdmin" = "disableJurisdictionalAdmin",
   "enableAccessibilityFeatures" = "enableAccessibilityFeatures",
+  "enableCompanyWebsite" = "enableCompanyWebsite",
   "enableGeocodingPreferences" = "enableGeocodingPreferences",
   "enableGeocodingRadiusMethod" = "enableGeocodingRadiusMethod",
   "enableHomeType" = "enableHomeType",
@@ -7105,6 +7103,8 @@ export enum FeatureFlagEnum {
   "enableSingleUseCode" = "enableSingleUseCode",
   "enableUnitGroups" = "enableUnitGroups",
   "enableUtilitiesIncluded" = "enableUtilitiesIncluded",
+  "enableAdditionalResources" = "enableAdditionalResources",
+  "example" = "example",
   "hideCloseListingButton" = "hideCloseListingButton",
   "swapCommunityTypeWithPrograms" = "swapCommunityTypeWithPrograms",
 }
