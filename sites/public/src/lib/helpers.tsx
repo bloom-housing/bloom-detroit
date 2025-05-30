@@ -404,6 +404,17 @@ export const isFeatureFlagOn = (jurisdiction: Jurisdiction, featureFlag: string)
   return jurisdiction?.featureFlags?.some((flag) => flag.name === featureFlag && flag.active)
 }
 
+export const setFeatureFlagLocalStorage = (
+  jurisdiction: Jurisdiction,
+  featureFlag: string,
+  storageKey: string
+) => {
+  window.localStorage.setItem(
+    `bloom-${storageKey}`,
+    (isFeatureFlagOn(jurisdiction, featureFlag) === true).toString()
+  )
+}
+
 /**
  * @throws {ResponseError}
  */
@@ -441,4 +452,8 @@ export const RenderIf = (props: { language: string; children: JSX.Element }) => 
     return props.children
   }
   return null
+}
+
+export const isTrue = (value) => {
+  return value === true || value === "true"
 }

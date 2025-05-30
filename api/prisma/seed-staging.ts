@@ -60,10 +60,13 @@ export const stagingSeed = async (
         FeatureFlagEnum.enableListingOpportunity,
         FeatureFlagEnum.enablePartnerDemographics,
         FeatureFlagEnum.enablePartnerSettings,
-        FeatureFlagEnum.enableListingsPagination,
+        FeatureFlagEnum.enableListingPagination,
         FeatureFlagEnum.enableListingFavoriting,
+        FeatureFlagEnum.enableListingFiltering,
         FeatureFlagEnum.enableCompanyWebsite,
+        FeatureFlagEnum.enableWaitlistAdditionalFields,
       ],
+      languages: Object.values(LanguagesEnum),
     }),
   });
   // jurisdiction with unit groups enabled
@@ -86,12 +89,14 @@ export const stagingSeed = async (
         FeatureFlagEnum.enableListingOpportunity,
         FeatureFlagEnum.enablePartnerDemographics,
         FeatureFlagEnum.enablePartnerSettings,
-        FeatureFlagEnum.enableListingsPagination,
+        FeatureFlagEnum.enableListingPagination,
         FeatureFlagEnum.disableJurisdictionalAdmin,
         FeatureFlagEnum.swapCommunityTypeWithPrograms,
         FeatureFlagEnum.enableListingFavoriting,
+        FeatureFlagEnum.enableListingFiltering,
         FeatureFlagEnum.enableCompanyWebsite,
         FeatureFlagEnum.disableCommonApplication,
+        FeatureFlagEnum.enableWaitlistAdditionalFields,
       ],
     }),
   });
@@ -104,8 +109,10 @@ export const stagingSeed = async (
         FeatureFlagEnum.enableListingOpportunity,
         FeatureFlagEnum.enablePartnerDemographics,
         FeatureFlagEnum.enablePartnerSettings,
-        FeatureFlagEnum.enableListingsPagination,
+        FeatureFlagEnum.enableListingFiltering,
+        FeatureFlagEnum.enableListingPagination,
       ],
+      languages: [LanguagesEnum.en, LanguagesEnum.es, LanguagesEnum.vi],
     }),
   });
   // Jurisdiction with no feature flags enabled

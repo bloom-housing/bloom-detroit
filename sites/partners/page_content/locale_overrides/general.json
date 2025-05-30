@@ -1,4 +1,5 @@
 {
+  "t.selectLanguage": "Select language",
   "actions.copy": "Copy",
   "application.add.addHouseholdMember": "Add Household Member",
   "application.add.applicationAddError": "You’ll need to resolve any errors before moving on.",
@@ -591,6 +592,7 @@
   "t.updated": "Updated",
   "t.url": "URL",
   "t.view": "View",
+  "t.recommended": "Recommended",
   "users.addPassword": "Add a Password",
   "users.addUser": "Add User",
   "users.administrator": "Administrator",
