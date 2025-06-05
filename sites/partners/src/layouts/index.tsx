@@ -50,12 +50,13 @@ const Layout = (props) => {
           <title>{t("nav.siteTitlePartners")}</title>
         </Head>
         <SiteHeader
-          logoSrc="/images/logo_glyph.svg"
+          logoSrc="/images/detroit-logo.png"
           title={t("nav.siteTitlePartners")}
           logoWidth={"medium"}
           menuLinks={menuLinks}
           siteHeaderWidth={"wide"}
           homeURL={"/"}
+          className="custom-site-header"
         />
         <main>
           {toastMessagesRef.current?.map((toastMessage) => (
