@@ -56,7 +56,6 @@ const Layout = (props) => {
           menuLinks={menuLinks}
           siteHeaderWidth={"wide"}
           homeURL={"/"}
-          className="custom-site-header"
         />
         <main>
           {toastMessagesRef.current?.map((toastMessage) => (
