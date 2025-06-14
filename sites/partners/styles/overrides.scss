@@ -3,8 +3,6 @@
 :root {
   // Seeds token overrides
 
-  --seeds-font-alt-sans: "Montserrat", "Open Sans", "Helvetica", "Arial", "Verdana", "sans-serif";
-  --seeds-font-serif: "Montserrat", "Droid Serif", "Georgia", "Times", "serif";
   --seeds-color-primary-darker: #133a35;
   --seeds-color-primary-dark: #1f6058;
   --seeds-color-primary: #297e73;
@@ -14,20 +12,13 @@
   --seeds-bg-color-surface-primary-inverse: var(--seeds-color-primary-dark);
 
   // Map some old UIC tokens to updated Seeds tokens
-  --bloom-font-serif: var(--seeds-font-serif);
-  --bloom-font-alt-sans: var(--seeds-font-alt-sans);
   --bloom-color-primary-dark: var(--seeds-color-primary-dark);
   --ag-row-hover-color: var(--seeds-color-primary-lighter);
-  --title-font-weight: var(--seeds-font-weight-semibold);
 
   // Seeds component & class token overrides
   .seeds-button {
     --button-border-radius-sm: var(--seeds-rounded-3xl);
     --button-border-radius-md: var(--seeds-rounded-3xl);
-  }
-
-  .text-heading-4xl {
-    font-weight: var(--seeds-font-weight-semibold);
   }
 
   // UIC and miscellaneous overrides
@@ -129,14 +120,16 @@
 }
 
 .site-header {
+  --detroit-navbar-height: 92px;
   --bloom-color-primary: var(--seeds-color-primary);
 
   --logo-desktop-height: 150px;
   --logo-width-med: 275px;
   --logo-image-max-height: 3rem;
   --logo-image-desktop-max-height: 5rem;
-  --base-height: 92px;
-  --base-max-height: 92px;
+  --base-height: var(--detroit-navbar-height);
+  --base-max-height: var(--detroit-navbar-height);
+  --navbar-menu-desktop-height: var(--detroit-navbar-height);
 }
 
 .ag-theme-bloom .button {
