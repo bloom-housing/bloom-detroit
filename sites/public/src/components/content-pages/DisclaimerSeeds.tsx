@@ -21,11 +21,7 @@ const DisclaimerSeeds = () => {
 
   return (
     <Layout>
-      <PageHeaderLayout
-        heading={t("pageTitle.disclaimer")}
-        subheading="A design approach is a general philosophy that may or may not include a guide for specific methods."
-        inverse
-      >
+      <PageHeaderLayout heading={t("pageTitle.terms")} inverse>
         <Markdown className={styles["markdown"]}>{pageContent.toString()}</Markdown>
       </PageHeaderLayout>
     </Layout>
