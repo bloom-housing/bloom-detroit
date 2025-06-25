@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from "react"
+import Markdown from "markdown-to-jsx"
 import { useForm } from "react-hook-form"
 import {
   FeatureFlagEnum,
@@ -15,7 +16,6 @@ import {
   pdfUrlFromListingEvents,
   ResponseException,
 } from "@bloom-housing/shared-helpers"
-import { Heading } from "@bloom-housing/ui-seeds"
 import { ErrorPage } from "../../pages/_error"
 import { fetchFavoriteListingIds, isFeatureFlagOn, saveListingFavorite } from "../../lib/helpers"
 import {
@@ -134,7 +134,9 @@ export const ListingViewSeeds = ({ listing, jurisdiction, profile, preview }: Li
     <>
       {listing.whatToExpect && (
         <InfoCard heading={t("whatToExpect.label")}>
-          <div>{listing.whatToExpect}</div>
+          <div>
+            <Markdown>{listing.whatToExpect}</Markdown>
+          </div>
         </InfoCard>
       )}
     </>
@@ -142,9 +144,6 @@ export const ListingViewSeeds = ({ listing, jurisdiction, profile, preview }: Li
 
   const UnitFeatures = (
     <>
-      <Heading size={"lg"} className={"seeds-m-be-header"} priority={3}>
-        {t("t.unitFeatures")}
-      </Heading>
       <UnitSummaries
         disableUnitsAccordion={listing.disableUnitsAccordion}
         units={listing.units}
@@ -220,10 +219,7 @@ export const ListingViewSeeds = ({ listing, jurisdiction, profile, preview }: Li
           />
           <div className={styles["main-content"]}>
             <div className={styles["hide-desktop"]}>{ApplyBar}</div>
-            <Eligibility
-              eligibilitySections={getEligibilitySections(jurisdiction, listing)}
-              section8Acceptance={listing.section8Acceptance}
-            />
+            <Eligibility eligibilitySections={getEligibilitySections(jurisdiction, listing)} />
             <Features features={getFeatures(listing, jurisdiction)}>{UnitFeatures}</Features>
             <Neighborhood
               address={listing.listingsBuildingAddress}
