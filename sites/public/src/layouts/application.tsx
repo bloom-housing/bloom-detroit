@@ -2,15 +2,14 @@ import React, { useContext, useEffect, useState } from "react"
 import dayjs from "dayjs"
 import { NextRouter, useRouter } from "next/router"
 import Head from "next/head"
-import HomeIcon from "@heroicons/react/24/solid/HomeIcon"
 import { Message, Toast, Icon } from "@bloom-housing/ui-seeds"
+import { User } from "@bloom-housing/shared-helpers/src/types/backend-swagger"
+import { ToastProps } from "@bloom-housing/ui-seeds/src/blocks/Toast"
 import { MenuLink, t, SiteHeader as UICSiteHeader } from "@bloom-housing/ui-components"
 import { AuthContext, MessageContext } from "@bloom-housing/shared-helpers"
 import CustomSiteFooter from "../components/shared/CustomSiteFooter"
 import { HeaderLink, SiteHeader } from "../patterns/SiteHeader"
 import styles from "./application.module.scss"
-import { User } from "@bloom-housing/shared-helpers/src/types/backend-swagger"
-import { ToastProps } from "@bloom-housing/ui-seeds/src/blocks/Toast"
 import Markdown from "markdown-to-jsx"
 
 const isMessageActive = (windowEnv: string) => {
@@ -42,6 +41,10 @@ const getSiteHeaderDeprecated = (
     {
       title: t("nav.listings"),
       href: "/listings",
+    },
+    {
+      title: t("pageTitle.about"),
+      href: "/about",
     },
   ]
   if (process.env.housingCounselorServiceUrl) {
@@ -147,6 +150,10 @@ const getHeaderLinks = (
       href: process.env.housingCounselorServiceUrl,
     })
   }
+  headerLinks.push({
+    label: t("pageTitle.about"),
+    href: "/about",
+  })
   if (profile) {
     headerLinks.push({
       label: t("nav.myAccount"),
@@ -240,11 +247,16 @@ const Layout = (props) => {
             titleLink={"/"}
             logo={
               <Icon size={"lg"}>
-                <HomeIcon />
+                <img
+                  className={styles["jurisdiction-icon"]}
+                  src="/images/detroit-logo.png"
+                  alt={t("footer.logoAlt")}
+                />
               </Icon>
             }
             mainContentId="main-content"
             showMessageBar={true}
+            subtitle={t("footer.headerLink")}
           />
         ) : (
           getSiteHeaderDeprecated(

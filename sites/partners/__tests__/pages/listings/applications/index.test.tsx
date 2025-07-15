@@ -71,7 +71,7 @@ describe("applications", () => {
     )
     const { findByText, getByText, getAllByText } = render(<ApplicationsList />)
 
-    const header = await findByText("Partners Portal")
+    const header = await findByText("Detroit Partner Portal")
     expect(header).toBeInTheDocument()
 
     expect(getAllByText("Archer Studios").length).toBeGreaterThan(0)
@@ -181,7 +181,7 @@ describe("applications", () => {
     )
     const { findByText, getByText } = render(<ApplicationsList />)
 
-    const header = await findByText("Partners Portal")
+    const header = await findByText("Detroit Partner Portal")
     expect(header).toBeInTheDocument()
 
     fireEvent.click(getByText("Add Application"))
@@ -211,7 +211,7 @@ describe("applications", () => {
     )
     const { findByText, getByText } = render(<ApplicationsList />)
 
-    const header = await findByText("Partners Portal")
+    const header = await findByText("Detroit Partner Portal")
     expect(header).toBeInTheDocument()
 
     fireEvent.click(getByText("Add Application"))

@@ -60,7 +60,7 @@ describe("<RentalsFinder>", () => {
 
     expect(screen.getByRole("button", { name: /next/i })).toBeInTheDocument()
     expect(
-      screen.getByRole("button", { name: /skip this and show me listings/i })
+      screen.getByRole("button", { name: /skip this and show me rentals/i })
     ).toBeInTheDocument()
 
     expect(screen.queryByRole("button", { name: /finish/i })).not.toBeInTheDocument()
@@ -108,7 +108,7 @@ describe("<RentalsFinder>", () => {
       // ----------- Section 1 - Housing Needs | Step Skipped - Region  -------------------
       expect(
         screen.queryByRole("heading", {
-          name: /what areas would you like to live in\?/i,
+          name: /what areas of Detroit would you like to live in\?/i,
           level: 2,
         })
       ).not.toBeInTheDocument()
@@ -184,7 +184,7 @@ describe("<RentalsFinder>", () => {
 
       expect(
         screen.getByRole("heading", {
-          name: /what areas would you like to live in\?/i,
+          name: /what areas of Detroit would you like to live in\?/i,
           level: 2,
         })
       ).toBeInTheDocument()
@@ -289,7 +289,7 @@ describe("<RentalsFinder>", () => {
     expect(screen.queryByRole("button", { name: /finish/i })).not.toBeInTheDocument()
     expect(screen.queryByRole("button", { name: /back/i })).not.toBeInTheDocument()
     expect(
-      screen.getByRole("button", { name: /skip this and show me listings/i })
+      screen.getByRole("button", { name: /skip this and show me rentals/i })
     ).toBeInTheDocument()
 
     const nextButton = screen.getByRole("button", { name: /next/i })
@@ -309,7 +309,7 @@ describe("<RentalsFinder>", () => {
 
     expect(
       screen.getByRole("heading", {
-        name: /what areas would you like to live in\?/i,
+        name: /what areas of Detroit would you like to live in\?/i,
         level: 2,
       })
     ).toBeInTheDocument()
@@ -327,7 +327,7 @@ describe("<RentalsFinder>", () => {
     expect(screen.queryByRole("button", { name: /finish/i })).not.toBeInTheDocument()
     expect(screen.getByRole("button", { name: /back/i })).toBeInTheDocument()
     expect(
-      screen.getByRole("button", { name: /skip this and show me listings/i })
+      screen.getByRole("button", { name: /skip this and show me rentals/i })
     ).toBeInTheDocument()
     await act(() => userEvent.click(nextButton))
 
@@ -365,7 +365,7 @@ describe("<RentalsFinder>", () => {
     expect(screen.queryByRole("button", { name: /finish/i })).not.toBeInTheDocument()
     expect(screen.getByRole("button", { name: /back/i })).toBeInTheDocument()
     expect(
-      screen.getByRole("button", { name: /skip this and show me listings/i })
+      screen.getByRole("button", { name: /skip this and show me rentals/i })
     ).toBeInTheDocument()
     await act(() => userEvent.click(nextButton))
 
@@ -431,7 +431,7 @@ describe("<RentalsFinder>", () => {
     expect(screen.queryByRole("button", { name: /finish/i })).not.toBeInTheDocument()
     expect(screen.getByRole("button", { name: /back/i })).toBeInTheDocument()
     expect(
-      screen.getByRole("button", { name: /skip this and show me listings/i })
+      screen.getByRole("button", { name: /skip this and show me rentals/i })
     ).toBeInTheDocument()
     await act(() => userEvent.click(nextButton))
 
@@ -474,7 +474,7 @@ describe("<RentalsFinder>", () => {
     expect(screen.queryByRole("button", { name: /finish/i })).not.toBeInTheDocument()
     expect(screen.getByRole("button", { name: /back/i })).toBeInTheDocument()
     expect(
-      screen.getByRole("button", { name: /skip this and show me listings/i })
+      screen.getByRole("button", { name: /skip this and show me rentals/i })
     ).toBeInTheDocument()
     await act(() => userEvent.click(nextButton))
 
@@ -504,7 +504,7 @@ describe("<RentalsFinder>", () => {
     expect(disclaimerItems).toHaveLength(5)
 
     const disclaimerPatterns = [
-      /this website will show you regulated affordable rentals, meaning they are affordable because of governmental funding./i,
+      /Detroit Home Connect will show you regulated affordable rentals, meaning they are affordable because of governmental funding./i,
       /with this funding, these kinds of rentals often have restrictions about who can live in a property./i,
       /many buildings serve moderate- or lower-income households, so applicants cannot make more money than specific income limits./i,
       /some buildings are only reserved for seniors./i,
@@ -590,7 +590,7 @@ describe("<RentalsFinder>", () => {
       />
     )
 
-    const skipButton = screen.getByRole("button", { name: /skip this and show me listings/i })
+    const skipButton = screen.getByRole("button", { name: /skip this and show me rentals/i })
     expect(skipButton).toBeInTheDocument()
 
     await act(() => userEvent.click(skipButton))
@@ -629,7 +629,7 @@ describe("<RentalsFinder>", () => {
     expect(disclaimerItems).toHaveLength(5)
 
     const disclaimerPatterns = [
-      /this website will show you regulated affordable rentals, meaning they are affordable because of governmental funding./i,
+      /Detroit Home Connect will show you regulated affordable rentals, meaning they are affordable because of governmental funding./i,
       /with this funding, these kinds of rentals often have restrictions about who can live in a property./i,
       /many buildings serve moderate- or lower-income households, so applicants cannot make more money than specific income limits./i,
       /some buildings are only reserved for seniors./i,

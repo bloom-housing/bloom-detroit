@@ -27,6 +27,7 @@ export const CustomIconMap = {
   house: <HouseIcon />,
   questionMarkCircle: <QuestionMarkCircleIcon />,
   listBullet: <ListBulletIcon />,
+  questionMark: <QuestionMarkCircleIcon />,
 }
 
 export type CustomIconType = keyof typeof CustomIconMap
