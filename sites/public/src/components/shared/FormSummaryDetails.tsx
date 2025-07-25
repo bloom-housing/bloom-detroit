@@ -13,6 +13,8 @@ import {
   Application,
   ApplicationMultiselectQuestion,
   ApplicationMultiselectQuestionOption,
+  FeatureFlag,
+  FeatureFlagEnum,
   InputType,
   Listing,
   MultiselectQuestionsApplicationSectionEnum,
@@ -28,34 +30,7 @@ type FormSummaryDetailsProps = {
   validationError?: boolean
   enableUnitGroups?: boolean
   enableFullTimeStudentQuestion?: boolean
-}
-
-const accessibilityLabels = (accessibility) => {
-  const labels = []
-  if (accessibility.mobility) labels.push(t("application.ada.mobility"))
-  if (accessibility.vision) labels.push(t("application.ada.vision"))
-  if (accessibility.hearing) labels.push(t("application.ada.hearing"))
-  if (labels.length === 0) labels.push(t("t.no"))
-
-  return labels
-}
-
-const reformatAddress = (address: Address) => {
-  const { street, street2, city, state, zipCode } = address
-  const newAddress = {
-    placeName: street,
-    street: street2,
-    city,
-    state,
-    zipCode,
-  } as Address
-  if (newAddress.street === null || newAddress.street === "") {
-    if (newAddress.placeName) {
-      newAddress.street = newAddress.placeName
-      delete newAddress.placeName
-    }
-  }
-  return newAddress
+  enableAdaOtherOption?: boolean
 }
 
 const FormSummaryDetails = ({
@@ -66,6 +41,7 @@ const FormSummaryDetails = ({
   hidePrograms = false,
   validationError = false,
   enableUnitGroups = false,
+  enableAdaOtherOption = false,
   enableFullTimeStudentQuestion = false,
 }: FormSummaryDetailsProps) => {
   // fix for rehydration
@@ -75,6 +51,36 @@ const FormSummaryDetails = ({
   }, [])
   if (!hasMounted) {
     return null
+  }
+
+  const accessibilityLabels = () => {
+    const labels = []
+    if (application.accessibility.mobility) labels.push(t("application.ada.mobility"))
+    if (application.accessibility.vision) labels.push(t("application.ada.vision"))
+    if (application.accessibility.hearing) labels.push(t("application.ada.hearing"))
+    if (application.accessibility.other && enableAdaOtherOption)
+      labels.push(t("application.ada.other"))
+    if (labels.length === 0) labels.push(t("t.no"))
+
+    return labels
+  }
+
+  const reformatAddress = (address: Address) => {
+    const { street, street2, city, state, zipCode } = address
+    const newAddress = {
+      placeName: street,
+      street: street2,
+      city,
+      state,
+      zipCode,
+    } as Address
+    if (newAddress.street === null || newAddress.street === "") {
+      if (newAddress.placeName) {
+        newAddress.street = newAddress.placeName
+        delete newAddress.placeName
+      }
+    }
+    return newAddress
   }
 
   const alternateContactName = () => {
@@ -139,7 +145,7 @@ const FormSummaryDetails = ({
     return (
       <>
         <Card.Header className={styles["summary-header"]}>
-          <Heading priority={3} size="xl" className="font-serif font-normal">
+          <Heading priority={3} size="xl">
             {header}
           </Heading>
           {editMode && !validationError && <Link href={appLink}>{t("t.edit")}</Link>}
@@ -192,7 +198,7 @@ const FormSummaryDetails = ({
   return (
     <>
       <Card.Header className={styles["summary-header"]}>
-        <Heading priority={3} size="xl" className="font-serif font-normal">
+        <Heading priority={3} size="xl">
           {t("t.you")}
         </Heading>
         {editMode && <Link href="/applications/contact/name">{t("t.edit")}</Link>}
@@ -311,7 +317,7 @@ const FormSummaryDetails = ({
       {application.alternateContact.type && application.alternateContact.type !== "noContact" && (
         <>
           <Card.Header className={styles["summary-header"]}>
-            <Heading priority={3} size="xl" className="font-serif font-normal">
+            <Heading priority={3} size="xl">
               {t("application.alternateContact.type.label")}
             </Heading>
             {editMode && !validationError && (
@@ -372,7 +378,7 @@ const FormSummaryDetails = ({
       {application.householdSize > 1 && (
         <>
           <Card.Header className={styles["summary-header"]}>
-            <Heading priority={3} size="xl" className="font-serif font-normal">
+            <Heading priority={3} size="xl">
               {t("application.household.householdMembers")}
             </Heading>
             {editMode && !validationError && (
@@ -435,7 +441,7 @@ const FormSummaryDetails = ({
 
       <>
         <Card.Header className={styles["summary-header"]}>
-          <Heading priority={3} size="xl" className="font-serif font-normal">
+          <Heading priority={3} size="xl">
             {t("application.review.householdDetails")}
           </Heading>
           {editMode && !validationError && (
@@ -462,7 +468,7 @@ const FormSummaryDetails = ({
             label={t("application.ada.label")}
             className={styles["summary-value"]}
           >
-            {accessibilityLabels(application.accessibility).map((item) => (
+            {accessibilityLabels().map((item) => (
               <div key={item} data-testid={item}>
                 {item}
                 <br />
@@ -504,7 +510,7 @@ const FormSummaryDetails = ({
           )}
 
         <Card.Header className={styles["summary-header"]}>
-          <Heading priority={3} size="xl" className="font-serif font-normal">
+          <Heading priority={3} size="xl">
             {t("t.income")}
           </Heading>
           {editMode && !validationError && (
