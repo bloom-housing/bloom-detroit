@@ -1,7 +1,7 @@
 import { useContext, useEffect } from "react"
 import Markdown from "markdown-to-jsx"
 import { AuthContext, PageView, pushGtmEvent } from "@bloom-housing/shared-helpers"
-import { MarkdownSection, t } from "@bloom-housing/ui-components"
+import { t } from "@bloom-housing/ui-components"
 import Layout from "../layouts/application"
 import { RenderIf } from "../lib/helpers"
 import { UserStatus } from "../lib/constants"
@@ -24,18 +24,16 @@ const Terms = () => {
   return (
     <Layout>
       <PageHeaderLayout heading={pagetTitle} inverse>
-        <MarkdownSection>
-          <Markdown
-            options={{
-              overrides: {
-                RenderIf,
-              },
-            }}
-            className={styles["markdown"]}
-          >
-            {pageContent.toString()}
-          </Markdown>
-        </MarkdownSection>
+        <Markdown
+          options={{
+            overrides: {
+              RenderIf,
+            },
+          }}
+          className={styles["markdown"]}
+        >
+          {pageContent.toString()}
+        </Markdown>
       </PageHeaderLayout>
     </Layout>
   )
