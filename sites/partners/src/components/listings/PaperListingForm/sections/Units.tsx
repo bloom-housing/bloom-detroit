@@ -360,33 +360,35 @@ const FormUnits = ({
               fieldGroupClassName={"flex h-12 items-center"}
               fieldLabelClassName={styles["label-option"]}
             />
-            <FieldGroup
-              name="listingAvailabilityQuestion"
-              type="radio"
-              fieldLabelClassName={styles["label-option"]}
-              groupLabel={t("listings.listingAvailabilityQuestion")}
-              register={register}
-              error={fieldHasError(errors?.listingAvailability) && listingAvailability === null}
-              errorMessage={fieldMessage(errors?.listingAvailability)}
-              fieldClassName="m-0"
-              fieldGroupClassName="flex h-12 items-center"
-              fields={[
-                {
-                  label: t("listings.availableUnits"),
-                  value: "availableUnits",
-                  id: "availableUnits",
-                  dataTestId: "listingAvailability.availableUnits",
-                  defaultChecked: listing?.reviewOrderType !== ReviewOrderTypeEnum.waitlist,
-                },
-                {
-                  label: t("listings.waitlist.open"),
-                  value: "openWaitlist",
-                  id: "openWaitlist",
-                  dataTestId: "listingAvailability.openWaitlist",
-                  defaultChecked: listing?.reviewOrderType === ReviewOrderTypeEnum.waitlist,
-                },
-              ]}
-            />
+            {!isNonRegulated && (
+              <FieldGroup
+                name="listingAvailabilityQuestion"
+                type="radio"
+                fieldLabelClassName={styles["label-option"]}
+                groupLabel={t("listings.listingAvailabilityQuestion")}
+                register={register}
+                error={fieldHasError(errors?.listingAvailability) && listingAvailability === null}
+                errorMessage={fieldMessage(errors?.listingAvailability)}
+                fieldClassName="m-0"
+                fieldGroupClassName="flex h-12 items-center"
+                fields={[
+                  {
+                    label: t("listings.availableUnits"),
+                    value: "availableUnits",
+                    id: "availableUnits",
+                    dataTestId: "listingAvailability.availableUnits",
+                    defaultChecked: listing?.reviewOrderType !== ReviewOrderTypeEnum.waitlist,
+                  },
+                  {
+                    label: t("listings.waitlist.open"),
+                    value: "openWaitlist",
+                    id: "openWaitlist",
+                    dataTestId: "listingAvailability.openWaitlist",
+                    defaultChecked: listing?.reviewOrderType === ReviewOrderTypeEnum.waitlist,
+                  },
+                ]}
+              />
+            )}
           </Grid.Row>
         )}
         <SectionWithGrid.HeadingRow>{t("listings.units")}</SectionWithGrid.HeadingRow>

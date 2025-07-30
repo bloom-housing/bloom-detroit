@@ -680,22 +680,26 @@ const UnitForm = ({
                 </Grid.Row>
               </Grid>
 
-              <hr className="spacer-section-above spacer-section" />
-              <SectionWithGrid heading={t("t.accessibility")}>
-                <Grid.Row columns={4}>
-                  <Grid.Cell>
-                    <Select
-                      id="unitAccessibilityPriorityTypes.id"
-                      name="unitAccessibilityPriorityTypes.id"
-                      label={t("listings.unit.accessibilityPriorityType")}
-                      placeholder={t("listings.unit.accessibilityPriorityType")}
-                      register={register}
-                      controlClassName="control"
-                      options={unitPrioritiesOptions}
-                    />
-                  </Grid.Cell>
-                </Grid.Row>
-              </SectionWithGrid>
+              {!isNonRegulated && (
+                <>
+                  <hr className="spacer-section-above spacer-section" />
+                  <SectionWithGrid heading={t("t.accessibility")}>
+                    <Grid.Row columns={4}>
+                      <Grid.Cell>
+                        <Select
+                          id="unitAccessibilityPriorityTypes.id"
+                          name="unitAccessibilityPriorityTypes.id"
+                          label={t("listings.unit.accessibilityPriorityType")}
+                          placeholder={t("listings.unit.accessibilityPriorityType")}
+                          register={register}
+                          controlClassName="control"
+                          options={unitPrioritiesOptions}
+                        />
+                      </Grid.Cell>
+                    </Grid.Row>
+                  </SectionWithGrid>
+                </>
+              )}
             </Card.Section>
           </Card>
         </Form>
