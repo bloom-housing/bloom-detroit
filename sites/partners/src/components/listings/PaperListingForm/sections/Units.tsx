@@ -34,6 +34,7 @@ type UnitProps = {
   setUnits: (units: TempUnit[]) => void
   unitGroups: TempUnitGroup[]
   units: TempUnit[]
+  isNonRegulated?: boolean
 }
 
 const FormUnits = ({
@@ -44,6 +45,7 @@ const FormUnits = ({
   setUnits,
   unitGroups,
   units,
+  isNonRegulated,
 }: UnitProps) => {
   const { addToast } = useContext(MessageContext)
   const [unitDrawerOpen, setUnitDrawerOpen] = useState(false)
@@ -515,6 +517,7 @@ const FormUnits = ({
             draft={!units.some((unit) => unit.tempId === defaultUnit?.tempId)}
             defaultUnit={defaultUnit}
             nextId={nextId}
+            isNonRegulated={isNonRegulated}
           />
         )}
       </Drawer>

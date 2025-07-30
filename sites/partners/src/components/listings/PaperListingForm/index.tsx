@@ -68,6 +68,7 @@ type ListingFormProps = {
   listing?: FormListing
   editMode?: boolean
   setListingName?: React.Dispatch<React.SetStateAction<string>>
+  isNonRegulated?: boolean
 }
 
 export type SubmitFunction = (
@@ -98,7 +99,7 @@ const getToast = (
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const ListingForm = ({ listing, editMode, setListingName }: ListingFormProps) => {
+const ListingForm = ({ listing, editMode, setListingName, isNonRegulated }: ListingFormProps) => {
   const defaultValues = editMode ? listing : formDefaults
   const formMethods = useForm<FormListing>({
     defaultValues,
@@ -416,6 +417,7 @@ const ListingForm = ({ listing, editMode, setListingName }: ListingFormProps) =>
                           <ListingIntro
                             jurisdictions={profile?.jurisdictions || []}
                             requiredFields={requiredFields}
+                            isNonRegulated={isNonRegulated}
                           />
                           <ListingPhotos requiredFields={requiredFields} />
                           <BuildingDetails
@@ -435,6 +437,7 @@ const ListingForm = ({ listing, editMode, setListingName }: ListingFormProps) =>
                             setUnits={setUnits}
                             unitGroups={unitGroups}
                             units={units}
+                            isNonRegulated={isNonRegulated}
                           />
                           <PreferencesAndPrograms
                             listing={listing}
@@ -450,6 +453,7 @@ const ListingForm = ({ listing, editMode, setListingName }: ListingFormProps) =>
                           <BuildingFeatures
                             existingFeatures={listing?.listingFeatures}
                             requiredFields={requiredFields}
+                            isNonRegulated={isNonRegulated}
                           />
                           <NeighborhoodAmenities />
                           <AdditionalEligibility

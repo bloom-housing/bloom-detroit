@@ -84,6 +84,8 @@ export type FormListing = Omit<Listing, "countyCode"> & {
   whereApplicationsMailedIn?: ApplicationAddressTypeEnum | AnotherAddressEnum
   accessibilityFeatures?: string[]
   utilities?: string[]
+  certificateOfCompliance?: YesNoEnum
+  notes?: string
 }
 
 export const addressTypes = {
@@ -168,6 +170,8 @@ export const formDefaults: FormListing = {
   reviewOrderType: null,
   unitsSummary: [],
   applicationLotteryTotals: [],
+  certificateOfCompliance: null,
+  notes: "",
 }
 
 export type TempUnit = Unit & {

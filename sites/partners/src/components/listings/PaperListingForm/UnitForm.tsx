@@ -21,9 +21,17 @@ type UnitFormProps = {
   defaultUnit: TempUnit | undefined
   nextId: number
   draft: boolean
+  isNonRegulated?: boolean
 }
 
-const UnitForm = ({ onSubmit, onClose, defaultUnit, nextId, draft }: UnitFormProps) => {
+const UnitForm = ({
+  onSubmit,
+  onClose,
+  defaultUnit,
+  nextId,
+  draft,
+  isNonRegulated,
+}: UnitFormProps) => {
   const { amiChartsService } = useContext(AuthContext)
 
   const [amiChartsOptions, setAmiChartsOptions] = useState([])
