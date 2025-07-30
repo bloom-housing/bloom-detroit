@@ -445,6 +445,7 @@ const ListingForm = ({ listing, editMode, setListingName, isNonRegulated }: List
                             setPreferences={setPreferences}
                             programs={programs || []}
                             setPrograms={setPrograms}
+                            isNonRegulated={isNonRegulated}
                           />
                           <AdditionalFees
                             existingUtilities={listing?.listingUtilities}
