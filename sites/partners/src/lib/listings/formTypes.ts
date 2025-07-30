@@ -184,6 +184,7 @@ export type TempUnit = Unit & {
   maxIncomeHouseholdSize6?: string
   maxIncomeHouseholdSize7?: string
   maxIncomeHouseholdSize8?: string
+  isFixedRent?: string
 }
 
 export type TempAmiLevel = UnitGroupAmiLevel & {
