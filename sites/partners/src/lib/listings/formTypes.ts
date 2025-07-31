@@ -86,6 +86,7 @@ export type FormListing = Omit<Listing, "countyCode"> & {
   utilities?: string[]
   certificateOfCompliance?: YesNoEnum
   notes?: string
+  isSeniorsOnly?: YesNoEnum
 }
 
 export const addressTypes = {
@@ -172,6 +173,7 @@ export const formDefaults: FormListing = {
   applicationLotteryTotals: [],
   certificateOfCompliance: null,
   notes: "",
+  isSeniorsOnly: null,
 }
 
 export type TempUnit = Unit & {

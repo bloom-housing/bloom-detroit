@@ -428,7 +428,11 @@ const ListingForm = ({ listing, editMode, setListingName, isNonRegulated }: List
                             setCustomMapPositionChosen={setCustomMapPositionChosen}
                             setLatLong={setLatitudeLongitude}
                           />
-                          <CommunityType listing={listing} requiredFields={requiredFields} />
+                          <CommunityType
+                            listing={listing}
+                            requiredFields={requiredFields}
+                            isNonRegulated={isNonRegulated}
+                          />
                           <Units
                             disableUnitsAccordion={listing?.disableUnitsAccordion}
                             featureFlags={activeFeatureFlags}
@@ -492,9 +496,14 @@ const ListingForm = ({ listing, editMode, setListingName, isNonRegulated }: List
                             isAdmin={profile?.userRoles.isAdmin}
                             whatToExpectEditor={whatToExpectEditor}
                             requiredFields={requiredFields}
+                            isNonRegulated={isNonRegulated}
                           />
                           <LeasingAgent requiredFields={requiredFields} />
-                          <ApplicationTypes listing={listing} requiredFields={requiredFields} />
+                          <ApplicationTypes
+                            listing={listing}
+                            requiredFields={requiredFields}
+                            isNonRegulated={isNonRegulated}
+                          />
                           <ApplicationAddress listing={listing} requiredFields={requiredFields} />
                           <ApplicationDates
                             listing={listing}

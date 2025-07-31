@@ -109,7 +109,7 @@ const ListingIntro = (props: ListingIntroProps) => {
               register={register}
               {...defaultFieldProps(
                 "developer",
-                t("listings.developer"),
+                props.isNonRegulated ? "Property Management Account" : t("listings.developer"),
                 props.requiredFields,
                 errors,
                 clearErrors
