@@ -24,6 +24,7 @@ type RankingsAndResultsProps = {
   listing?: FormListing
   requiredFields: string[]
   whatToExpectEditor: Editor
+  isNonRegulated?: boolean
 }
 
 const RankingsAndResults = ({
@@ -31,6 +32,7 @@ const RankingsAndResults = ({
   listing,
   requiredFields,
   whatToExpectEditor,
+  isNonRegulated,
 }: RankingsAndResultsProps) => {
   const formMethods = useFormContext()
   const { doJurisdictionsHaveFeatureFlagOn } = useContext(AuthContext)
@@ -101,7 +103,7 @@ const RankingsAndResults = ({
         heading={t("listings.sections.rankingsResultsTitle")}
         subheading={t("listings.sections.rankingsResultsSubtitle")}
       >
-        {(availabilityQuestion !== "openWaitlist" || enableUnitGroups) && (
+        {!isNonRegulated && (availabilityQuestion !== "openWaitlist" || enableUnitGroups) && (
           <Grid.Row columns={2} className={"flex items-center"}>
             <Grid.Cell>
               <FieldGroup
@@ -294,31 +296,33 @@ const RankingsAndResults = ({
             </Grid.Row>
           </>
         )}
-        <Grid.Row columns={2} className={"flex items-center"}>
-          <Grid.Cell>
-            <FieldGroup
-              name="waitlistOpenQuestion"
-              type="radio"
-              groupLabel={t("listings.waitlist.openQuestion")}
-              register={register}
-              fieldLabelClassName={`${styles["label-option"]} seeds-m-bs-2`}
-              fields={[
-                {
-                  ...yesNoRadioOptions[0],
-                  id: "waitlistOpenYes",
-                  disabled: !enableUnitGroups && availabilityQuestion === "availableUnits",
-                  defaultChecked: listing && listing.isWaitlistOpen === true,
-                },
-                {
-                  ...yesNoRadioOptions[1],
-                  id: "waitlistOpenNo",
-                  disabled: !enableUnitGroups && availabilityQuestion === "availableUnits",
-                  defaultChecked: !listing || (listing && listing.isWaitlistOpen === false),
-                },
-              ]}
-            />
-          </Grid.Cell>
-        </Grid.Row>
+        {!isNonRegulated && (
+          <Grid.Row columns={2} className={"flex items-center"}>
+            <Grid.Cell>
+              <FieldGroup
+                name="waitlistOpenQuestion"
+                type="radio"
+                groupLabel={t("listings.waitlist.openQuestion")}
+                register={register}
+                fieldLabelClassName={`${styles["label-option"]} seeds-m-bs-2`}
+                fields={[
+                  {
+                    ...yesNoRadioOptions[0],
+                    id: "waitlistOpenYes",
+                    disabled: !enableUnitGroups && availabilityQuestion === "availableUnits",
+                    defaultChecked: listing && listing.isWaitlistOpen === true,
+                  },
+                  {
+                    ...yesNoRadioOptions[1],
+                    id: "waitlistOpenNo",
+                    disabled: !enableUnitGroups && availabilityQuestion === "availableUnits",
+                    defaultChecked: !listing || (listing && listing.isWaitlistOpen === false),
+                  },
+                ]}
+              />
+            </Grid.Cell>
+          </Grid.Row>
+        )}
         {waitlistOpen === YesNoEnum.yes &&
           (availabilityQuestion === "openWaitlist" || enableUnitGroups) && (
             <Grid.Row columns={3}>
