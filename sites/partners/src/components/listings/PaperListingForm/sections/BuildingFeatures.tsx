@@ -14,6 +14,7 @@ import styles from "../ListingForm.module.scss"
 type BuildingFeaturesProps = {
   existingFeatures: ListingFeatures
   requiredFields: string[]
+  isNonRegulated?: boolean
 }
 
 const BuildingFeatures = (props: BuildingFeaturesProps) => {
@@ -159,6 +160,25 @@ const BuildingFeatures = (props: BuildingFeaturesProps) => {
               fieldGroupClassName="grid grid-cols-3 mt-2 gap-x-4"
               fieldLabelClassName={styles["label-option"]}
             />
+          </Grid.Row>
+        )}
+        {props.isNonRegulated && (
+          <Grid.Row>
+            <Grid.Cell>
+              <Textarea
+                fullWidth={true}
+                placeholder={""}
+                register={register}
+                maxLength={600}
+                {...defaultFieldProps(
+                  "notes",
+                  "Notes (Lead, etc)",
+                  props.requiredFields,
+                  errors,
+                  clearErrors
+                )}
+              />
+            </Grid.Cell>
           </Grid.Row>
         )}
       </SectionWithGrid>

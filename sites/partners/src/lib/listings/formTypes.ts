@@ -84,6 +84,9 @@ export type FormListing = Omit<Listing, "countyCode"> & {
   whereApplicationsMailedIn?: ApplicationAddressTypeEnum | AnotherAddressEnum
   accessibilityFeatures?: string[]
   utilities?: string[]
+  certificateOfCompliance?: YesNoEnum
+  notes?: string
+  isSeniorsOnly?: YesNoEnum
 }
 
 export const addressTypes = {
@@ -168,6 +171,9 @@ export const formDefaults: FormListing = {
   reviewOrderType: null,
   unitsSummary: [],
   applicationLotteryTotals: [],
+  certificateOfCompliance: null,
+  notes: "",
+  isSeniorsOnly: null,
 }
 
 export type TempUnit = Unit & {
@@ -180,6 +186,7 @@ export type TempUnit = Unit & {
   maxIncomeHouseholdSize6?: string
   maxIncomeHouseholdSize7?: string
   maxIncomeHouseholdSize8?: string
+  isFixedRent?: string
 }
 
 export type TempAmiLevel = UnitGroupAmiLevel & {

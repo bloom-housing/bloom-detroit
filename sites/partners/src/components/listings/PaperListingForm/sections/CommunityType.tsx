@@ -24,9 +24,10 @@ import styles from "../ListingForm.module.scss"
 type CommunityTypeProps = {
   listing?: FormListing
   requiredFields: string[]
+  isNonRegulated?: boolean
 }
 
-const CommunityType = ({ listing, requiredFields }: CommunityTypeProps) => {
+const CommunityType = ({ listing, requiredFields, isNonRegulated }: CommunityTypeProps) => {
   const formMethods = useFormContext()
   const { doJurisdictionsHaveFeatureFlagOn } = useContext(AuthContext)
 
@@ -93,118 +94,213 @@ const CommunityType = ({ listing, requiredFields }: CommunityTypeProps) => {
         heading={t("listings.sections.communityType")}
         subheading={t("listings.sections.communityTypeSubtitle")}
       >
-        <Grid.Row columns={2}>
-          {options && (
-            <Select
-              id={`reservedCommunityTypes.id`}
-              name={`reservedCommunityTypes.id`}
-              label={getLabel(
-                "reservedCommunityTypes",
-                requiredFields,
-                t("listings.reservedCommunityType")
-              )}
-              register={register}
-              controlClassName="control"
-              options={options}
-              inputProps={{
-                onChange: () => {
-                  setCurrentCommunityType(reservedCommunityType)
-                  fieldHasError(errors?.reservedCommunityTypes) &&
-                    clearErrors("reservedCommunityTypes")
-                },
-                "aria-required": fieldIsRequired("reservedCommunityTypes", requiredFields),
-              }}
-              error={fieldHasError(errors?.reservedCommunityTypes)}
-              errorMessage={fieldMessage(errors?.reservedCommunityTypes)}
-            />
-          )}
-        </Grid.Row>
-        <Grid.Row columns={3}>
-          <Grid.Cell className="seeds-grid-span-2">
-            <Textarea
-              label={getLabel(
-                "reservedCommunityDescription",
-                requiredFields,
-                t("listings.reservedCommunityDescription")
-              )}
-              placeholder={""}
-              name={"reservedCommunityDescription"}
-              id={"reservedCommunityDescription"}
-              fullWidth={true}
-              register={register}
-              note={t("listings.appearsInListing")}
-              errorMessage={fieldMessage(errors?.reservedCommunityDescription)}
-              inputProps={{
-                onChange: () => {
-                  fieldHasError(errors?.reservedCommunityDescription) &&
-                    clearErrors("reservedCommunityDescription")
-                },
-                "aria-required": fieldIsRequired("reservedCommunityDescription", requiredFields),
-              }}
-            />
-          </Grid.Cell>
-        </Grid.Row>
-
-        <Grid.Row columns={1}>
-          <FieldGroup
-            groupLabel={t("listings.includeCommunityDisclaimer")}
-            name="includeCommunityDisclaimerQuestion"
-            fieldLabelClassName={`${styles["label-option"]} seeds-m-bs-2`}
-            type="radio"
-            register={register}
-            fields={[
-              {
-                label: t("t.yes"),
-                value: YesNoEnum.yes,
-                id: "includeCommunityDisclaimerYes",
-                disabled: !currentCommunityType,
-              },
-              {
-                label: t("t.no"),
-                value: YesNoEnum.no,
-                id: "includeCommunityDisclaimerNo",
-                disabled: !currentCommunityType,
-              },
-            ]}
-          />
-        </Grid.Row>
-
-        {watch("includeCommunityDisclaimerQuestion") === YesNoEnum.yes && currentCommunityType && (
+        {isNonRegulated ? (
+          // Non-regulated flow
           <>
-            <Grid.Row columns={3}>
-              <Grid.Cell className="seeds-grid-span-2">
-                <Field
+            <Grid.Row columns={1}>
+              <Grid.Cell>
+                <FieldGroup
+                  name="isSeniorsOnly"
+                  type="radio"
                   register={register}
-                  subNote={t("listings.appearsAsFirstPage")}
-                  {...defaultFieldProps(
-                    "communityDisclaimerTitle",
-                    t("listings.reservedCommunityDisclaimerTitle"),
-                    requiredFields,
-                    errors,
-                    clearErrors,
-                    true
-                  )}
+                  groupLabel="Is this unit for seniors only?"
+                  fieldLabelClassName={`${styles["label-option"]} seeds-m-bs-2`}
+                  fields={[
+                    {
+                      label: t("t.yes"),
+                      value: YesNoEnum.yes,
+                      id: "isSeniorsOnlyYes",
+                    },
+                    {
+                      label: t("t.no"),
+                      value: YesNoEnum.no,
+                      id: "isSeniorsOnlyNo",
+                    },
+                  ]}
                 />
               </Grid.Cell>
             </Grid.Row>
+            <Grid.Row columns={1}>
+              <FieldGroup
+                groupLabel={t("listings.includeCommunityDisclaimer")}
+                name="includeCommunityDisclaimerQuestion"
+                fieldLabelClassName={`${styles["label-option"]} seeds-m-bs-2`}
+                type="radio"
+                register={register}
+                fields={[
+                  {
+                    label: t("t.yes"),
+                    value: YesNoEnum.yes,
+                    id: "includeCommunityDisclaimerYes",
+                  },
+                  {
+                    label: t("t.no"),
+                    value: YesNoEnum.no,
+                    id: "includeCommunityDisclaimerNo",
+                  },
+                ]}
+              />
+            </Grid.Row>
+            {watch("includeCommunityDisclaimerQuestion") === YesNoEnum.yes && (
+              <>
+                <Grid.Row columns={3}>
+                  <Grid.Cell className="seeds-grid-span-2">
+                    <Field
+                      register={register}
+                      subNote={t("listings.appearsAsFirstPage")}
+                      {...defaultFieldProps(
+                        "communityDisclaimerTitle",
+                        t("listings.reservedCommunityDisclaimerTitle"),
+                        requiredFields,
+                        errors,
+                        clearErrors,
+                        true
+                      )}
+                    />
+                  </Grid.Cell>
+                </Grid.Row>
 
+                <Grid.Row columns={3}>
+                  <Grid.Cell className="seeds-grid-span-2">
+                    <Textarea
+                      fullWidth={true}
+                      register={register}
+                      note={t("listings.appearsAsFirstPage")}
+                      {...defaultFieldProps(
+                        "communityDisclaimerDescription",
+                        t("listings.reservedCommunityDisclaimer"),
+                        requiredFields,
+                        errors,
+                        clearErrors,
+                        true
+                      )}
+                    />
+                  </Grid.Cell>
+                </Grid.Row>
+              </>
+            )}
+          </>
+        ) : (
+          // Regular flow
+          <>
+            <Grid.Row columns={2}>
+              {options && (
+                <Select
+                  id={`reservedCommunityTypes.id`}
+                  name={`reservedCommunityTypes.id`}
+                  label={getLabel(
+                    "reservedCommunityTypes",
+                    requiredFields,
+                    t("listings.reservedCommunityType")
+                  )}
+                  register={register}
+                  controlClassName="control"
+                  options={options}
+                  inputProps={{
+                    onChange: () => {
+                      setCurrentCommunityType(reservedCommunityType)
+                      fieldHasError(errors?.reservedCommunityTypes) &&
+                        clearErrors("reservedCommunityTypes")
+                    },
+                    "aria-required": fieldIsRequired("reservedCommunityTypes", requiredFields),
+                  }}
+                  error={fieldHasError(errors?.reservedCommunityTypes)}
+                  errorMessage={fieldMessage(errors?.reservedCommunityTypes)}
+                />
+              )}
+            </Grid.Row>
             <Grid.Row columns={3}>
               <Grid.Cell className="seeds-grid-span-2">
                 <Textarea
+                  label={getLabel(
+                    "reservedCommunityDescription",
+                    requiredFields,
+                    t("listings.reservedCommunityDescription")
+                  )}
+                  placeholder={""}
+                  name={"reservedCommunityDescription"}
+                  id={"reservedCommunityDescription"}
                   fullWidth={true}
                   register={register}
-                  note={t("listings.appearsAsFirstPage")}
-                  {...defaultFieldProps(
-                    "communityDisclaimerDescription",
-                    t("listings.reservedCommunityDisclaimer"),
-                    requiredFields,
-                    errors,
-                    clearErrors,
-                    true
-                  )}
+                  note={t("listings.appearsInListing")}
+                  errorMessage={fieldMessage(errors?.reservedCommunityDescription)}
+                  inputProps={{
+                    onChange: () => {
+                      fieldHasError(errors?.reservedCommunityDescription) &&
+                        clearErrors("reservedCommunityDescription")
+                    },
+                    "aria-required": fieldIsRequired(
+                      "reservedCommunityDescription",
+                      requiredFields
+                    ),
+                  }}
                 />
               </Grid.Cell>
             </Grid.Row>
+
+            <Grid.Row columns={1}>
+              <FieldGroup
+                groupLabel={t("listings.includeCommunityDisclaimer")}
+                name="includeCommunityDisclaimerQuestion"
+                fieldLabelClassName={`${styles["label-option"]} seeds-m-bs-2`}
+                type="radio"
+                register={register}
+                fields={[
+                  {
+                    label: t("t.yes"),
+                    value: YesNoEnum.yes,
+                    id: "includeCommunityDisclaimerYes",
+                    disabled: !currentCommunityType,
+                  },
+                  {
+                    label: t("t.no"),
+                    value: YesNoEnum.no,
+                    id: "includeCommunityDisclaimerNo",
+                    disabled: !currentCommunityType,
+                  },
+                ]}
+              />
+            </Grid.Row>
+
+            {watch("includeCommunityDisclaimerQuestion") === YesNoEnum.yes &&
+              currentCommunityType && (
+                <>
+                  <Grid.Row columns={3}>
+                    <Grid.Cell className="seeds-grid-span-2">
+                      <Field
+                        register={register}
+                        subNote={t("listings.appearsAsFirstPage")}
+                        {...defaultFieldProps(
+                          "communityDisclaimerTitle",
+                          t("listings.reservedCommunityDisclaimerTitle"),
+                          requiredFields,
+                          errors,
+                          clearErrors,
+                          true
+                        )}
+                      />
+                    </Grid.Cell>
+                  </Grid.Row>
+
+                  <Grid.Row columns={3}>
+                    <Grid.Cell className="seeds-grid-span-2">
+                      <Textarea
+                        fullWidth={true}
+                        register={register}
+                        note={t("listings.appearsAsFirstPage")}
+                        {...defaultFieldProps(
+                          "communityDisclaimerDescription",
+                          t("listings.reservedCommunityDisclaimer"),
+                          requiredFields,
+                          errors,
+                          clearErrors,
+                          true
+                        )}
+                      />
+                    </Grid.Cell>
+                  </Grid.Row>
+                </>
+              )}
           </>
         )}
       </SectionWithGrid>
