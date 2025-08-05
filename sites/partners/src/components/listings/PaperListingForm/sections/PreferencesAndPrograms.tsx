@@ -59,6 +59,7 @@ const ProgramsAndPreferences = ({
       dataFetcher={useJurisdictionalMultiselectQuestionList}
       formKey={"program"}
       applicationSection={MultiselectQuestionsApplicationSectionEnum.programs}
+      isNonRegulated={isNonRegulated}
     />
   ) : (
     <SelectAndOrder
@@ -74,6 +75,7 @@ const ProgramsAndPreferences = ({
       formKey={"program"}
       applicationSection={MultiselectQuestionsApplicationSectionEnum.programs}
       subNote={`${t("listing.choosePopulations")}.`}
+      isNonRegulated={isNonRegulated}
     />
   )
 

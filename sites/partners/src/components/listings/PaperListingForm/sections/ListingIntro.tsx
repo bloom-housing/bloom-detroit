@@ -67,7 +67,7 @@ const ListingIntro = (props: ListingIntroProps) => {
           </Grid.Cell>
         </Grid.Row>
         <Grid.Row columns={2}>
-          <div className={`${defaultJurisdiction ? "hidden" : ""}`}>
+          <div>
             <Select
               id={"jurisdictions.id"}
               defaultValue={defaultJurisdiction}
@@ -79,7 +79,7 @@ const ListingIntro = (props: ListingIntroProps) => {
                 </span>
               }
               register={register}
-              controlClassName={`control ${defaultJurisdiction ? "hidden" : ""}`}
+              controlClassName="control"
               error={
                 fieldHasError(errors?.jurisdictions) || fieldHasError(errors?.["jurisdictions.id"])
               }

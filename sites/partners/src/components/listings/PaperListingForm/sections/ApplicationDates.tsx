@@ -30,6 +30,7 @@ type ApplicationDatesProps = {
   setOpenHouseEvents: (events: TempEvent[]) => void
   listing?: FormListing
   requiredFields: string[]
+  isNonRegulated?: boolean
 }
 
 const ApplicationDates = ({
@@ -37,6 +38,7 @@ const ApplicationDates = ({
   openHouseEvents,
   setOpenHouseEvents,
   requiredFields,
+  isNonRegulated,
 }: ApplicationDatesProps) => {
   const openHouseHeaders = {
     date: "t.date",
@@ -200,7 +202,7 @@ const ApplicationDates = ({
             />
           </Grid.Cell>
         </Grid.Row>
-        {enableMarketingStatus && (
+        {enableMarketingStatus && !isNonRegulated && (
           <Grid.Row columns={2}>
             <Grid.Cell>
               <FieldGroup

@@ -149,19 +149,6 @@ const BuildingFeatures = (props: BuildingFeaturesProps) => {
             />
           </Grid.Cell>
         </Grid.Row>
-        {!enableAccessibilityFeatures ? null : (
-          <Grid.Row>
-            <FieldGroup
-              type="checkbox"
-              name="accessibilityFeatures"
-              groupLabel={t("listings.sections.accessibilityFeatures")}
-              fields={featureOptions}
-              register={register}
-              fieldGroupClassName="grid grid-cols-3 mt-2 gap-x-4"
-              fieldLabelClassName={styles["label-option"]}
-            />
-          </Grid.Row>
-        )}
         {props.isNonRegulated && (
           <Grid.Row>
             <Grid.Cell>
@@ -179,6 +166,19 @@ const BuildingFeatures = (props: BuildingFeaturesProps) => {
                 )}
               />
             </Grid.Cell>
+          </Grid.Row>
+        )}
+        {!enableAccessibilityFeatures ? null : (
+          <Grid.Row>
+            <FieldGroup
+              type="checkbox"
+              name="accessibilityFeatures"
+              groupLabel={t("listings.sections.accessibilityFeatures")}
+              fields={featureOptions}
+              register={register}
+              fieldGroupClassName="grid grid-cols-3 mt-2 gap-x-4"
+              fieldLabelClassName={styles["label-option"]}
+            />
           </Grid.Row>
         )}
       </SectionWithGrid>
