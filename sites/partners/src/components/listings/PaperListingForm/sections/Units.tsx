@@ -34,6 +34,7 @@ type UnitProps = {
   setUnits: (units: TempUnit[]) => void
   unitGroups: TempUnitGroup[]
   units: TempUnit[]
+  isNonRegulated?: boolean
 }
 
 const FormUnits = ({
@@ -44,9 +45,11 @@ const FormUnits = ({
   setUnits,
   unitGroups,
   units,
+  isNonRegulated,
 }: UnitProps) => {
   const { addToast } = useContext(MessageContext)
   const [unitDrawerOpen, setUnitDrawerOpen] = useState(false)
+  const [unitGroupDrawerOpen, setUnitGroupDrawerOpen] = useState(false)
   const [unitDeleteModal, setUnitDeleteModal] = useState<number | null>(null)
   const [defaultUnit, setDefaultUnit] = useState<TempUnit | null>(null)
   const [defaultUnitGroup, setDefaultUnitGroup] = useState<TempUnitGroup | null>(null)
@@ -145,8 +148,9 @@ const FormUnits = ({
 
   const editUnitGroup = useCallback(
     (tempId: number) => {
-      setDefaultUnitGroup(unitGroups.filter((unitGroup) => unitGroup.tempId === tempId)[0])
-      setUnitDrawerOpen(true)
+      const existingUnitGroup = unitGroups.filter((unitGroup) => unitGroup.tempId === tempId)[0]
+      setDefaultUnitGroup(existingUnitGroup || null)
+      setUnitGroupDrawerOpen(true)
     },
     [unitGroups]
   )
@@ -358,33 +362,35 @@ const FormUnits = ({
               fieldGroupClassName={"flex h-12 items-center"}
               fieldLabelClassName={styles["label-option"]}
             />
-            <FieldGroup
-              name="listingAvailabilityQuestion"
-              type="radio"
-              fieldLabelClassName={styles["label-option"]}
-              groupLabel={t("listings.listingAvailabilityQuestion")}
-              register={register}
-              error={fieldHasError(errors?.listingAvailability) && listingAvailability === null}
-              errorMessage={fieldMessage(errors?.listingAvailability)}
-              fieldClassName="m-0"
-              fieldGroupClassName="flex h-12 items-center"
-              fields={[
-                {
-                  label: t("listings.availableUnits"),
-                  value: "availableUnits",
-                  id: "availableUnits",
-                  dataTestId: "listingAvailability.availableUnits",
-                  defaultChecked: listing?.reviewOrderType !== ReviewOrderTypeEnum.waitlist,
-                },
-                {
-                  label: t("listings.waitlist.open"),
-                  value: "openWaitlist",
-                  id: "openWaitlist",
-                  dataTestId: "listingAvailability.openWaitlist",
-                  defaultChecked: listing?.reviewOrderType === ReviewOrderTypeEnum.waitlist,
-                },
-              ]}
-            />
+            {!isNonRegulated && (
+              <FieldGroup
+                name="listingAvailabilityQuestion"
+                type="radio"
+                fieldLabelClassName={styles["label-option"]}
+                groupLabel={t("listings.listingAvailabilityQuestion")}
+                register={register}
+                error={fieldHasError(errors?.listingAvailability) && listingAvailability === null}
+                errorMessage={fieldMessage(errors?.listingAvailability)}
+                fieldClassName="m-0"
+                fieldGroupClassName="flex h-12 items-center"
+                fields={[
+                  {
+                    label: t("listings.availableUnits"),
+                    value: "availableUnits",
+                    id: "availableUnits",
+                    dataTestId: "listingAvailability.availableUnits",
+                    defaultChecked: listing?.reviewOrderType !== ReviewOrderTypeEnum.waitlist,
+                  },
+                  {
+                    label: t("listings.waitlist.open"),
+                    value: "openWaitlist",
+                    id: "openWaitlist",
+                    dataTestId: "listingAvailability.openWaitlist",
+                    defaultChecked: listing?.reviewOrderType === ReviewOrderTypeEnum.waitlist,
+                  },
+                ]}
+              />
+            )}
           </Grid.Row>
         )}
         <SectionWithGrid.HeadingRow>{t("listings.units")}</SectionWithGrid.HeadingRow>
@@ -402,29 +408,208 @@ const FormUnits = ({
               : getLabel("units", requiredFields, "Units")}
           </div>
           <Grid.Cell className="grid-inset-section">
-            {(enableUnitGroups ? !!unitGroups.length : !!units.length) && (
-              <div className="mb-5">
-                <MinimalTable headers={unitTableHeaders} data={unitTableData} />
-              </div>
+            {isNonRegulated ? (
+              <>
+                {!!units.length && (
+                  <div className="mb-5">
+                    <h4 className="text-sm font-semibold mb-2">{t("listings.unit.add")}</h4>
+                    <MinimalTable
+                      headers={{
+                        number: "listings.unit.number",
+                        unitType: "listings.unit.type",
+                        amiPercentage: "listings.unit.ami",
+                        monthlyRent: "listings.unit.rent",
+                        sqFeet: "listings.unit.sqft",
+                        unitAccessibilityPriorityTypes: "listings.unit.priorityType",
+                        action: "",
+                      }}
+                      data={units.map((unit) => ({
+                        number: { content: unit.number },
+                        unitType: {
+                          content: unit.unitTypes && t(`listings.unitTypes.${unit.unitTypes.name}`),
+                        },
+                        amiPercentage: { content: unit.amiPercentage },
+                        monthlyRent: { content: unit.monthlyRent },
+                        sqFeet: { content: unit.sqFeet },
+                        unitAccessibilityPriorityTypes: {
+                          content: unit.unitAccessibilityPriorityTypes?.name,
+                        },
+                        action: {
+                          content: (
+                            <div className="flex gap-3">
+                              <Button
+                                type="button"
+                                className="font-semibold"
+                                onClick={() => editUnit(unit.tempId)}
+                                variant="text"
+                                size="sm"
+                              >
+                                {t("t.edit")}
+                              </Button>
+                              <Button
+                                type="button"
+                                className="font-semibold text-alert"
+                                onClick={() => setUnitDeleteModal(unit.tempId)}
+                                variant="text"
+                                size="sm"
+                              >
+                                {t("t.delete")}
+                              </Button>
+                            </div>
+                          ),
+                        },
+                      }))}
+                    />
+                  </div>
+                )}
+                {!!unitGroups.length && (
+                  <div className="mb-5">
+                    <h4 className="text-sm font-semibold mb-2">{t("listings.unitGroup.add")}</h4>
+                    <MinimalTable
+                      headers={{
+                        unitType: "listings.unit.type",
+                        number: "listings.unit.totalCount",
+                        amiPercentage: "listings.unit.ami",
+                        monthlyRent: "listings.unit.rent",
+                        occupancy: "listings.unit.occupancy",
+                        sqFeet: "listings.unit.sqft",
+                        bath: "listings.unit.bath",
+                        action: "",
+                      }}
+                      data={unitGroups.map((unitGroup) => {
+                        let amiRange: MinMax, rentRange: MinMax, percentIncomeRange: MinMax
+
+                        unitGroup.unitGroupAmiLevels.forEach((ami) => {
+                          if (ami.amiPercentage) {
+                            amiRange = minMaxFinder(amiRange, ami.amiPercentage)
+                          }
+                          if (
+                            ami.flatRentValue &&
+                            ami.monthlyRentDeterminationType ===
+                              EnumUnitGroupAmiLevelMonthlyRentDeterminationType.flatRent
+                          ) {
+                            rentRange = minMaxFinder(rentRange, ami.flatRentValue)
+                          }
+                          if (
+                            ami.percentageOfIncomeValue &&
+                            ami.monthlyRentDeterminationType ===
+                              EnumUnitGroupAmiLevelMonthlyRentDeterminationType.percentageOfIncome
+                          ) {
+                            percentIncomeRange = minMaxFinder(
+                              percentIncomeRange,
+                              ami.percentageOfIncomeValue
+                            )
+                          }
+                        })
+
+                        return {
+                          unitType: {
+                            content:
+                              unitGroup?.unitTypes
+                                .map((unitType) => t(`listings.unitTypes.${unitType.name}`))
+                                .join(", ") || "",
+                          },
+                          number: { content: unitGroup.totalCount },
+                          amiPercentage: {
+                            content: amiRange && formatRange(amiRange.min, amiRange.max, "", "%"),
+                          },
+                          monthlyRent: { content: formatRentRange(rentRange, percentIncomeRange) },
+                          occupancy: {
+                            content: formatRange(unitGroup.minOccupancy, unitGroup.maxOccupancy),
+                          },
+                          sqFeet: {
+                            content: formatRange(unitGroup.sqFeetMin, unitGroup.sqFeetMax),
+                          },
+                          bath: {
+                            content: formatRange(unitGroup.bathroomMin, unitGroup.bathroomMax),
+                          },
+                          action: {
+                            content: (
+                              <div className="flex gap-3">
+                                <Button
+                                  type="button"
+                                  className="font-semibold"
+                                  onClick={() => editUnitGroup(unitGroup.tempId)}
+                                  variant="text"
+                                  size="sm"
+                                >
+                                  {t("t.edit")}
+                                </Button>
+                                <Button
+                                  type="button"
+                                  className="font-semibold text-alert"
+                                  onClick={() => setUnitDeleteModal(unitGroup.tempId)}
+                                  variant="text"
+                                  size="sm"
+                                >
+                                  {t("t.delete")}
+                                </Button>
+                              </div>
+                            ),
+                          },
+                        }
+                      })}
+                    />
+                  </div>
+                )}
+              </>
+            ) : (
+              (enableUnitGroups ? !!unitGroups.length : !!units.length) && (
+                <div className="mb-5">
+                  <MinimalTable headers={unitTableHeaders} data={unitTableData} />
+                </div>
+              )
             )}
 
-            <Button
-              id="addUnitsButton"
-              type="button"
-              variant={fieldHasError(errors?.units) ? "alert" : "primary-outlined"}
-              size="sm"
-              onClick={() => {
-                if (enableUnitGroups) {
-                  editUnitGroup(unitGroups.length + 1)
-                } else {
-                  editUnit(units.length + 1)
-                }
+            {isNonRegulated ? (
+              <div className="flex gap-2">
+                <Button
+                  id="addUnitButton"
+                  type="button"
+                  variant={fieldHasError(errors?.units) ? "alert" : "primary-outlined"}
+                  size="sm"
+                  onClick={() => {
+                    setDefaultUnitGroup(null)
+                    editUnit(units.length + 1)
+                    clearErrors("units")
+                  }}
+                >
+                  {t("listings.unit.add")}
+                </Button>
+                <Button
+                  id="addUnitGroupButton"
+                  type="button"
+                  variant={fieldHasError(errors?.unitGroups) ? "alert" : "primary-outlined"}
+                  size="sm"
+                  onClick={() => {
+                    setDefaultUnit(null)
+                    setDefaultUnitGroup(null)
+                    setUnitGroupDrawerOpen(true)
+                    clearErrors("unitGroups")
+                  }}
+                >
+                  {t("listings.unitGroup.add")}
+                </Button>
+              </div>
+            ) : (
+              <Button
+                id="addUnitsButton"
+                type="button"
+                variant={fieldHasError(errors?.units) ? "alert" : "primary-outlined"}
+                size="sm"
+                onClick={() => {
+                  if (enableUnitGroups) {
+                    editUnitGroup(unitGroups.length + 1)
+                  } else {
+                    editUnit(units.length + 1)
+                  }
 
-                clearErrors("units")
-              }}
-            >
-              {t(enableUnitGroups ? "listings.unitGroup.add" : "listings.unit.add")}
-            </Button>
+                  clearErrors("units")
+                }}
+              >
+                {t(enableUnitGroups ? "listings.unitGroup.add" : "listings.unit.add")}
+              </Button>
+            )}
           </Grid.Cell>
           {(fieldHasError(errors?.units) || fieldHasError(errors?.unitGroups)) && (
             <span className={"text-xs text-alert seeds-m-bs-2"} id="units-error">
@@ -468,20 +653,102 @@ const FormUnits = ({
         ariaLabelledBy="units-drawer-header"
       >
         <Drawer.Header id="units-drawer-header">
-          {t(enableUnitGroups ? "listings.unitGroup.add" : "listings.unit.add")}
+          {isNonRegulated
+            ? defaultUnitGroup
+              ? t("listings.unitGroup.add")
+              : t("listings.unit.add")
+            : t(enableUnitGroups ? "listings.unitGroup.add" : "listings.unit.add")}
           <Tag
             variant={
-              units.some((unit) => unit.tempId === defaultUnit?.tempId)
+              isNonRegulated
+                ? defaultUnitGroup
+                  ? unitGroups.some((unitGroup) => unitGroup.tempId === defaultUnitGroup?.tempId)
+                    ? "success-inverse"
+                    : undefined
+                  : units.some((unit) => unit.tempId === defaultUnit?.tempId)
+                  ? "success-inverse"
+                  : undefined
+                : units.some((unit) => unit.tempId === defaultUnit?.tempId)
                 ? "success-inverse"
                 : undefined
             }
           >
-            {units.some((unit) => unit.tempId === defaultUnit?.tempId)
+            {isNonRegulated
+              ? defaultUnitGroup
+                ? unitGroups.some((unitGroup) => unitGroup.tempId === defaultUnitGroup?.tempId)
+                  ? t("t.saved")
+                  : t("t.draft")
+                : units.some((unit) => unit.tempId === defaultUnit?.tempId)
+                ? t("t.saved")
+                : t("t.draft")
+              : units.some((unit) => unit.tempId === defaultUnit?.tempId)
               ? t("t.saved")
               : t("t.draft")}
           </Tag>
         </Drawer.Header>
-        {enableUnitGroups ? (
+        {isNonRegulated ? (
+          defaultUnit ? (
+            <UnitForm
+              onSubmit={(unit) => {
+                saveUnit(unit)
+              }}
+              onClose={(openNextUnit: boolean, openCurrentUnit: boolean, defaultUnit: TempUnit) => {
+                setDefaultUnit(defaultUnit)
+                if (openNextUnit) {
+                  if (defaultUnit) {
+                    addToast(t("listings.unit.unitCopied"), { variant: "success" })
+                  }
+                  editUnit(nextId)
+                } else if (!openCurrentUnit) {
+                  setUnitDrawerOpen(false)
+                } else {
+                  addToast(t("listings.unit.unitSaved"), { variant: "success" })
+                }
+              }}
+              draft={!units.some((unit) => unit.tempId === defaultUnit?.tempId)}
+              defaultUnit={defaultUnit}
+              nextId={nextId}
+              isNonRegulated={isNonRegulated}
+            />
+          ) : defaultUnitGroup ? (
+            <UnitGroupForm
+              onSubmit={(unitGroup) => {
+                saveUnitGroup(unitGroup)
+              }}
+              onClose={() => {
+                setDefaultUnitGroup(null)
+                setUnitDrawerOpen(false)
+              }}
+              defaultUnitGroup={defaultUnitGroup}
+              draft={!unitGroups.some((unitGroup) => unitGroup.tempId === defaultUnitGroup?.tempId)}
+              nextId={nextId}
+            />
+          ) : (
+            // This should never happen, but fallback to UnitForm
+            <UnitForm
+              onSubmit={(unit) => {
+                saveUnit(unit)
+              }}
+              onClose={(openNextUnit: boolean, openCurrentUnit: boolean, defaultUnit: TempUnit) => {
+                setDefaultUnit(defaultUnit)
+                if (openNextUnit) {
+                  if (defaultUnit) {
+                    addToast(t("listings.unit.unitCopied"), { variant: "success" })
+                  }
+                  editUnit(nextId)
+                } else if (!openCurrentUnit) {
+                  setUnitDrawerOpen(false)
+                } else {
+                  addToast(t("listings.unit.unitSaved"), { variant: "success" })
+                }
+              }}
+              draft={!units.some((unit) => unit.tempId === defaultUnit?.tempId)}
+              defaultUnit={defaultUnit}
+              nextId={nextId}
+              isNonRegulated={isNonRegulated}
+            />
+          )
+        ) : enableUnitGroups ? (
           <UnitGroupForm
             onSubmit={(unitGroup) => {
               saveUnitGroup(unitGroup)
@@ -493,6 +760,7 @@ const FormUnits = ({
             defaultUnitGroup={defaultUnitGroup}
             draft={!unitGroups.some((unitGroup) => unitGroup.tempId === defaultUnitGroup?.tempId)}
             nextId={nextId}
+            isNonRegulated={isNonRegulated}
           />
         ) : (
           <UnitForm
@@ -515,8 +783,43 @@ const FormUnits = ({
             draft={!units.some((unit) => unit.tempId === defaultUnit?.tempId)}
             defaultUnit={defaultUnit}
             nextId={nextId}
+            isNonRegulated={isNonRegulated}
           />
         )}
+      </Drawer>
+
+      <Drawer
+        isOpen={unitGroupDrawerOpen}
+        onClose={() => setUnitGroupDrawerOpen(false)}
+        ariaLabelledBy="unit-group-drawer-header"
+      >
+        <Drawer.Header id="unit-group-drawer-header">
+          {t("listings.unitGroup.add")}
+          <Tag
+            variant={
+              unitGroups.some((unitGroup) => unitGroup.tempId === defaultUnitGroup?.tempId)
+                ? "success-inverse"
+                : undefined
+            }
+          >
+            {unitGroups.some((unitGroup) => unitGroup.tempId === defaultUnitGroup?.tempId)
+              ? t("t.saved")
+              : t("t.draft")}
+          </Tag>
+        </Drawer.Header>
+        <UnitGroupForm
+          onSubmit={(unitGroup) => {
+            saveUnitGroup(unitGroup)
+          }}
+          onClose={() => {
+            setDefaultUnitGroup(null)
+            setUnitGroupDrawerOpen(false)
+          }}
+          defaultUnitGroup={defaultUnitGroup}
+          draft={!unitGroups.some((unitGroup) => unitGroup.tempId === defaultUnitGroup?.tempId)}
+          nextId={nextId}
+          isNonRegulated={isNonRegulated}
+        />
       </Drawer>
 
       <Dialog isOpen={!!unitDeleteModal} onClose={() => setUnitDeleteModal(null)}>

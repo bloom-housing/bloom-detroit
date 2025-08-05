@@ -68,6 +68,7 @@ type ListingFormProps = {
   listing?: FormListing
   editMode?: boolean
   setListingName?: React.Dispatch<React.SetStateAction<string>>
+  isNonRegulated?: boolean
 }
 
 export type SubmitFunction = (
@@ -98,7 +99,7 @@ const getToast = (
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const ListingForm = ({ listing, editMode, setListingName }: ListingFormProps) => {
+const ListingForm = ({ listing, editMode, setListingName, isNonRegulated }: ListingFormProps) => {
   const defaultValues = editMode ? listing : formDefaults
   const formMethods = useForm<FormListing>({
     defaultValues,
@@ -416,6 +417,7 @@ const ListingForm = ({ listing, editMode, setListingName }: ListingFormProps) =>
                           <ListingIntro
                             jurisdictions={profile?.jurisdictions || []}
                             requiredFields={requiredFields}
+                            isNonRegulated={isNonRegulated}
                           />
                           <ListingPhotos requiredFields={requiredFields} />
                           <BuildingDetails
@@ -426,7 +428,11 @@ const ListingForm = ({ listing, editMode, setListingName }: ListingFormProps) =>
                             setCustomMapPositionChosen={setCustomMapPositionChosen}
                             setLatLong={setLatitudeLongitude}
                           />
-                          <CommunityType listing={listing} requiredFields={requiredFields} />
+                          <CommunityType
+                            listing={listing}
+                            requiredFields={requiredFields}
+                            isNonRegulated={isNonRegulated}
+                          />
                           <Units
                             disableUnitsAccordion={listing?.disableUnitsAccordion}
                             featureFlags={activeFeatureFlags}
@@ -435,6 +441,7 @@ const ListingForm = ({ listing, editMode, setListingName }: ListingFormProps) =>
                             setUnits={setUnits}
                             unitGroups={unitGroups}
                             units={units}
+                            isNonRegulated={isNonRegulated}
                           />
                           <PreferencesAndPrograms
                             listing={listing}
@@ -442,6 +449,7 @@ const ListingForm = ({ listing, editMode, setListingName }: ListingFormProps) =>
                             setPreferences={setPreferences}
                             programs={programs || []}
                             setPrograms={setPrograms}
+                            isNonRegulated={isNonRegulated}
                           />
                           <AdditionalFees
                             existingUtilities={listing?.listingUtilities}
@@ -450,6 +458,7 @@ const ListingForm = ({ listing, editMode, setListingName }: ListingFormProps) =>
                           <BuildingFeatures
                             existingFeatures={listing?.listingFeatures}
                             requiredFields={requiredFields}
+                            isNonRegulated={isNonRegulated}
                           />
                           <NeighborhoodAmenities />
                           <AdditionalEligibility
@@ -487,15 +496,21 @@ const ListingForm = ({ listing, editMode, setListingName }: ListingFormProps) =>
                             isAdmin={profile?.userRoles.isAdmin}
                             whatToExpectEditor={whatToExpectEditor}
                             requiredFields={requiredFields}
+                            isNonRegulated={isNonRegulated}
                           />
                           <LeasingAgent requiredFields={requiredFields} />
-                          <ApplicationTypes listing={listing} requiredFields={requiredFields} />
+                          <ApplicationTypes
+                            listing={listing}
+                            requiredFields={requiredFields}
+                            isNonRegulated={isNonRegulated}
+                          />
                           <ApplicationAddress listing={listing} requiredFields={requiredFields} />
                           <ApplicationDates
                             listing={listing}
                             openHouseEvents={openHouseEvents}
                             setOpenHouseEvents={setOpenHouseEvents}
                             requiredFields={requiredFields}
+                            isNonRegulated={isNonRegulated}
                           />
 
                           <div className="-ml-8 -mt-8 relative" style={{ top: "7rem" }}>

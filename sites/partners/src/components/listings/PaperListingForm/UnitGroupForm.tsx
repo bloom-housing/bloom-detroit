@@ -29,6 +29,7 @@ type UnitGroupFormProps = {
   defaultUnitGroup: TempUnitGroup | undefined
   draft: boolean
   nextId: number
+  isNonRegulated?: boolean
 }
 
 const UnitGroupForm = ({
@@ -37,6 +38,7 @@ const UnitGroupForm = ({
   defaultUnitGroup,
   draft,
   nextId,
+  isNonRegulated,
 }: UnitGroupFormProps) => {
   const [amiChartsOptions, setAmiChartsOptions] = useState([])
   const [unitPrioritiesOptions, setUnitPrioritiesOptions] = useState([])
@@ -85,6 +87,9 @@ const UnitGroupForm = ({
 
   const totalAvailable: number = useWatch({ control, name: "totalAvailable" })
   const totalCount: number = useWatch({ control, name: "totalCount" })
+
+  // Controls for rent type (non-regulated forms)
+  const isFixedRent: string = useWatch({ control, name: "isFixedRent" })
 
   const numberOccupancyOptions = 8
   const numberFloorsOptions = 11
@@ -140,6 +145,9 @@ const UnitGroupForm = ({
         openWaitlist: defaultUnitGroup.openWaitlist ? YesNoEnum.yes : YesNoEnum.no,
         unitTypes: defaultUnitGroup?.unitTypes?.map((elem) => elem.id ?? elem.toString()),
       })
+    } else if (isNonRegulated) {
+      // Set default values for non-regulated forms
+      setValue("isFixedRent", "true")
     }
     //eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
@@ -326,6 +334,74 @@ const UnitGroupForm = ({
                   dataTestId="totalCount"
                 />
               </Grid.Row>
+              {isNonRegulated && (
+                <>
+                  <Grid.Row columns={3}>
+                    <Grid.Cell>
+                      <FieldGroup
+                        name="isFixedRent"
+                        type="radio"
+                        register={register}
+                        groupLabel="Rent Type"
+                        fieldLabelClassName={`${styles["label-option"]} seeds-m-bs-2`}
+                        fields={[
+                          {
+                            label: "Fixed Rent",
+                            value: "true",
+                            id: "isFixedRentYes",
+                          },
+                          {
+                            label: "Rent Range",
+                            value: "false",
+                            id: "isFixedRentNo",
+                          },
+                        ]}
+                      />
+                    </Grid.Cell>
+                  </Grid.Row>
+                  {isFixedRent === "true" && (
+                    <Grid.Row columns={3}>
+                      <Grid.Cell>
+                        <Field
+                          id="monthlyRent"
+                          name="monthlyRent"
+                          label={t("listings.unit.monthlyRent")}
+                          placeholder="0.00"
+                          register={register}
+                          type="number"
+                          prepend="$"
+                        />
+                      </Grid.Cell>
+                    </Grid.Row>
+                  )}
+                  {isFixedRent === "false" && (
+                    <Grid.Row columns={3}>
+                      <Grid.Cell>
+                        <Field
+                          id="monthlyRateLowEnd"
+                          name="monthlyRateLowEnd"
+                          label="Monthly Rent From:"
+                          placeholder="0.00"
+                          register={register}
+                          type="number"
+                          prepend="$"
+                        />
+                      </Grid.Cell>
+                      <Grid.Cell>
+                        <Field
+                          id="monthlyRateHighEnd"
+                          name="monthlyRateHighEnd"
+                          label="Monthly Rent To:"
+                          placeholder="0.00"
+                          register={register}
+                          type="number"
+                          prepend="$"
+                        />
+                      </Grid.Cell>
+                    </Grid.Row>
+                  )}
+                </>
+              )}
               <Grid.Row columns={3}>
                 <Select
                   controlClassName="control"
@@ -485,55 +561,61 @@ const UnitGroupForm = ({
                     },
                   }}
                 />
-                <FieldGroup
-                  name="openWaitlist"
-                  type="radio"
-                  fields={[
-                    {
-                      id: "waitlistStatusOpen",
-                      dataTestId: "waitlistStatusOpen",
-                      label: t("listings.listingStatus.active"),
-                      value: YesNoEnum.yes,
-                      defaultChecked: !defaultUnitGroup,
-                    },
-                    {
-                      id: "waitlistStatusClosed",
-                      dataTestId: "waitlistStatusClosed",
-                      label: t("listings.listingStatus.closed"),
-                      value: YesNoEnum.no,
-                    },
-                  ]}
-                  register={register}
-                  fieldClassName="m-0"
-                  fieldGroupClassName="flex h-12 items-center"
-                  error={errors?.openWaitlist !== undefined}
-                  errorMessage={t("errors.requiredFieldError")}
-                  dataTestId="openWaitListQuestion"
-                  groupLabel={t("listings.unit.waitlistStatus")}
-                  fieldLabelClassName={styles["label-option"]}
-                />
+                {!isNonRegulated && (
+                  <FieldGroup
+                    name="openWaitlist"
+                    type="radio"
+                    fields={[
+                      {
+                        id: "waitlistStatusOpen",
+                        dataTestId: "waitlistStatusOpen",
+                        label: t("listings.listingStatus.active"),
+                        value: YesNoEnum.yes,
+                        defaultChecked: !defaultUnitGroup,
+                      },
+                      {
+                        id: "waitlistStatusClosed",
+                        dataTestId: "waitlistStatusClosed",
+                        label: t("listings.listingStatus.closed"),
+                        value: YesNoEnum.no,
+                      },
+                    ]}
+                    register={register}
+                    fieldClassName="m-0"
+                    fieldGroupClassName="flex h-12 items-center"
+                    error={errors?.openWaitlist !== undefined}
+                    errorMessage={t("errors.requiredFieldError")}
+                    dataTestId="openWaitListQuestion"
+                    groupLabel={t("listings.unit.waitlistStatus")}
+                    fieldLabelClassName={styles["label-option"]}
+                  />
+                )}
               </Grid.Row>
             </SectionWithGrid>
-            <hr className="spacer-section-above spacer-section" />
-            <SectionWithGrid heading={t("listings.sections.eligibilityTitle")}>
-              <Grid.Cell className="grid-inset-section">
-                {!!amiLevels.length && (
-                  <div className="mb-5">
-                    <MinimalTable headers={amiTableHeaders} data={amiLevelsTableData} />
-                  </div>
-                )}
-                <Button
-                  onClick={() => {
-                    setAmiSummary((amiLevels.length || 0) + 1)
-                  }}
-                  id="addAmiLevelButton"
-                  type="button"
-                  variant="primary-outlined"
-                >
-                  {t("listings.unit.amiAdd")}
-                </Button>
-              </Grid.Cell>
-            </SectionWithGrid>
+            {!isNonRegulated && (
+              <>
+                <hr className="spacer-section-above spacer-section" />
+                <SectionWithGrid heading={t("listings.sections.eligibilityTitle")}>
+                  <Grid.Cell className="grid-inset-section">
+                    {!!amiLevels.length && (
+                      <div className="mb-5">
+                        <MinimalTable headers={amiTableHeaders} data={amiLevelsTableData} />
+                      </div>
+                    )}
+                    <Button
+                      onClick={() => {
+                        setAmiSummary((amiLevels.length || 0) + 1)
+                      }}
+                      id="addAmiLevelButton"
+                      type="button"
+                      variant="primary-outlined"
+                    >
+                      {t("listings.unit.amiAdd")}
+                    </Button>
+                  </Grid.Cell>
+                </SectionWithGrid>
+              </>
+            )}
           </Card.Section>
         </Card>
       </Drawer.Content>

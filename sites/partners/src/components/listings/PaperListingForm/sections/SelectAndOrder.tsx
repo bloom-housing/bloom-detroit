@@ -34,6 +34,7 @@ type SelectAndOrderProps = {
   formKey: string
   applicationSection: MultiselectQuestionsApplicationSectionEnum
   subNote?: string
+  isNonRegulated?: boolean
 }
 
 const SelectAndOrder = ({
@@ -50,6 +51,7 @@ const SelectAndOrder = ({
   dataFetcher,
   formKey,
   subNote,
+  isNonRegulated,
 }: SelectAndOrderProps) => {
   const [tableDrawer, setTableDrawer] = useState<boolean | null>(null)
   const [selectDrawer, setSelectDrawer] = useState<boolean | null>(null)
@@ -364,31 +366,40 @@ const SelectAndOrder = ({
           <Card>
             <Card.Section>
               {jurisdiction
-                ? fetchedData.map((item, index) => {
-                    const previewShown = openPreviews.some((preview) => preview === index)
-                    return (
-                      <Grid key={index}>
-                        <Grid.Row>
-                          <Grid.Cell>
-                            <Field
-                              className={`font-semibold ${styles["label-option"]}`}
-                              id={`${formKey}.${item.id}`}
-                              name={`${formKey}.${item.id}`}
-                              type="checkbox"
-                              label={item.text}
-                              register={register}
-                              inputProps={{
-                                defaultChecked: draftListingData.some(
-                                  (existingItem) => existingItem.id === item.id
-                                ),
-                              }}
-                            />
-                            {getPreviewSection(previewShown, index, item)}
-                          </Grid.Cell>
-                        </Grid.Row>
-                      </Grid>
-                    )
-                  })
+                ? fetchedData
+                    .filter((item) => {
+                      // Filter out "Families" and "Veterans" options for non-regulated forms
+                      if (isNonRegulated) {
+                        const text = item.text?.toLowerCase() || ""
+                        return !text.includes("families") && !text.includes("veterans")
+                      }
+                      return true
+                    })
+                    .map((item, index) => {
+                      const previewShown = openPreviews.some((preview) => preview === index)
+                      return (
+                        <Grid key={index}>
+                          <Grid.Row>
+                            <Grid.Cell>
+                              <Field
+                                className={`font-semibold ${styles["label-option"]}`}
+                                id={`${formKey}.${item.id}`}
+                                name={`${formKey}.${item.id}`}
+                                type="checkbox"
+                                label={item.text}
+                                register={register}
+                                inputProps={{
+                                  defaultChecked: draftListingData.some(
+                                    (existingItem) => existingItem.id === item.id
+                                  ),
+                                }}
+                              />
+                              {getPreviewSection(previewShown, index, item)}
+                            </Grid.Cell>
+                          </Grid.Row>
+                        </Grid>
+                      )
+                    })
                 : t("listings.selectJurisdiction")}
             </Card.Section>
           </Card>
@@ -402,7 +413,15 @@ const SelectAndOrder = ({
               onClick={() => {
                 const formData = getValues()
                 const formItems = []
-                fetchedData.forEach((uniqueItem) => {
+                const filteredData = fetchedData.filter((item) => {
+                  // Filter out "Families" and "Veterans" options for non-regulated forms
+                  if (isNonRegulated) {
+                    const text = item.text?.toLowerCase() || ""
+                    return !text.includes("families") && !text.includes("veterans")
+                  }
+                  return true
+                })
+                filteredData.forEach((uniqueItem) => {
                   if (formData[formKey] && formData[formKey][uniqueItem.id]) {
                     formItems.push(uniqueItem)
                   }

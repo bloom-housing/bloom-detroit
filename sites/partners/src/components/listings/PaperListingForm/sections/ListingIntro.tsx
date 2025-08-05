@@ -1,7 +1,7 @@
 import React from "react"
 import { useFormContext } from "react-hook-form"
-import { Jurisdiction } from "@bloom-housing/shared-helpers/src/types/backend-swagger"
-import { t, Field, SelectOption, Select } from "@bloom-housing/ui-components"
+import { Jurisdiction, YesNoEnum } from "@bloom-housing/shared-helpers/src/types/backend-swagger"
+import { t, Field, SelectOption, Select, FieldGroup } from "@bloom-housing/ui-components"
 import { Grid } from "@bloom-housing/ui-seeds"
 import {
   fieldMessage,
@@ -15,6 +15,7 @@ import styles from "../ListingForm.module.scss"
 interface ListingIntroProps {
   jurisdictions: Jurisdiction[]
   requiredFields: string[]
+  isNonRegulated?: boolean
 }
 
 const ListingIntro = (props: ListingIntroProps) => {
@@ -31,6 +32,17 @@ const ListingIntro = (props: ListingIntroProps) => {
     })),
   ]
   const defaultJurisdiction = props.jurisdictions.length === 1 ? props.jurisdictions[0].id : ""
+
+  const yesNoRadioOptions = [
+    {
+      label: t("t.yes"),
+      value: YesNoEnum.yes,
+    },
+    {
+      label: t("t.no"),
+      value: YesNoEnum.no,
+    },
+  ]
 
   return (
     <>
@@ -55,7 +67,7 @@ const ListingIntro = (props: ListingIntroProps) => {
           </Grid.Cell>
         </Grid.Row>
         <Grid.Row columns={2}>
-          <div className={`${defaultJurisdiction ? "hidden" : ""}`}>
+          <div>
             <Select
               id={"jurisdictions.id"}
               defaultValue={defaultJurisdiction}
@@ -67,7 +79,7 @@ const ListingIntro = (props: ListingIntroProps) => {
                 </span>
               }
               register={register}
-              controlClassName={`control ${defaultJurisdiction ? "hidden" : ""}`}
+              controlClassName="control"
               error={
                 fieldHasError(errors?.jurisdictions) || fieldHasError(errors?.["jurisdictions.id"])
               }
@@ -97,7 +109,7 @@ const ListingIntro = (props: ListingIntroProps) => {
               register={register}
               {...defaultFieldProps(
                 "developer",
-                t("listings.developer"),
+                props.isNonRegulated ? "Property Management Account" : t("listings.developer"),
                 props.requiredFields,
                 errors,
                 clearErrors
@@ -105,6 +117,39 @@ const ListingIntro = (props: ListingIntroProps) => {
             />
           </Grid.Cell>
         </Grid.Row>
+        {props.isNonRegulated && (
+          <Grid.Row columns={1}>
+            <Grid.Cell>
+              <FieldGroup
+                name="certificateOfCompliance"
+                type="radio"
+                register={register}
+                groupLabel="Does this property have a Certificate of Compliance?"
+                fieldLabelClassName={`${styles["label-option"]} seeds-m-bs-2`}
+                fields={[
+                  {
+                    ...yesNoRadioOptions[0],
+                    id: "certificateOfComplianceYes",
+                    inputProps: {
+                      onChange: () => {
+                        // Handle yes selection
+                      },
+                    },
+                  },
+                  {
+                    ...yesNoRadioOptions[1],
+                    id: "certificateOfComplianceNo",
+                    inputProps: {
+                      onChange: () => {
+                        // Handle no selection
+                      },
+                    },
+                  },
+                ]}
+              />
+            </Grid.Cell>
+          </Grid.Row>
+        )}
       </SectionWithGrid>
     </>
   )

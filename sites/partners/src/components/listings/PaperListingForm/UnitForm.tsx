@@ -21,9 +21,17 @@ type UnitFormProps = {
   defaultUnit: TempUnit | undefined
   nextId: number
   draft: boolean
+  isNonRegulated?: boolean
 }
 
-const UnitForm = ({ onSubmit, onClose, defaultUnit, nextId, draft }: UnitFormProps) => {
+const UnitForm = ({
+  onSubmit,
+  onClose,
+  defaultUnit,
+  nextId,
+  draft,
+  isNonRegulated,
+}: UnitFormProps) => {
   const { amiChartsService } = useContext(AuthContext)
 
   const [amiChartsOptions, setAmiChartsOptions] = useState([])
@@ -71,6 +79,11 @@ const UnitForm = ({ onSubmit, onClose, defaultUnit, nextId, draft }: UnitFormPro
   const maxOccupancy: number = useWatch({
     control,
     name: "maxOccupancy",
+  })
+
+  const isFixedRent: string = useWatch({
+    control,
+    name: "isFixedRent",
   })
 
   const maxAmiHouseholdSize = 8
@@ -353,6 +366,14 @@ const UnitForm = ({ onSubmit, onClose, defaultUnit, nextId, draft }: UnitFormPro
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [rentType])
 
+  // Set rent type to "fixed" for non-regulated listings
+  useEffect(() => {
+    if (isNonRegulated) {
+      setValue("rentType", "fixed")
+      setValue("isFixedRent", "true")
+    }
+  }, [isNonRegulated, setValue])
+
   // sets the options for the ami charts
   useEffect(() => {
     if (amiCharts.length === 0 || amiChartsOptions.length) return
@@ -480,84 +501,90 @@ const UnitForm = ({ onSubmit, onClose, defaultUnit, nextId, draft }: UnitFormPro
                 </Grid.Row>
               </SectionWithGrid>
 
-              <hr className="spacer-section-above spacer-section" />
-              <SectionWithGrid heading={t("listings.unit.eligibility")}>
-                <Grid.Row columns={4}>
-                  <Select
-                    id="amiChart.id"
-                    name="amiChart.id"
-                    label={t("listings.unit.amiChart")}
-                    placeholder={t("listings.unit.amiChart")}
-                    register={register}
-                    controlClassName="control"
-                    options={amiChartsOptions}
-                    error={fieldHasError(errors?.amiChart?.id)}
-                    errorMessage={t("errors.requiredFieldError")}
-                    validation={{ required: true }}
-                    inputProps={{
-                      onChange: (value) => {
-                        setValue("amiPercentage", undefined)
-                        clearErrors("amiPercentage")
-                        clearErrors("amiChart.id")
-                        ;[...Array(maxAmiHouseholdSize)].forEach((_, index) => {
-                          setValue(`maxIncomeHouseholdSize${index + 1}`, undefined)
-                        })
-                        if (value?.target?.value && !loading && amiChartsOptions) {
-                          void fetchAmiChart(value.target?.value)
-                          setIsAmiPercentageDirty(true)
-                        }
-                      },
-                    }}
-                  />
+              {!isNonRegulated && (
+                <>
+                  <hr className="spacer-section-above spacer-section" />
+                  <SectionWithGrid heading={t("listings.unit.eligibility")}>
+                    <Grid.Row columns={4}>
+                      <Select
+                        id="amiChart.id"
+                        name="amiChart.id"
+                        label={t("listings.unit.amiChart")}
+                        placeholder={t("listings.unit.amiChart")}
+                        register={register}
+                        controlClassName="control"
+                        options={amiChartsOptions}
+                        error={fieldHasError(errors?.amiChart?.id)}
+                        errorMessage={t("errors.requiredFieldError")}
+                        validation={{ required: true }}
+                        inputProps={{
+                          onChange: (value) => {
+                            setValue("amiPercentage", undefined)
+                            clearErrors("amiPercentage")
+                            clearErrors("amiChart.id")
+                            ;[...Array(maxAmiHouseholdSize)].forEach((_, index) => {
+                              setValue(`maxIncomeHouseholdSize${index + 1}`, undefined)
+                            })
+                            if (value?.target?.value && !loading && amiChartsOptions) {
+                              void fetchAmiChart(value.target?.value)
+                              setIsAmiPercentageDirty(true)
+                            }
+                          },
+                        }}
+                      />
 
-                  <Select
-                    id={"amiPercentage"}
-                    name="amiPercentage"
-                    label={t("listings.unit.amiPercentage")}
-                    placeholder={t("listings.unit.amiPercentage")}
-                    register={register}
-                    controlClassName="control"
-                    options={amiChartPercentageOptions}
-                    inputProps={{
-                      onChange: () => {
-                        setIsAmiPercentageDirty(true)
-                        clearErrors("amiPercentage")
-                      },
-                    }}
-                    error={fieldHasError(errors?.amiPercentage)}
-                    errorMessage={t("errors.requiredFieldError")}
-                    validation={{ required: !!amiChartID }}
-                    disabled={!amiChartID}
-                  />
-                </Grid.Row>
-              </SectionWithGrid>
+                      <Select
+                        id={"amiPercentage"}
+                        name="amiPercentage"
+                        label={t("listings.unit.amiPercentage")}
+                        placeholder={t("listings.unit.amiPercentage")}
+                        register={register}
+                        controlClassName="control"
+                        options={amiChartPercentageOptions}
+                        inputProps={{
+                          onChange: () => {
+                            setIsAmiPercentageDirty(true)
+                            clearErrors("amiPercentage")
+                          },
+                        }}
+                        error={fieldHasError(errors?.amiPercentage)}
+                        errorMessage={t("errors.requiredFieldError")}
+                        validation={{ required: !!amiChartID }}
+                        disabled={!amiChartID}
+                      />
+                    </Grid.Row>
+                  </SectionWithGrid>
 
-              <section className="mb-6 sm:w-1/2 sm:pr-3">
-                <table className={"w-full text-xs td-plain th-plain"}>
-                  <thead>
-                    <tr>
-                      <th>{t("listings.householdSize")}</th>
-                      <th>{t("listings.maxAnnualIncome")}</th>
-                    </tr>
-                  </thead>
-                  <tbody>{getAmiChartTableData()}</tbody>
-                </table>
-              </section>
+                  <section className="mb-6 sm:w-1/2 sm:pr-3">
+                    <table className={"w-full text-xs td-plain th-plain"}>
+                      <thead>
+                        <tr>
+                          <th>{t("listings.householdSize")}</th>
+                          <th>{t("listings.maxAnnualIncome")}</th>
+                        </tr>
+                      </thead>
+                      <tbody>{getAmiChartTableData()}</tbody>
+                    </table>
+                  </section>
+                </>
+              )}
 
               <Grid>
                 <Grid.Row columns={4}>
-                  <FieldGroup
-                    name="rentType"
-                    type="radio"
-                    register={register}
-                    fields={rentTypeOptions}
-                    fieldClassName="m-0"
-                    fieldGroupClassName="flex h-12 items-center"
-                    groupLabel={t("listings.unit.rentType")}
-                    fieldLabelClassName={styles["label-option"]}
-                  />
+                  {!isNonRegulated && (
+                    <FieldGroup
+                      name="rentType"
+                      type="radio"
+                      register={register}
+                      fields={rentTypeOptions}
+                      fieldClassName="m-0"
+                      fieldGroupClassName="flex h-12 items-center"
+                      groupLabel={t("listings.unit.rentType")}
+                      fieldLabelClassName={styles["label-option"]}
+                    />
+                  )}
 
-                  {rentType === "fixed" && (
+                  {(rentType === "fixed" || isNonRegulated) && (
                     <>
                       <Grid.Cell>
                         <Field
@@ -571,20 +598,74 @@ const UnitForm = ({ onSubmit, onClose, defaultUnit, nextId, draft }: UnitFormPro
                         />
                       </Grid.Cell>
 
-                      <Grid.Cell>
-                        <Field
-                          id="monthlyRent"
-                          name="monthlyRent"
-                          label={t("listings.unit.monthlyRent")}
-                          placeholder="0.00"
-                          register={register}
-                          type="number"
-                          prepend="$"
-                        />
-                      </Grid.Cell>
+                      {isNonRegulated && (
+                        <Grid.Cell>
+                          <FieldGroup
+                            name="isFixedRent"
+                            type="radio"
+                            register={register}
+                            groupLabel="Rent Type"
+                            fieldLabelClassName={`${styles["label-option"]} seeds-m-bs-2`}
+                            fields={[
+                              {
+                                label: "Fixed Rent",
+                                value: "true",
+                                id: "isFixedRentYes",
+                              },
+                              {
+                                label: "Rent Range",
+                                value: "false",
+                                id: "isFixedRentNo",
+                              },
+                            ]}
+                          />
+                        </Grid.Cell>
+                      )}
+
+                      {(!isNonRegulated || (isNonRegulated && isFixedRent === "true")) && (
+                        <Grid.Cell>
+                          <Field
+                            id="monthlyRent"
+                            name="monthlyRent"
+                            label={t("listings.unit.monthlyRent")}
+                            placeholder="0.00"
+                            register={register}
+                            type="number"
+                            prepend="$"
+                          />
+                        </Grid.Cell>
+                      )}
+
+                      {isNonRegulated && isFixedRent === "false" && (
+                        <>
+                          <Grid.Cell>
+                            <Field
+                              id="monthlyRateLowEnd"
+                              name="monthlyRateLowEnd"
+                              label="Monthly Rent From:"
+                              placeholder="0.00"
+                              register={register}
+                              type="number"
+                              prepend="$"
+                            />
+                          </Grid.Cell>
+
+                          <Grid.Cell>
+                            <Field
+                              id="monthlyRateHighEnd"
+                              name="monthlyRateHighEnd"
+                              label="Monthly Rent To:"
+                              placeholder="0.00"
+                              register={register}
+                              type="number"
+                              prepend="$"
+                            />
+                          </Grid.Cell>
+                        </>
+                      )}
                     </>
                   )}
-                  {rentType === "percentage" && (
+                  {!isNonRegulated && rentType === "percentage" && (
                     <Grid.Cell>
                       <Field
                         id="monthlyRentAsPercentOfIncome"
@@ -599,22 +680,26 @@ const UnitForm = ({ onSubmit, onClose, defaultUnit, nextId, draft }: UnitFormPro
                 </Grid.Row>
               </Grid>
 
-              <hr className="spacer-section-above spacer-section" />
-              <SectionWithGrid heading={t("t.accessibility")}>
-                <Grid.Row columns={4}>
-                  <Grid.Cell>
-                    <Select
-                      id="unitAccessibilityPriorityTypes.id"
-                      name="unitAccessibilityPriorityTypes.id"
-                      label={t("listings.unit.accessibilityPriorityType")}
-                      placeholder={t("listings.unit.accessibilityPriorityType")}
-                      register={register}
-                      controlClassName="control"
-                      options={unitPrioritiesOptions}
-                    />
-                  </Grid.Cell>
-                </Grid.Row>
-              </SectionWithGrid>
+              {!isNonRegulated && (
+                <>
+                  <hr className="spacer-section-above spacer-section" />
+                  <SectionWithGrid heading={t("t.accessibility")}>
+                    <Grid.Row columns={4}>
+                      <Grid.Cell>
+                        <Select
+                          id="unitAccessibilityPriorityTypes.id"
+                          name="unitAccessibilityPriorityTypes.id"
+                          label={t("listings.unit.accessibilityPriorityType")}
+                          placeholder={t("listings.unit.accessibilityPriorityType")}
+                          register={register}
+                          controlClassName="control"
+                          options={unitPrioritiesOptions}
+                        />
+                      </Grid.Cell>
+                    </Grid.Row>
+                  </SectionWithGrid>
+                </>
+              )}
             </Card.Section>
           </Card>
         </Form>

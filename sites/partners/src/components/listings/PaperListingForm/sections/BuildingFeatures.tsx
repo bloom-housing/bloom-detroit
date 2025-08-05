@@ -14,6 +14,7 @@ import styles from "../ListingForm.module.scss"
 type BuildingFeaturesProps = {
   existingFeatures: ListingFeatures
   requiredFields: string[]
+  isNonRegulated?: boolean
 }
 
 const BuildingFeatures = (props: BuildingFeaturesProps) => {
@@ -148,6 +149,25 @@ const BuildingFeatures = (props: BuildingFeaturesProps) => {
             />
           </Grid.Cell>
         </Grid.Row>
+        {props.isNonRegulated && (
+          <Grid.Row>
+            <Grid.Cell>
+              <Textarea
+                fullWidth={true}
+                placeholder={""}
+                register={register}
+                maxLength={600}
+                {...defaultFieldProps(
+                  "notes",
+                  "Notes (Lead, etc)",
+                  props.requiredFields,
+                  errors,
+                  clearErrors
+                )}
+              />
+            </Grid.Cell>
+          </Grid.Row>
+        )}
         {!enableAccessibilityFeatures ? null : (
           <Grid.Row>
             <FieldGroup

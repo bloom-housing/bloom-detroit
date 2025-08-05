@@ -17,6 +17,7 @@ type ProgramsAndPreferencesProps = {
   setPreferences: (multiselectQuestions: MultiselectQuestion[]) => void
   programs: MultiselectQuestion[]
   setPrograms: (multiselectQuestions: MultiselectQuestion[]) => void
+  isNonRegulated?: boolean
 }
 
 const ProgramsAndPreferences = ({
@@ -25,6 +26,7 @@ const ProgramsAndPreferences = ({
   setPreferences,
   programs,
   setPrograms,
+  isNonRegulated,
 }: ProgramsAndPreferencesProps) => {
   const formMethods = useFormContext()
   const { doJurisdictionsHaveFeatureFlagOn } = useContext(AuthContext)
@@ -57,6 +59,7 @@ const ProgramsAndPreferences = ({
       dataFetcher={useJurisdictionalMultiselectQuestionList}
       formKey={"program"}
       applicationSection={MultiselectQuestionsApplicationSectionEnum.programs}
+      isNonRegulated={isNonRegulated}
     />
   ) : (
     <SelectAndOrder
@@ -72,12 +75,13 @@ const ProgramsAndPreferences = ({
       formKey={"program"}
       applicationSection={MultiselectQuestionsApplicationSectionEnum.programs}
       subNote={`${t("listing.choosePopulations")}.`}
+      isNonRegulated={isNonRegulated}
     />
   )
 
   return (
     <>
-      {!disableListingPreferences && (
+      {!isNonRegulated && !disableListingPreferences && (
         <SelectAndOrder
           addText={t("listings.addPreference")}
           drawerTitle={t("listings.addPreferences")}
