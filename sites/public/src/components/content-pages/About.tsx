@@ -6,7 +6,7 @@ import styles from "../../patterns/PageHeaderLayout.module.scss"
 
 const About = () => {
   return (
-    <Layout>
+    <Layout pageTitle={t("pageTitle.about")}>
       <PageHeaderLayout heading={t("pageTitle.about")} inverse>
         <section className={styles["markdown"]}>
           <p>{t("about.body1")}</p>
