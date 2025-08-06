@@ -410,58 +410,6 @@ const FormUnits = ({
           <Grid.Cell className="grid-inset-section">
             {isNonRegulated ? (
               <>
-                {!!units.length && (
-                  <div className="mb-5">
-                    <h4 className="text-sm font-semibold mb-2">{t("listings.unit.add")}</h4>
-                    <MinimalTable
-                      headers={{
-                        number: "listings.unit.number",
-                        unitType: "listings.unit.type",
-                        amiPercentage: "listings.unit.ami",
-                        monthlyRent: "listings.unit.rent",
-                        sqFeet: "listings.unit.sqft",
-                        unitAccessibilityPriorityTypes: "listings.unit.priorityType",
-                        action: "",
-                      }}
-                      data={units.map((unit) => ({
-                        number: { content: unit.number },
-                        unitType: {
-                          content: unit.unitTypes && t(`listings.unitTypes.${unit.unitTypes.name}`),
-                        },
-                        amiPercentage: { content: unit.amiPercentage },
-                        monthlyRent: { content: unit.monthlyRent },
-                        sqFeet: { content: unit.sqFeet },
-                        unitAccessibilityPriorityTypes: {
-                          content: unit.unitAccessibilityPriorityTypes?.name,
-                        },
-                        action: {
-                          content: (
-                            <div className="flex gap-3">
-                              <Button
-                                type="button"
-                                className="font-semibold"
-                                onClick={() => editUnit(unit.tempId)}
-                                variant="text"
-                                size="sm"
-                              >
-                                {t("t.edit")}
-                              </Button>
-                              <Button
-                                type="button"
-                                className="font-semibold text-alert"
-                                onClick={() => setUnitDeleteModal(unit.tempId)}
-                                variant="text"
-                                size="sm"
-                              >
-                                {t("t.delete")}
-                              </Button>
-                            </div>
-                          ),
-                        },
-                      }))}
-                    />
-                  </div>
-                )}
                 {!!unitGroups.length && (
                   <div className="mb-5">
                     <h4 className="text-sm font-semibold mb-2">{t("listings.unitGroup.add")}</h4>
@@ -562,35 +510,20 @@ const FormUnits = ({
             )}
 
             {isNonRegulated ? (
-              <div className="flex gap-2">
-                <Button
-                  id="addUnitButton"
-                  type="button"
-                  variant={fieldHasError(errors?.units) ? "alert" : "primary-outlined"}
-                  size="sm"
-                  onClick={() => {
-                    setDefaultUnitGroup(null)
-                    editUnit(units.length + 1)
-                    clearErrors("units")
-                  }}
-                >
-                  {t("listings.unit.add")}
-                </Button>
-                <Button
-                  id="addUnitGroupButton"
-                  type="button"
-                  variant={fieldHasError(errors?.unitGroups) ? "alert" : "primary-outlined"}
-                  size="sm"
-                  onClick={() => {
-                    setDefaultUnit(null)
-                    setDefaultUnitGroup(null)
-                    setUnitGroupDrawerOpen(true)
-                    clearErrors("unitGroups")
-                  }}
-                >
-                  {t("listings.unitGroup.add")}
-                </Button>
-              </div>
+              <Button
+                id="addUnitGroupButton"
+                type="button"
+                variant={fieldHasError(errors?.unitGroups) ? "alert" : "primary-outlined"}
+                size="sm"
+                onClick={() => {
+                  setDefaultUnit(null)
+                  setDefaultUnitGroup(null)
+                  setUnitGroupDrawerOpen(true)
+                  clearErrors("unitGroups")
+                }}
+              >
+                {t("listings.unitGroup.add")}
+              </Button>
             ) : (
               <Button
                 id="addUnitsButton"
