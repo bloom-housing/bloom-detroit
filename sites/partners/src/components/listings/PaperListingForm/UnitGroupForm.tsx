@@ -73,14 +73,6 @@ const UnitGroupForm = ({
   const minOccupancy: number = useWatch({ control, name: "minOccupancy" })
   const maxOccupancy: number = useWatch({ control, name: "maxOccupancy" })
 
-  // Controls for validating square footage
-  const sqFeetMin: number = useWatch({ control, name: "sqFeetMin" })
-  const sqFeetMax: number = useWatch({ control, name: "sqFeetMax" })
-
-  // Controls for validating floor
-  const floorMin: number = useWatch({ control, name: "floorMin" })
-  const floorMax: number = useWatch({ control, name: "floorMax" })
-
   // Controls for validating number of bathrooms
   const bathroomMin: number = useWatch({ control, name: "bathroomMin" })
   const bathroomMax: number = useWatch({ control, name: "bathroomMax" })
@@ -90,9 +82,9 @@ const UnitGroupForm = ({
 
   // Controls for rent type (non-regulated forms)
   const isFixedRent: string = useWatch({ control, name: "isFixedRent" })
+  const isFixedDeposit: string = useWatch({ control, name: "isFixedDeposit" })
 
   const numberOccupancyOptions = 8
-  const numberFloorsOptions = 11
 
   const bathroomOptions = [
     { label: "", value: "" },
@@ -148,6 +140,7 @@ const UnitGroupForm = ({
     } else if (isNonRegulated) {
       // Set default values for non-regulated forms
       setValue("isFixedRent", "true")
+      setValue("isFixedDeposit", "true")
     }
     //eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
@@ -317,7 +310,7 @@ const UnitGroupForm = ({
             <SectionWithGrid heading={t("listings.unit.details")}>
               <Grid.Row columns={3}>
                 <Field
-                  label={t("listings.unit.affordableGroupQuantity")}
+                  label="Unit Group Quantity"
                   id="totalCount"
                   name="totalCount"
                   register={register}
@@ -400,6 +393,70 @@ const UnitGroupForm = ({
                       </Grid.Cell>
                     </Grid.Row>
                   )}
+                  <Grid.Row columns={3}>
+                    <Grid.Cell>
+                      <FieldGroup
+                        name="isFixedDeposit"
+                        type="radio"
+                        register={register}
+                        groupLabel="Deposit Type"
+                        fieldLabelClassName={`${styles["label-option"]} seeds-m-bs-2`}
+                        fields={[
+                          {
+                            label: "Fixed Deposit",
+                            value: "true",
+                            id: "isFixedDepositYes",
+                          },
+                          {
+                            label: "Deposit Range",
+                            value: "false",
+                            id: "isFixedDepositNo",
+                          },
+                        ]}
+                      />
+                    </Grid.Cell>
+                  </Grid.Row>
+                  {isFixedDeposit === "true" && (
+                    <Grid.Row columns={3}>
+                      <Grid.Cell>
+                        <Field
+                          id="deposit"
+                          name="deposit"
+                          label="Deposit"
+                          placeholder="0.00"
+                          register={register}
+                          type="number"
+                          prepend="$"
+                        />
+                      </Grid.Cell>
+                    </Grid.Row>
+                  )}
+                  {isFixedDeposit === "false" && (
+                    <Grid.Row columns={3}>
+                      <Grid.Cell>
+                        <Field
+                          id="depositLowEnd"
+                          name="depositLowEnd"
+                          label="Deposit From:"
+                          placeholder="0.00"
+                          register={register}
+                          type="number"
+                          prepend="$"
+                        />
+                      </Grid.Cell>
+                      <Grid.Cell>
+                        <Field
+                          id="depositHighEnd"
+                          name="depositHighEnd"
+                          label="Deposit To:"
+                          placeholder="0.00"
+                          register={register}
+                          type="number"
+                          prepend="$"
+                        />
+                      </Grid.Cell>
+                    </Grid.Row>
+                  )}
                 </>
               )}
               <Grid.Row columns={3}>
@@ -438,73 +495,7 @@ const UnitGroupForm = ({
                   }}
                 />
               </Grid.Row>
-              <Grid.Row columns={3}>
-                <Field
-                  label={t("listings.unit.minSquareFootage")}
-                  id="sqFeetMin"
-                  name="sqFeetMin"
-                  register={register}
-                  type="number"
-                  errorMessage={t("errors.minGreaterThanMaxFootageError")}
-                  error={fieldHasError(errors?.sqFeetMin)}
-                  validation={{ max: sqFeetMax }}
-                  onChange={() => {
-                    void trigger("sqFeetMin")
-                    void trigger("sqFeetMax")
-                  }}
-                />
 
-                <Field
-                  label={t("listings.unit.maxSquareFootage")}
-                  id="sqFeetMax"
-                  name="sqFeetMax"
-                  register={register}
-                  type="number"
-                  errorMessage={t("errors.maxLessThanMinFootageError")}
-                  error={fieldHasError(errors?.sqFeetMax)}
-                  validation={{ min: sqFeetMin }}
-                  onChange={() => {
-                    void trigger("sqFeetMin")
-                    void trigger("sqFeetMax")
-                  }}
-                />
-              </Grid.Row>
-              <Grid.Row columns={3}>
-                <Select
-                  controlClassName="control"
-                  label={t("listings.unit.minFloor")}
-                  name="floorMin"
-                  id="floorMin"
-                  options={numberOptions(numberFloorsOptions)}
-                  register={register}
-                  errorMessage={t("errors.minGreaterThanMaxFloorError")}
-                  error={fieldHasError(errors?.floorMin)}
-                  validation={{ max: floorMax || numberFloorsOptions }}
-                  inputProps={{
-                    onChange: () => {
-                      void trigger("floorMin")
-                      void trigger("floorMax")
-                    },
-                  }}
-                />
-                <Select
-                  controlClassName="control"
-                  label={t("listings.unit.maxFloor")}
-                  name="floorMax"
-                  id="floorMax"
-                  options={numberOptions(numberFloorsOptions)}
-                  register={register}
-                  errorMessage={t("errors.maxLessThanMinFloorError")}
-                  error={fieldHasError(errors?.floorMax)}
-                  validation={{ min: floorMin }}
-                  inputProps={{
-                    onChange: () => {
-                      void trigger("floorMin")
-                      void trigger("floorMax")
-                    },
-                  }}
-                />
-              </Grid.Row>
               <Grid.Row columns={3}>
                 <Select
                   controlClassName="control"
@@ -625,7 +616,7 @@ const UnitGroupForm = ({
           variant="primary"
           size="sm"
           id={"unitFormSaveAndExitButton"}
-          onClick={() => onFormSubmit()}
+          onClick={() => onClose()}
         >
           {t("t.saveExit")}
         </Button>

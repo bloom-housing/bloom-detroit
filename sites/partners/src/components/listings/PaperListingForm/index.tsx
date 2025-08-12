@@ -505,13 +505,15 @@ const ListingForm = ({ listing, editMode, setListingName, isNonRegulated }: List
                             isNonRegulated={isNonRegulated}
                           />
                           <ApplicationAddress listing={listing} requiredFields={requiredFields} />
-                          <ApplicationDates
-                            listing={listing}
-                            openHouseEvents={openHouseEvents}
-                            setOpenHouseEvents={setOpenHouseEvents}
-                            requiredFields={requiredFields}
-                            isNonRegulated={isNonRegulated}
-                          />
+                          {!isNonRegulated && (
+                            <ApplicationDates
+                              listing={listing}
+                              openHouseEvents={openHouseEvents}
+                              setOpenHouseEvents={setOpenHouseEvents}
+                              requiredFields={requiredFields}
+                              isNonRegulated={isNonRegulated}
+                            />
+                          )}
 
                           <div className="-ml-8 -mt-8 relative" style={{ top: "7rem" }}>
                             <Button

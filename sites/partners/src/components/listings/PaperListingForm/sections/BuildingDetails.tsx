@@ -325,38 +325,10 @@ const BuildingDetails = ({
                 ]}
                 {...defaultFieldProps("region", t("t.region"), requiredFields, errors, clearErrors)}
               />
-            ) : (
-              <Field
-                type={"number"}
-                register={register}
-                {...defaultFieldProps(
-                  "yearBuilt",
-                  t("listings.yearBuilt"),
-                  requiredFields,
-                  errors,
-                  clearErrors
-                )}
-              />
-            )}
+            ) : null}
           </Grid.Cell>
         </Grid.Row>
-        {enableRegions && (
-          <Grid.Row columns={3}>
-            <Grid.Cell>
-              <Field
-                type={"number"}
-                register={register}
-                {...defaultFieldProps(
-                  "yearBuilt",
-                  t("listings.yearBuilt"),
-                  requiredFields,
-                  errors,
-                  clearErrors
-                )}
-              />
-            </Grid.Cell>
-          </Grid.Row>
-        )}
+
         <Grid.Row columns={3}>
           <Grid.Cell className="seeds-grid-span-2">
             <FieldValue label={t("listings.mapPreview")} className={styles["custom-label"]}>
