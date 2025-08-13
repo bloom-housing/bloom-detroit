@@ -14,6 +14,7 @@ import styles from "../ListingForm.module.scss"
 type AdditionalFeesProps = {
   existingUtilities: ListingUtilities
   requiredFields: string[]
+  isNonRegulated?: boolean
 }
 
 const AdditionalFees = (props: AdditionalFeesProps) => {
@@ -23,6 +24,7 @@ const AdditionalFees = (props: AdditionalFeesProps) => {
   const { register, watch, errors, clearErrors, setValue } = formMethods
 
   const jurisdiction = watch("jurisdictions.id")
+  const isFixedDeposit = watch("isFixedDeposit")
 
   const utilitiesFields = useMemo(() => {
     return listingUtilities.map((utility) => {
@@ -47,6 +49,13 @@ const AdditionalFees = (props: AdditionalFeesProps) => {
     }
   }, [enableUtilitiesIncluded, setValue])
 
+  // Set default deposit type for non-regulated forms
+  useEffect(() => {
+    if (props.isNonRegulated && !isFixedDeposit) {
+      setValue("isFixedDeposit", "true")
+    }
+  }, [props.isNonRegulated, isFixedDeposit, setValue])
+
   return (
     <>
       <hr className="spacer-section-above spacer-section" />
@@ -69,35 +78,116 @@ const AdditionalFees = (props: AdditionalFeesProps) => {
               )}
             />
           </Grid.Cell>
-          <Grid.Cell>
-            <Field
-              register={register}
-              type={"currency"}
-              prepend={"$"}
-              {...defaultFieldProps(
-                "depositMin",
-                t("listings.depositMin"),
-                props.requiredFields,
-                errors,
-                clearErrors
-              )}
-            />
-          </Grid.Cell>
-          <Grid.Cell>
-            <Field
-              register={register}
-              type={"currency"}
-              prepend={"$"}
-              {...defaultFieldProps(
-                "depositMax",
-                t("listings.depositMax"),
-                props.requiredFields,
-                errors,
-                clearErrors
-              )}
-            />
-          </Grid.Cell>
+          {props.isNonRegulated ? (
+            <>
+              <Grid.Cell>
+                <FieldGroup
+                  name="isFixedDeposit"
+                  type="radio"
+                  register={register}
+                  groupLabel="Deposit Type"
+                  fieldLabelClassName={`${styles["label-option"]} seeds-m-bs-2`}
+                  fields={[
+                    {
+                      label: "Fixed Deposit",
+                      value: "true",
+                      id: "isFixedDepositYes",
+                    },
+                    {
+                      label: "Deposit Range",
+                      value: "false",
+                      id: "isFixedDepositNo",
+                    },
+                  ]}
+                />
+              </Grid.Cell>
+            </>
+          ) : (
+            <>
+              <Grid.Cell>
+                <Field
+                  register={register}
+                  type={"currency"}
+                  prepend={"$"}
+                  {...defaultFieldProps(
+                    "depositMin",
+                    t("listings.depositMin"),
+                    props.requiredFields,
+                    errors,
+                    clearErrors
+                  )}
+                />
+              </Grid.Cell>
+              <Grid.Cell>
+                <Field
+                  register={register}
+                  type={"currency"}
+                  prepend={"$"}
+                  {...defaultFieldProps(
+                    "depositMax",
+                    t("listings.depositMax"),
+                    props.requiredFields,
+                    errors,
+                    clearErrors
+                  )}
+                />
+              </Grid.Cell>
+            </>
+          )}
         </Grid.Row>
+        {props.isNonRegulated && (
+          <>
+            {isFixedDeposit === "true" ? (
+              <Grid.Row columns={2}>
+                <Grid.Cell>
+                  <Field
+                    register={register}
+                    type={"currency"}
+                    prepend={"$"}
+                    {...defaultFieldProps(
+                      "deposit",
+                      "Deposit",
+                      props.requiredFields,
+                      errors,
+                      clearErrors
+                    )}
+                  />
+                </Grid.Cell>
+              </Grid.Row>
+            ) : (
+              <Grid.Row>
+                <Grid.Cell>
+                  <Field
+                    register={register}
+                    type={"currency"}
+                    prepend={"$"}
+                    {...defaultFieldProps(
+                      "depositLowEnd",
+                      "Deposit From:",
+                      props.requiredFields,
+                      errors,
+                      clearErrors
+                    )}
+                  />
+                </Grid.Cell>
+                <Grid.Cell>
+                  <Field
+                    register={register}
+                    type={"currency"}
+                    prepend={"$"}
+                    {...defaultFieldProps(
+                      "depositHighEnd",
+                      "Deposit To:",
+                      props.requiredFields,
+                      errors,
+                      clearErrors
+                    )}
+                  />
+                </Grid.Cell>
+              </Grid.Row>
+            )}
+          </>
+        )}
         <Grid.Row>
           <Grid.Cell>
             <Textarea

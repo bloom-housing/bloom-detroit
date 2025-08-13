@@ -82,7 +82,6 @@ const UnitGroupForm = ({
 
   // Controls for rent type (non-regulated forms)
   const isFixedRent: string = useWatch({ control, name: "isFixedRent" })
-  const isFixedDeposit: string = useWatch({ control, name: "isFixedDeposit" })
 
   const numberOccupancyOptions = 8
 
@@ -140,7 +139,6 @@ const UnitGroupForm = ({
     } else if (isNonRegulated) {
       // Set default values for non-regulated forms
       setValue("isFixedRent", "true")
-      setValue("isFixedDeposit", "true")
     }
     //eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
@@ -233,51 +231,6 @@ const UnitGroupForm = ({
       }),
     [amiLevels, amiChartsOptions]
   )
-
-  async function onFormSubmit() {
-    const validation = await trigger()
-    if (!validation) {
-      return
-    }
-
-    const data = getValues()
-
-    if (data.unitTypes?.length) {
-      const types = data.unitTypes
-        .map((entry) => unitTypes.find((type) => type.id === entry))
-        .filter((entry) => !!entry)
-
-      data.unitTypes = types
-    } else {
-      delete data.unitTypes
-    }
-
-    let amiLevelsData
-    if (amiLevels) {
-      amiLevelsData = amiLevels?.map((level) => ({
-        ...level,
-        amiChart: amiCharts.find((a) => a.id === level.amiChart.id),
-      }))
-    } else if (data?.amiLevels) {
-      data.amiLevels = data.amiLevels.map((level) => ({
-        ...level,
-        amiChart: amiCharts.find((a) => a.id === level.amiChart.id),
-      }))
-    }
-
-    const formData = {
-      id: null,
-      createdAt: undefined,
-      updatedAt: undefined,
-      ...data,
-      openWaitlist: data.openWaitlist === YesNoEnum.yes,
-      tempId: draft ? nextId : defaultUnitGroup.tempId,
-      unitGroupAmiLevels: amiLevelsData,
-    }
-    onSubmit(formData)
-    onClose()
-  }
-
   return (
     <>
       <Drawer.Content>
@@ -385,70 +338,6 @@ const UnitGroupForm = ({
                           id="monthlyRateHighEnd"
                           name="monthlyRateHighEnd"
                           label="Monthly Rent To:"
-                          placeholder="0.00"
-                          register={register}
-                          type="number"
-                          prepend="$"
-                        />
-                      </Grid.Cell>
-                    </Grid.Row>
-                  )}
-                  <Grid.Row columns={3}>
-                    <Grid.Cell>
-                      <FieldGroup
-                        name="isFixedDeposit"
-                        type="radio"
-                        register={register}
-                        groupLabel="Deposit Type"
-                        fieldLabelClassName={`${styles["label-option"]} seeds-m-bs-2`}
-                        fields={[
-                          {
-                            label: "Fixed Deposit",
-                            value: "true",
-                            id: "isFixedDepositYes",
-                          },
-                          {
-                            label: "Deposit Range",
-                            value: "false",
-                            id: "isFixedDepositNo",
-                          },
-                        ]}
-                      />
-                    </Grid.Cell>
-                  </Grid.Row>
-                  {isFixedDeposit === "true" && (
-                    <Grid.Row columns={3}>
-                      <Grid.Cell>
-                        <Field
-                          id="deposit"
-                          name="deposit"
-                          label="Deposit"
-                          placeholder="0.00"
-                          register={register}
-                          type="number"
-                          prepend="$"
-                        />
-                      </Grid.Cell>
-                    </Grid.Row>
-                  )}
-                  {isFixedDeposit === "false" && (
-                    <Grid.Row columns={3}>
-                      <Grid.Cell>
-                        <Field
-                          id="depositLowEnd"
-                          name="depositLowEnd"
-                          label="Deposit From:"
-                          placeholder="0.00"
-                          register={register}
-                          type="number"
-                          prepend="$"
-                        />
-                      </Grid.Cell>
-                      <Grid.Cell>
-                        <Field
-                          id="depositHighEnd"
-                          name="depositHighEnd"
-                          label="Deposit To:"
                           placeholder="0.00"
                           register={register}
                           type="number"

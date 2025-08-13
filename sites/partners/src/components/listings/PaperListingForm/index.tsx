@@ -454,6 +454,7 @@ const ListingForm = ({ listing, editMode, setListingName, isNonRegulated }: List
                           <AdditionalFees
                             existingUtilities={listing?.listingUtilities}
                             requiredFields={requiredFields}
+                            isNonRegulated={isNonRegulated}
                           />
                           <BuildingFeatures
                             existingFeatures={listing?.listingFeatures}
