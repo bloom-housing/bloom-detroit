@@ -39,7 +39,7 @@
   "basicsVideo.waitlistSubtitle": "En este video, aprenda sobre la importancia de ingresar a las listas de espera de viviendas asequibles, lo que lo pondrá en fila para obtener unidades a medida que estén disponibles.",
   "contact.cityOfDetroitDescription": "Para preguntas sobre listados y solicitudes, comuníquese con el agente de propiedad que aparece en cada listado.",
   "contact.cityOfDetroitTitle": "Departamento de Vivienda y Revitalización de la Ciudad de Detroit",
-  "contact.generalInquiries": "Para consultas generales sobre el programa, puede llamar al Departamento de Vivienda y Revitalización al <a className='underline' href='tel:+13132246380'>313-224-6380</a>",
+  "contact.generalInquiries": "Para consultas generales sobre el programa, puede llamar al Departamento de Vivienda y Revitalización al [313-224-6380](tel:313-224-6380)",
   "finder.accessibility.legend": "Opciones de funciones de accesibilidad",
   "finder.accessibility.question": "¿Usted o alguien en su hogar necesita alguna de las siguientes funciones de accesibilidad?",
   "finder.accessibility.subtitle": "Las características de accesibilidad incluyen muchas diseñadas específicamente para residentes con discapacidades, así como una serie de otras comodidades del edificio y la unidad.",
