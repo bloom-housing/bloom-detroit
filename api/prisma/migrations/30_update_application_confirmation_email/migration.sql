@@ -148,6 +148,7 @@ INSERT INTO translations ( "updated_at","language", "translations", "jurisdictio
         "waitlistContact": "অপেক্ষা তালিকায় থাকাকালীন আপনার সাথে যোগাযোগ করা হতে পারে এবং নিশ্চিত করা যেতে পারে যে আপনি অপেক্ষা তালিকায় থাকতে চান।"
       },
       "gotYourConfirmationNumber": "আমরা আপনার আবেদন পেয়েছি",
+      "subject":"আপনার আবেদন নিশ্চিতকরণ",
       "whatHappensNext": "এরপর কী হবে?",
       "yourConfirmationNumber": "আপনার নিশ্চিতকরণ নম্বর"
     },
