@@ -171,7 +171,7 @@ const Resources = () => {
                     RenderIf,
                   },
                 }}
-                className={styles["contact-card-content"]}
+                className={`${styles["contact-card-content"]} ${styles["contact-card-description"]}`}
               >
                 {contactInfo.toString()}
               </Markdown>
