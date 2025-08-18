@@ -1,85 +1,23 @@
--- Updates application confirmation email copy
+{
+  "en": {
+    "t": { "seeListing": "See Listing" },
+    "confirmation": {
+      "applicationsClosed": "Application <br />closed",
+      "applicationsRanked": "Application <br />ranked",
+      "applicationReceived": "Application <br />received",
+      "eligible": {
+        "fcfs": "Applicants will be contacted on a first come first serve basis until vacancies are filled.",
+        "lottery": "Once the application period closes, applicants will be placed in order based on lottery rank order.",
+        "waitlist": "Applicants will be placed on the waitlist on a first come first serve basis until waitlist spots are filled.",
+        "waitlistContact": "You may be contacted while on the waitlist to confirm that you wish to remain on the waitlist."
+      },
+      "gotYourConfirmationNumber": "We got your application for",
+      "whatHappensNext": "What happens next?",
+      "yourConfirmationNumber": "Your Confirmation Number"
+    }
+  },
 
--- Removes preference related strings in addition to updating copy
-UPDATE translations
-SET translations = jsonb_set(
-    translations,
-    '{t, seeListing}',
-    'See Listing'
-    )
-WHERE language = 'en';
-
-UPDATE translations
-SET translations = jsonb_set(
-    translations,
-    '{confirmation, applicationsClosed}',
-    'Application <br />closed'
-    )
-WHERE language = 'en';
-
-UPDATE translations
-SET translations = jsonb_set(
-    translations,
-    '{confirmation, applicationsRanked}',
-    'Application <br />ranked'
-    )
-WHERE language = 'en';
-
-UPDATE translations
-SET translations = jsonb_set(
-    translations,
-    '{confirmation, applicationsReceived}',
-    'Application <br />received'
-    )
-WHERE language = 'en';
-
-UPDATE translations
-SET translations = jsonb_set(
-    translations,
-    '{confirmation, eligible}',
-    '{"fcfs": "Applicants will be contacted on a first come first serve basis until vacancies are filled.",
-    "lottery": "Once the application period closes, applicants will be placed in order based on lottery rank order.",
-    "waitlist":"Applicants will be placed on the waitlist on a first come first serve basis until waitlist spots are filled.",
-    "waitlistContact":"You may be contacted while on the waitlist to confirm that you wish to remain on the waitlist."}'
-    )
-WHERE language = 'en';
-
-UPDATE translations
-SET translations = jsonb_set(
-    translations,
-    '{confirmation, leasingAgent, contactAgentToUpdateInfo}',
-    '"If you need to update information on your application, do not apply again. Instead, contact the Property Agent for this listing."'
-    )
-WHERE language = 'en';
-
-UPDATE translations
-SET translations = jsonb_set(
-    translations,
-    '{confirmation, gotYourConfirmationNumber}',
-    'We got your application for'
-    )
-WHERE language = 'en';
-
-UPDATE translations
-SET translations = jsonb_set(
-    translations,
-    '{confirmation, whatHappensNext}',
-    'What happens next?'
-    )
-WHERE language = 'en';
-
-UPDATE translations
-SET translations = jsonb_set(
-    translations,
-    '{confirmation, yourConfirmationNumber}',
-    'Your Confirmation Number'
-    )
-WHERE language = 'en';
-
-
-
-INSERT INTO translations ( "updated_at","language", "translations", "jurisdiction_id") VALUES (CURRENT_TIMESTAMP,'es', 
-'{
+  "es": {
     "t": { "seeListing": "Ver listado" },
     "confirmation": {
       "applicationsClosed": "Solicitud <br />cerrada",
@@ -103,10 +41,9 @@ INSERT INTO translations ( "updated_at","language", "translations", "jurisdictio
       "whatHappensNext": "¿Qué pasa después?",
       "yourConfirmationNumber": "Su número de confirmación"
     }
-  }', (Select id from jurisdictions where name='Detroit'));
+  },
 
-INSERT INTO translations ( "updated_at","language", "translations", "jurisdiction_id") VALUES (CURRENT_TIMESTAMP,'ar', 
-'{
+  "ar": {
     "t": { "seeListing": "انظر القائمة" },
     "confirmation": {
       "applicationsClosed": "تم إغلاق الطلب",
@@ -130,10 +67,9 @@ INSERT INTO translations ( "updated_at","language", "translations", "jurisdictio
       "whatHappensNext": "ماذا سيحدث بعد ذلك؟",
       "yourConfirmationNumber": "رقم التأكيد الخاص بك"
     }
-  }', (Select id from jurisdictions where name='Detroit'));
+  },
 
-INSERT INTO translations ( "updated_at","language", "translations", "jurisdiction_id") VALUES (CURRENT_TIMESTAMP,'bn', 
-'{
+  "bn": {
     "t": { "seeListing": "তালিকা দেখুন" },
     "confirmation": {
       "applicationsClosed": "আবেদন <br />বন্ধ",
@@ -156,4 +92,5 @@ INSERT INTO translations ( "updated_at","language", "translations", "jurisdictio
       "whatHappensNext": "এরপর কী হবে?",
       "yourConfirmationNumber": "আপনার নিশ্চিতকরণ নম্বর"
     }
-  }', (Select id from jurisdictions where name='Detroit'));
+  }
+}
