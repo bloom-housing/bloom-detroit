@@ -5,28 +5,17 @@
     "editListing": "Edit Listing",
     "viewListing": "View Listing",
     "reviewListing": "Review Listing",
-    "partnersPortal": "Partners Portal",
-    "confirmation": {
-      "eligible": {
-        "fcfs": "Se contactará a los solicitantes por orden de llegada hasta que se cubran las vacantes.",
-        "lottery": "Una vez finalizado el plazo de solicitud, los solicitantes se ordenarán según el orden de clasificación del sorteo.",
-        "waitlist": "Los solicitantes se incluirán en la lista de espera por orden de llegada hasta que se cubran las plazas.",
-        "waitlistContact": "Es posible que nos pongamos en contacto con usted mientras esté en la lista de espera para confirmar su deseo de permanecer en ella."
-      },
-      "leasingAgent": {
-        "footer": "Si necesita actualizar la información de su solicitud, no la vuelva a solicitar. En su lugar, contacte al agente inmobiliario de este anuncio."
-      }
-    }
+    "partnersPortal": "Partners Portal"
   },
   "footer": {
-    "line1": "Bloom",
+    "line1": "Bloomington",
     "line2": "",
-    "footer": "Bloom Housing",
+    "footer": "Bloomington",
     "thankYou": "Thank you"
   },
   "header": {
-    "logoUrl": "https://res.cloudinary.com/exygy/image/upload/w_400,c_limit,q_65/dev/bloom_logo_generic_zgb4sg.jpg",
-    "logoTitle": "Bloom Housing Portal"
+    "logoUrl": "https://detroitmi.gov/themes/custom/detroitminew/logo.svg",
+    "logoTitle": "Detroit Home Connect"
   },
   "invite": {
     "hello": "Welcome to the Partners Portal",
@@ -80,6 +69,7 @@
     "applicationReceived": "Application <br />received",
     "prepareForNextSteps": "Prepare for next steps",
     "thankYouForApplying": "Thanks for applying. We have received your application for",
+    "applicationsReceived": "Application <br />received",
     "readHowYouCanPrepare": "Read about how you can prepare for next steps",
     "yourConfirmationNumber": "Your Confirmation Number",
     "applicationPeriodCloses": "Once the application period closes, the property manager will begin processing applications.",
@@ -89,7 +79,7 @@
   "leasingAgent": {
     "officeHours": "Office Hours:",
     "propertyManager": "Property Manager",
-    "contactAgentToUpdateInfo": "If you need to update information on your application, do not apply again. Instead, contact the Property Agent for this listing."
+    "contactAgentToUpdateInfo": "If you need to update information on your application, do not apply again. Instead, contact the agent for this listing."
   },
   "mfaCodeEmail": {
     "message": "Access code for your account has been requested.",
@@ -106,7 +96,7 @@
     "subject": "Forgot your password?",
     "callToAction": "If you did make this request, please click on the link below to reset your password:",
     "passwordInfo": "Your password won't change until you access the link above and create a new one.",
-    "resetRequest": "A request to reset your Bloom Housing Portal website password for %{appUrl} has recently been made.",
+    "resetRequest": "A request to reset your Detroit Home Connect website password for %{appUrl} has recently been made.",
     "ignoreRequest": "If you didn't request this, please ignore this email.",
     "changePassword": "Change my password"
   },
@@ -140,7 +130,7 @@
     "whatHappensContent": "The property manager will begin to contact applicants in the order of lottery rank, within each lottery preference. When the units are all filled, the property manager will stop contacting applicants. All the units could be filled before the property manager reaches your rank. If this happens, you will not be contacted.",
     "otherOpportunities1": "To view other housing opportunities, please visit %{appUrl}. You can sign up to receive notifications of new application opportunities",
     "otherOpportunities2": "here",
-    "otherOpportunities3": "If you want to learn about how lotteries work, please see the lottery Warning: Missing translation for key: \"confirmation.nextStepsUrl\" section of the",
+    "otherOpportunities3": "If you want to learn about how lotteries work, please see the lottery section of the",
     "otherOpportunities4": "Housing Portal Help Center"
   },
   "lotteryPublished": {

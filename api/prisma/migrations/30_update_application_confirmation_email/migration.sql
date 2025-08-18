@@ -47,7 +47,7 @@ WHERE language = 'en';
 UPDATE translations
 SET translations = jsonb_set(
     translations,
-    '{confirmation, leasingAgent, contactAgentToUpdateInfo}',
+    '{leasingAgent, contactAgentToUpdateInfo}',
     '"If you need to update information on your application, do not apply again. Instead, contact the Property Agent for this listing."'
     )
 WHERE language = 'en';
@@ -93,16 +93,16 @@ INSERT INTO translations ( "updated_at","language", "translations", "jurisdictio
         "waitlist": "Los solicitantes se incluirán en la lista de espera por orden de llegada hasta que se cubran las plazas.",
         "waitlistContact": "Es posible que nos pongamos en contacto con usted mientras esté en la lista de espera para confirmar su deseo de permanecer en ella."
       },
-      "leasingAgent": {
-        "officeHours": "Horario de oficina:",
-        "propertyManager": "Administrador de la propiedad",
-        "contactAgentToUpdateInfo": "Si necesita actualizar la información de su solicitud, no la vuelva a solicitar. En su lugar, contacte al agente inmobiliario de este anuncio."
-      },
       "gotYourConfirmationNumber": "Recibimos su solicitud para",
       "subject": "Confirmación de su solicitud",
       "whatHappensNext": "¿Qué pasa después?",
       "yourConfirmationNumber": "Su número de confirmación"
-    }
+    },
+    "leasingAgent": {
+        "officeHours": "Horario de oficina:",
+        "propertyManager": "Administrador de la propiedad",
+        "contactAgentToUpdateInfo": "Si necesita actualizar la información de su solicitud, no la vuelva a solicitar. En su lugar, contacte al agente inmobiliario de este anuncio."
+      }
   }', (Select id from jurisdictions where name='Detroit'));
 
 INSERT INTO translations ( "updated_at","language", "translations", "jurisdiction_id") VALUES (CURRENT_TIMESTAMP,'ar', 
@@ -120,16 +120,16 @@ INSERT INTO translations ( "updated_at","language", "translations", "jurisdictio
         "waitlist": "سيتم وضع المتقدمين على قائمة الانتظار على أساس أسبقية الحضور حتى يتم ملء أماكن قائمة الانتظار.",
         "waitlistContact": "قد يتم الاتصال بك أثناء وجودك في قائمة الانتظار لتأكيد رغبتك في البقاء في قائمة الانتظار."
       },
-      "leasingAgent": {
-        "officeHours": "ساعات العمل:",
-        "propertyManager": "مدير العقار",
-        "contactAgentToUpdateInfo": "إذا كنت بحاجة إلى تحديث معلومات طلبك، فلا تتقدم بطلب جديد. بدلاً من ذلك، تواصل مع وكيل العقارات المسؤول عن هذا الإعلان."
-      },
       "gotYourConfirmationNumber": "لقد حصلنا على طلبك",
       "subject": "تأكيد طلبك",
       "whatHappensNext": "ماذا سيحدث بعد ذلك؟",
       "yourConfirmationNumber": "رقم التأكيد الخاص بك"
     }
+    "leasingAgent": {
+        "officeHours": "ساعات العمل:",
+        "propertyManager": "مدير العقار",
+        "contactAgentToUpdateInfo": "إذا كنت بحاجة إلى تحديث معلومات طلبك، فلا تتقدم بطلب جديد. بدلاً من ذلك، تواصل مع وكيل العقارات المسؤول عن هذا الإعلان."
+      }
   }', (Select id from jurisdictions where name='Detroit'));
 
 INSERT INTO translations ( "updated_at","language", "translations", "jurisdiction_id") VALUES (CURRENT_TIMESTAMP,'bn', 
@@ -147,13 +147,13 @@ INSERT INTO translations ( "updated_at","language", "translations", "jurisdictio
         "waitlist": "অপেক্ষা তালিকার আসন পূরণ না হওয়া পর্যন্ত আবেদনকারীদের আগে আসলে আগে পাবেন ভিত্তিতে অপেক্ষা তালিকায় রাখা হবে।",
         "waitlistContact": "অপেক্ষা তালিকায় থাকাকালীন আপনার সাথে যোগাযোগ করা হতে পারে এবং নিশ্চিত করা যেতে পারে যে আপনি অপেক্ষা তালিকায় থাকতে চান।"
       },
-      "leasingAgent": {
-        "officeHours": "অফিসের সময়:",
-        "propertyManager": "সম্পত্তি ব্যবস্থাপক",
-        "contactAgentToUpdateInfo": "যদি আপনার আবেদনের তথ্য আপডেট করার প্রয়োজন হয়, তাহলে আর আবেদন করবেন না। পরিবর্তে, এই তালিকার জন্য সম্পত্তি এজেন্টের সাথে যোগাযোগ করুন।"
-      },
       "gotYourConfirmationNumber": "আমরা আপনার আবেদন পেয়েছি",
       "whatHappensNext": "এরপর কী হবে?",
       "yourConfirmationNumber": "আপনার নিশ্চিতকরণ নম্বর"
-    }
+    },
+    "leasingAgent": {
+        "officeHours": "অফিসের সময়:",
+        "propertyManager": "সম্পত্তি ব্যবস্থাপক",
+        "contactAgentToUpdateInfo": "যদি আপনার আবেদনের তথ্য আপডেট করার প্রয়োজন হয়, তাহলে আর আবেদন করবেন না। পরিবর্তে, এই তালিকার জন্য সম্পত্তি এজেন্টের সাথে যোগাযোগ করুন।"
+      }
   }', (Select id from jurisdictions where name='Detroit'));
