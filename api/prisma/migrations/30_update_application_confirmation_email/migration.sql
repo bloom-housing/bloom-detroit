@@ -124,7 +124,7 @@ INSERT INTO translations ( "updated_at","language", "translations", "jurisdictio
       "subject": "تأكيد طلبك",
       "whatHappensNext": "ماذا سيحدث بعد ذلك؟",
       "yourConfirmationNumber": "رقم التأكيد الخاص بك"
-    }
+    },
     "leasingAgent": {
         "officeHours": "ساعات العمل:",
         "propertyManager": "مدير العقار",
