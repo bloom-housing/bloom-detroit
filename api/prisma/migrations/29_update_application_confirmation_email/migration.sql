@@ -5,7 +5,7 @@ UPDATE translations
 SET translations = jsonb_set(
     translations,
     '{t, seeListing}',
-    'See Listing'
+    '"See Listing"'
     )
 WHERE language = 'en';
 
@@ -13,7 +13,7 @@ UPDATE translations
 SET translations = jsonb_set(
     translations,
     '{confirmation, applicationsClosed}',
-    'Application <br />closed'
+    '"Application <br />closed"'
     )
 WHERE language = 'en';
 
@@ -21,7 +21,7 @@ UPDATE translations
 SET translations = jsonb_set(
     translations,
     '{confirmation, applicationsRanked}',
-    'Application <br />ranked'
+    '"Application <br />ranked"'
     )
 WHERE language = 'en';
 
@@ -29,7 +29,7 @@ UPDATE translations
 SET translations = jsonb_set(
     translations,
     '{confirmation, applicationsReceived}',
-    'Application <br />received'
+    '"Application <br />received"'
     )
 WHERE language = 'en';
 
@@ -56,7 +56,7 @@ UPDATE translations
 SET translations = jsonb_set(
     translations,
     '{confirmation, gotYourConfirmationNumber}',
-    'We got your application for'
+    '"We got your application for"'
     )
 WHERE language = 'en';
 
@@ -64,7 +64,7 @@ UPDATE translations
 SET translations = jsonb_set(
     translations,
     '{confirmation, whatHappensNext}',
-    'What happens next?'
+    '"What happens next?"'
     )
 WHERE language = 'en';
 
@@ -72,7 +72,7 @@ UPDATE translations
 SET translations = jsonb_set(
     translations,
     '{confirmation, yourConfirmationNumber}',
-    'Your Confirmation Number'
+    '"Your Confirmation Number"'
     )
 WHERE language = 'en';
 
