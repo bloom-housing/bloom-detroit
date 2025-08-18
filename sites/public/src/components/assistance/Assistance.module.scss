@@ -57,8 +57,12 @@
     gap: var(--seeds-spacer-content);
 
     .contact-card-subsection {
-      display: block;
+      display: flex;
+      flex-direction: column;
       gap: var(--seeds-s4);
+      &:last-of-type {
+        display: block;
+      }
     }
 
     .contact-card-title {

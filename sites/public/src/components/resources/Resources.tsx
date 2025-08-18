@@ -159,7 +159,7 @@ const Resources = () => {
           </div>
           <aside className={styles["aside-section"]}>
             <Card className={styles["contact-card"]}>
-              <div className={styles["contact-card-subsection"]}>
+              <div className={styles["contact-card-content"]}>
                 <Heading size="xl" priority={2}>
                   {t("resources.contactTitle")}
                 </Heading>

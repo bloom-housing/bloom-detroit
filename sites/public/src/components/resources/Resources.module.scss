@@ -20,11 +20,11 @@
       gap: var(--seeds-spacer-content);
 
       .contact-card-content {
-        display: block;
+        display: flex;
+        flex-direction: column;
         gap: var(--seeds-s4);
-
-        p {
-          padding-block-start: var(--seeds-s4);
+        &:last-of-type {
+          display: block;
         }
       }
 
