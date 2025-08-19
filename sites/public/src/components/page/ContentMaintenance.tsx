@@ -17,15 +17,17 @@ const ContentMaintenance = () => {
       message:
         "Detroit Home Connect se encuentra actualmente en mantenimiento y no está disponible en este momento. Disculpe las molestias. Si tiene alguna pregunta urgente sobre el sitio, comuníquese con [detroithomeconnect@detroitmi.gov](mailto:detroithomeconnect@detroitmi.gov)",
     },
-    {
-      title: "صيانة",
-      message:
-        "خدمة ديترويت هوم كونيكت تخضع حاليًا للصيانة وهي غير متاحة حاليًا. نعتذر عن أي إزعاج، وإذا كانت لديكم أي أسئلة تتعلق بالموقع، يُرجى التواصل معنا عبر البريد الإلكتروني [detroithomeconnect@detroitmi.gov](mailto:detroithomeconnect@detroitmi.gov)",
-    },
+
     {
       title: "রক্ষণাবেক্ষণ",
       message:
         "ডেট্রয়েট হোম কানেক্ট বর্তমানে রক্ষণাবেক্ষণের অধীনে রয়েছে এবং এই মুহূর্তে এটি অনুপলব্ধ। অসুবিধার জন্য আমরা ক্ষমাপ্রার্থী, এবং যদি আপনার সাইট সম্পর্কিত কোনও সময়-সংবেদনশীল প্রশ্ন থাকে, তাহলে অনুগ্রহ করে [detroithomeconnect@detroitmi.gov](mailto:detroithomeconnect@detroitmi.gov) এ যোগাযোগ করুন।",
+    },
+    {
+      title: "صيانة",
+      message:
+        "خدمة ديترويت هوم كونيكت تخضع حاليًا للصيانة وهي غير متاحة حاليًا. نعتذر عن أي إزعاج، وإذا كانت لديكم أي أسئلة تتعلق بالموقع، يُرجى التواصل معنا عبر البريد الإلكتروني [detroithomeconnect@detroitmi.gov](mailto:detroithomeconnect@detroitmi.gov)",
+      rtl: true,
     },
   ]
 
@@ -35,7 +37,7 @@ const ContentMaintenance = () => {
       <MaxWidthLayout className={heroStyles["hero-container"]}>
         <div className={styles["maintenance-container"]}>
           {maintenanceMessages.map((lang) => (
-            <div className={styles["language-container"]}>
+            <div className={`${styles["language-container"]} ${lang?.rtl ? styles["rtl"] : ""}`}>
               <Heading priority={2} className={`${styles["maintenance-heading"]}`}>
                 {lang.title}
               </Heading>
