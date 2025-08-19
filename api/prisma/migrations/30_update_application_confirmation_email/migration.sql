@@ -97,7 +97,6 @@ SET translations = jsonb_set(
 WHERE language = 'en';
 
 
-
 INSERT INTO translations ( "updated_at","language", "translations", "jurisdiction_id") VALUES (CURRENT_TIMESTAMP,'es', 
 '{
     "t": { "seeListing": "Ver listado" },

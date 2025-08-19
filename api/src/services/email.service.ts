@@ -336,55 +336,53 @@ export class EmailService {
     application: ApplicationCreate,
     appUrl: string,
   ) {
-    for (const lang in LanguagesEnum) {
-      const jurisdiction = await this.getJurisdiction([listing.jurisdictions]);
-      void (await this.loadTranslations(jurisdiction, LanguagesEnum[lang]));
-      const listingUrl = `${appUrl}/listing/${listing.id}`;
-      const compiledTemplate = this.template('confirmation');
+    const jurisdiction = await this.getJurisdiction([listing.jurisdictions]);
+    void (await this.loadTranslations(jurisdiction, application.language));
+    const listingUrl = `${appUrl}/listing/${listing.id}`;
+    const compiledTemplate = this.template('confirmation');
 
-      let eligibleText: string;
-      let contactText = null;
-      if (listing.reviewOrderType === ReviewOrderTypeEnum.firstComeFirstServe) {
-        eligibleText = this.polyglot.t('confirmation.eligible.fcfs');
-      }
-      if (listing.reviewOrderType === ReviewOrderTypeEnum.lottery) {
-        eligibleText = this.polyglot.t('confirmation.eligible.lottery');
-      }
-      if (listing.reviewOrderType === ReviewOrderTypeEnum.waitlist) {
-        eligibleText = this.polyglot.t('confirmation.eligible.waitlist');
-        contactText = this.polyglot.t('confirmation.eligible.waitlistContact');
-      }
-
-      const user = {
-        firstName: application.applicant.firstName,
-        middleName: application.applicant.middleName,
-        lastName: application.applicant.lastName,
-      };
-
-      const nextStepsUrl = this.polyglot.t('confirmation.nextStepsUrl');
-
-      await this.send(
-        application.applicant.emailAddress,
-        jurisdiction.emailFromAddress,
-        this.polyglot.t('confirmation.subject'),
-        compiledTemplate({
-          subject: this.polyglot.t('confirmation.subject'),
-          header: {
-            logoTitle: this.polyglot.t('header.logoTitle'),
-            logoUrl: this.polyglot.t('header.logoUrl'),
-          },
-          listing,
-          listingUrl,
-          application,
-          interviewText: this.polyglot.t('confirmation.interview'),
-          eligibleText,
-          contactText,
-          nextStepsUrl:
-            nextStepsUrl != 'confirmation.nextStepsUrl' ? nextStepsUrl : null,
-          user,
-        }),
-      );
+    let eligibleText: string;
+    let contactText = null;
+    if (listing.reviewOrderType === ReviewOrderTypeEnum.firstComeFirstServe) {
+      eligibleText = this.polyglot.t('confirmation.eligible.fcfs');
     }
+    if (listing.reviewOrderType === ReviewOrderTypeEnum.lottery) {
+      eligibleText = this.polyglot.t('confirmation.eligible.lottery');
+    }
+    if (listing.reviewOrderType === ReviewOrderTypeEnum.waitlist) {
+      eligibleText = this.polyglot.t('confirmation.eligible.waitlist');
+      contactText = this.polyglot.t('confirmation.eligible.waitlistContact');
+    }
+
+    const user = {
+      firstName: application.applicant.firstName,
+      middleName: application.applicant.middleName,
+      lastName: application.applicant.lastName,
+    };
+
+    const nextStepsUrl = this.polyglot.t('confirmation.nextStepsUrl');
+
+    await this.send(
+      application.applicant.emailAddress,
+      jurisdiction.emailFromAddress,
+      this.polyglot.t('confirmation.subject'),
+      compiledTemplate({
+        subject: this.polyglot.t('confirmation.subject'),
+        header: {
+          logoTitle: this.polyglot.t('header.logoTitle'),
+          logoUrl: this.polyglot.t('header.logoUrl'),
+        },
+        listing,
+        listingUrl,
+        application,
+        interviewText: this.polyglot.t('confirmation.interview'),
+        eligibleText,
+        contactText,
+        nextStepsUrl:
+          nextStepsUrl != 'confirmation.nextStepsUrl' ? nextStepsUrl : null,
+        user,
+      }),
+    );
   }
 
   public async requestApproval(
