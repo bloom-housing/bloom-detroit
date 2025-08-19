@@ -1,0 +1,22 @@
+.maintenance-heading {
+  font-size: var(--seeds-font-size-3xl);
+  color: var(--seeds-color-on-inverse);
+  font-weight: var(--seeds-font-weight-semibold);
+  @media (--sm-only) {
+    font-size: var(--seeds-font-size-xl);
+  }
+}
+
+.maintenance-container {
+  max-width: var(--seeds-screen-md);
+  color: var(--seeds-color-on-inverse);
+  a {
+    color: var(--seeds-color-on-inverse);
+  }
+}
+
+.language-container {
+  &:not(:last-child) {
+    margin-block-end: var(--seeds-spacer-content);
+  }
+}
