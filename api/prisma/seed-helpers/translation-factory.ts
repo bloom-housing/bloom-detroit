@@ -195,9 +195,9 @@ const translations = (jurisdictionName?: string, language?: LanguagesEnum) => {
       confirmation: {
         eligible: {
           waitlist:
-            'Los solicitantes que reúnan los requisitos quedarán en la lista de espera por orden de recepción de solicitud hasta que se cubran todos los lugares.',
+            'Los solicitantes se incluirán en la lista de espera por orden de llegada hasta que se cubran las plazas.',
           waitlistContact:
-            'Es posible que se comuniquen con usted mientras esté en la lista de espera para confirmar que desea permanecer en la lista.',
+            'Es posible que nos pongamos en contacto con usted mientras esté en la lista de espera para confirmar su deseo de permanecer en ella.',
         },
         interview:
           'Si se comunican con usted para una entrevista, se le pedirá que complete una solicitud más detallada y presente documentos de respaldo.',
