@@ -1,6 +1,3 @@
--- Updates application confirmation email copy
-
--- Removes preference related strings in addition to updating copy
 UPDATE translations
 SET translations = jsonb_set(
     translations,
