@@ -342,16 +342,24 @@ export class EmailService {
     const compiledTemplate = this.template('confirmation');
 
     let eligibleText: string;
+    let preferenceText: string;
     let contactText = null;
     if (listing.reviewOrderType === ReviewOrderTypeEnum.firstComeFirstServe) {
       eligibleText = this.polyglot.t('confirmation.eligible.fcfs');
+      preferenceText = this.polyglot.t('confirmation.eligible.fcfsPreference');
     }
     if (listing.reviewOrderType === ReviewOrderTypeEnum.lottery) {
       eligibleText = this.polyglot.t('confirmation.eligible.lottery');
+      preferenceText = this.polyglot.t(
+        'confirmation.eligible.lotteryPreference',
+      );
     }
     if (listing.reviewOrderType === ReviewOrderTypeEnum.waitlist) {
       eligibleText = this.polyglot.t('confirmation.eligible.waitlist');
       contactText = this.polyglot.t('confirmation.eligible.waitlistContact');
+      preferenceText = this.polyglot.t(
+        'confirmation.eligible.waitlistPreference',
+      );
     }
 
     const user = {
@@ -375,6 +383,7 @@ export class EmailService {
         listing,
         listingUrl,
         application,
+        preferenceText,
         interviewText: this.polyglot.t('confirmation.interview'),
         eligibleText,
         contactText,

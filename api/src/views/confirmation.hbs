@@ -30,8 +30,9 @@
             <h2 class="mt3">{{t "confirmation.whatHappensNext"}}</h2>
             <ul>
             <li>{{eligibleText}}</li>
+            {{!-- <li>{{preferenceText}}</li> removed reference to preferences --}}
             <li>{{interviewText}}</li>
-            {{#if contactText}}
+            {{#if contactText}} 
               <li>{{contactText}}</li>
             {{/if}}
             </ul>
