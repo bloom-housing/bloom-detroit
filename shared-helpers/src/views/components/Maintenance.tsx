@@ -1,11 +1,9 @@
 import React from "react"
-import MaxWidthLayout from "../../layouts/max-width"
 import { Heading } from "@bloom-housing/ui-seeds"
 import Markdown from "markdown-to-jsx"
-import heroStyles from "../../patterns/Hero.module.scss"
-import styles from "./ContentMaintenance.module.scss"
+import styles from "./Maintenance.module.scss"
 
-const ContentMaintenance = () => {
+const Maintenance = (props: { isPartners?: boolean }) => {
   const maintenanceMessages = [
     {
       title: "Maintenance",
@@ -32,24 +30,22 @@ const ContentMaintenance = () => {
   ]
 
   return (
-    <>
+    <div className={props?.isPartners ? styles["maintenance-partners"] : ""}>
       <h1 className="sr-only">Site down for maintenance</h1>
-      <MaxWidthLayout className={heroStyles["hero-container"]}>
-        <div className={styles["maintenance-container"]}>
-          {maintenanceMessages.map((lang) => (
-            <div className={`${styles["language-container"]} ${lang?.rtl ? styles["rtl"] : ""}`}>
-              <Heading priority={2} className={`${styles["maintenance-heading"]}`}>
-                {lang.title}
-              </Heading>
-              <p className={styles["subtitle"]}>
-                <Markdown>{lang.message}</Markdown>
-              </p>
-            </div>
-          ))}
-        </div>
-      </MaxWidthLayout>
-    </>
+      <div className={styles["maintenance-container"]}>
+        {maintenanceMessages.map((lang) => (
+          <div className={`${styles["language-container"]} ${lang?.rtl ? styles["rtl"] : ""}`}>
+            <Heading priority={2} className={`${styles["maintenance-heading"]}`}>
+              {lang.title}
+            </Heading>
+            <p>
+              <Markdown>{lang.message}</Markdown>
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
   )
 }
 
-export { ContentMaintenance as default, ContentMaintenance }
+export { Maintenance as default, Maintenance }
