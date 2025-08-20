@@ -615,7 +615,7 @@ export class ScriptRunnerService {
       const description = Object.keys(updatedProgInfo).includes(prog.title)
         ? updatedProgInfo[prog.title]
         : prog.description;
-      console.log(prog.title, description);
+
       const res: MultiselectQuestion =
         await this.multiselectQuestionService.create({
           text: prog.title,
