@@ -612,9 +612,7 @@ export class ScriptRunnerService {
         Veterans:
           'This property offers housing for those who have served active duty in branches of the U.S. Armed Forces, and were discharged under conditions other than dishonorable.',
       };
-      const description = Object.keys(updatedProgInfo).includes(prog.title)
-        ? updatedProgInfo[prog.title]
-        : prog.description;
+      const description = updatedProgInfo[prog.title] || prog.description;
 
       const res: MultiselectQuestion =
         await this.multiselectQuestionService.create({
