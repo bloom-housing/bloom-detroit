@@ -7,12 +7,7 @@ import "@bloom-housing/ui-components/src/global/css-imports.scss"
 import "@bloom-housing/ui-components/src/global/app-css.scss"
 import "@bloom-housing/ui-seeds/src/global/app-css.scss"
 import { addTranslation, NavigationContext, GenericRouter } from "@bloom-housing/ui-components"
-import {
-  AuthProvider,
-  ConfigProvider,
-  MessageProvider,
-  RequireLogin,
-} from "@bloom-housing/shared-helpers"
+import { Maintenance } from "@bloom-housing/shared-helpers"
 
 // TODO: Make these not-global
 import "ag-grid-community/dist/styles/ag-grid.css"
@@ -22,6 +17,7 @@ import LinkComponent from "../components/core/LinkComponent"
 import { translations, overrideTranslations } from "../lib/translations"
 
 import "../../styles/overrides.scss"
+import Layout from "../layouts"
 
 const signInMessage = "Login is required to view this page."
 
@@ -47,18 +43,9 @@ function BloomApp({ Component, router, pageProps }: AppProps) {
   }, [locale])
 
   const pageContent = (
-    <ConfigProvider apiUrl={process.env.backendApiBase}>
-      <AuthProvider>
-        <RequireLogin
-          signInPath="/sign-in"
-          termsPath="/users/terms"
-          signInMessage={signInMessage}
-          skipForRoutes={skipLoginRoutes}
-        >
-          <MessageProvider>{hasMounted && <Component {...pageProps} />}</MessageProvider>
-        </RequireLogin>
-      </AuthProvider>
-    </ConfigProvider>
+    <Layout>
+      <Maintenance isPartners />
+    </Layout>
   )
 
   return (

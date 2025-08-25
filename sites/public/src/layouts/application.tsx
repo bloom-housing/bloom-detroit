@@ -249,18 +249,8 @@ const Layout = (props: LayoutProps) => {
         {process.env.showNewSeedsDesigns ? (
           <SiteHeader
             title={t("nav.siteTitle")}
-            languages={languages?.map((lang) => {
-              return {
-                label: lang.label,
-                onClick: () =>
-                  void router.push(router.asPath, router.asPath, { locale: lang.prefix || "en" }),
-                active: t("config.routePrefix") === lang.prefix,
-              }
-            })}
-            links={getHeaderLinks(router, profile, signOut, addToast, {
-              applications: showApplications,
-              favorites: showFavorites,
-            })}
+            languages={[]}
+            links={[]}
             titleLink={"/"}
             logo={
               <Icon size={"lg"}>

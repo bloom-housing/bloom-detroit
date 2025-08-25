@@ -10,13 +10,7 @@ import {
   NavigationContext as UICNavigationContext,
 } from "@bloom-housing/ui-components"
 import { NavigationContext } from "@bloom-housing/ui-seeds/src/global/NavigationContext"
-import {
-  blankApplication,
-  LoggedInUserIdleTimeout,
-  ConfigProvider,
-  AuthProvider,
-  MessageProvider,
-} from "@bloom-housing/shared-helpers"
+import { blankApplication, Maintenance } from "@bloom-housing/shared-helpers"
 import { headScript, bodyTopTag, pageChangeHandler } from "../lib/customScripts"
 import { AppSubmissionContext } from "../lib/applications/AppSubmissionContext"
 import ApplicationConductor, {
@@ -25,8 +19,10 @@ import ApplicationConductor, {
 } from "../lib/applications/ApplicationConductor"
 import { translations, overrideTranslations } from "../lib/translations"
 import LinkComponent from "../components/core/LinkComponent"
-
 import "../../styles/overrides.scss"
+import Layout from "../layouts/application"
+import MaxWidthLayout from "../layouts/max-width"
+import heroStyles from "../patterns/Hero.module.scss"
 
 const rtlLocales = process.env.rtlLanguages.split(",")
 
@@ -86,19 +82,12 @@ function BloomApp({ Component, router, pageProps }: AppProps) {
   // NOTE: Seeds and UI-Components both use a NavigationContext to help internal links use Next's
   // routing system, so we'll include both here until UIC is no longer in use.
 
-  const jurisdictionClassname = process.env.jurisdictionName.replace(" ", "-").toLowerCase()
-
   const pageContent = (
-    <ConfigProvider apiUrl={process.env.backendApiBase}>
-      <AuthProvider>
-        <MessageProvider>
-          <LoggedInUserIdleTimeout onTimeout={() => conductor.reset()} />
-          <div className={jurisdictionClassname}>
-            <Component {...pageProps} />
-          </div>
-        </MessageProvider>
-      </AuthProvider>
-    </ConfigProvider>
+    <Layout pageTitle={"Maintenance"}>
+      <MaxWidthLayout className={heroStyles["hero-container"]}>
+        <Maintenance />
+      </MaxWidthLayout>
+    </Layout>
   )
 
   return (
