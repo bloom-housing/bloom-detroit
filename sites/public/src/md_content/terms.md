@@ -120,6 +120,7 @@ You agree to indemnify, defend and hold harmless the City, as well as its subsid
 
 #### Section 14: Miscellaneous
 
+<div class='alpha-list'>
 - Entire agreement:
   These Terms set forth the entire understanding between you and the City and supersedes prior agreements, communications, and representations between you and the City regarding the subject matter contained herein.
 - Applicable laws:
@@ -134,6 +135,7 @@ You agree to indemnify, defend and hold harmless the City, as well as its subsid
   All rights not expressly granted herein are reserved.
 - Contact information:
   By e-mail: detroithomeconnect@detroitmi.gov
+</div>
 
 </RenderIf>
 
@@ -255,6 +257,7 @@ Usted acepta indemnizar, defender y eximir de responsabilidad al Ayuntamiento, a
 
 #### Sección 14: Disposiciones varias
 
+<div class='alpha-list'>
 - Acuerdo completo:
 Estos Términos establecen la totalidad del entendimiento entre usted y la Ciudad y sustituyen cualquier acuerdo, comunicación o declaración previa entre usted y la Ciudad en relación con el objeto del presente documento.
 - Leyes aplicables:
@@ -268,6 +271,7 @@ Todo el contenido del sitio web está protegido por la ley de derechos de autor,
 Todos los derechos no expresamente otorgados en este documento quedan reservados.
 - Información de contacto:
 Por correo electrónico: detroithomeconnect@detroitmi.gov
+</div>
 
 </RenderIf>
 
@@ -392,6 +396,7 @@ Por correo electrónico: detroithomeconnect@detroitmi.gov
 
 #### القسم ١٤: متفرقات
 
+<div class='alpha-list'>
 - الاتفاقية الكاملة:
 تحدد هذه الشروط كامل التفاهم بينك وبين المدينة، وتلغي أي اتفاقيات ومراسلات وتصريحات سابقة بينك وبين المدينة بشأن الموضوع الوارد في هذه الوثيقة.
 - القوانين المعمول بها:
@@ -406,6 +411,7 @@ Por correo electrónico: detroithomeconnect@detroitmi.gov
 جميع الحقوق غير الممنوحة صراحةً هنا محفوظة.
 - معلومات الاتصال:
 عبر البريد الإلكتروني: detroithomeconnect@detroitmi.gov
+</div>
 
 </RenderIf>
 
@@ -531,6 +537,7 @@ Por correo electrónico: detroithomeconnect@detroitmi.gov
 
 #### ধারা ১৪: বিবিধ
 
+<div class='alpha-list'>
 - সম্পূর্ণ চুক্তি:
 এই শর্তাবলী আপনার এবং শহরের মধ্যে সম্পূর্ণ বোঝাপড়াকে তুলে ধরে এবং এখানে অন্তর্ভুক্ত বিষয়বস্তু সম্পর্কে আপনার এবং শহরের মধ্যে পূর্ববর্তী চুক্তি, যোগাযোগ এবং প্রতিনিধিত্বকে বাতিল করে।
 - প্রযোজ্য আইন:
@@ -545,5 +552,6 @@ Por correo electrónico: detroithomeconnect@detroitmi.gov
 এখানে স্পষ্টভাবে প্রদত্ত নয় এমন সমস্ত অধিকার সংরক্ষিত।
 - যোগাযোগের তথ্য:
 ই-মেইলের মাধ্যমে: detroithomeconnect@detroitmi.gov
+</div>
 
 </RenderIf>
