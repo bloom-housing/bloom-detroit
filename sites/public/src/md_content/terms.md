@@ -3,7 +3,7 @@ Terms and Conditions of Use for Detroit Home Connect. The City of Detroit has wo
 
 These Terms were most recently updated on, and are effective as of: May 1, 2022
 
-#### Section 1: Definitions
+## Section 1: Definitions
 
 For purposes of these Terms and Conditions of Use the following words or phrases have the meanings respectively ascribed to them as set forth herein:
 
@@ -44,21 +44,21 @@ You may provide links to the Website, whether from another website, social media
 
 You understand that the City is not a consumer reporting agency and none of the Content or Services provided via the Website constitute a “consumer report” as such term is defined in the Federal Fair Credit Reporting Act (FCRA), 15 U.S.C. sec. 1681 et seq. The Content available to you must not be used as a factor in consumer debt collection decisioning, establishing a consumer’s eligibility for credit, insurance, employment, government benefits, or housing, or for any other purpose authorized under the FCRA. You agree to refrain from using Website, including its Content and Services, for any purpose authorized under the FCRA or in relation to taking an adverse action relating to a consumer application.
 
-#### Section 2: Introduction
+## Section 2: Introduction
 
 Thank you for accessing Detroit Home Connect! Please be aware that by accessing the Website, you are a User of the Website. These Terms constitute a legal binding agreement between the City and each User of the Website, including you. These Terms govern the use by Users of all aspects of the Website, unless otherwise specified herein. As a User, it is your responsibility to read and understand these Terms as a condition of your use of the Website.
 
-#### Section 3: Your acceptances of these Terms
+## Section 3: Your acceptances of these Terms
 
 Your accessing of the Website constitutes your agreement to be bound by these Terms in their entirety without exception or reservation. If you do not agree to these Terms, your sole recourse is to immediately cease use of the Website. The City’s continued operation of the Website for your use, and your continued use of the Website constitutes mutual consideration under this agreement.
 
 These Terms may be amended, revised, or otherwise updated at any time without prior notice to you. Unless otherwise stated therein, all updates to these Terms will become immediately effective upon their publication on the Website. Your access and continued use of the Website following any update to these Terms constitutes your acceptance of and agreement to these Terms, as updated.
 
-#### Section 4: Privacy Policy
+## Section 4: Privacy Policy
 
 The City takes the issue of your privacy very seriously and has developed a Privacy Policy that comprehensively governs the submission, use, dissemination, and protection of personal information submitted through the Website. The Privacy Policy is available [here](/privacy) and is fully incorporated by reference into these Terms.
 
-#### Section 5: Limitations on use
+## Section 5: Limitations on use
 
 You must understand that, unless otherwise noted, all Content may be protected by copyrights, trademarks, service marks, patents or other proprietary rights and laws that are owned, controlled or licensed by the City, or by the party credited as the creator or provider of the Content. You agree that you may use the Content solely for your personal use or in the regular course of your research and other related work, including the incorporation of portions of the Content in your own work product. In doing so, you must keep intact all copyright and other proprietary notices. You must not copy, distribute, display, perform, reproduce, republish, create derivative works from, transfer, or sell all or any portion of the Content, except to the extent permissible under all applicable intellectual property law, regulations and protections.
 
@@ -76,7 +76,7 @@ You may provide links to the Website, whether from another website, social media
 
 You understand that the City is not a consumer reporting agency and none of the Content or Services provided via the Website constitute a “consumer report” as such term is defined in the Federal Fair Credit Reporting Act (FCRA), 15 U.S.C. sec. 1681 et seq. The Content available to you must not be used as a factor in consumer debt collection decisioning, establishing a consumer’s eligibility for credit, insurance, employment, government benefits, or housing, or for any other purpose authorized under the FCRA. You agree to refrain from using Website, including its Content and Services, for any purpose authorized under the FCRA or in relation to taking an adverse action relating to a consumer application.
 
-#### Section 6: User accounts
+## Section 6: User accounts
 
 Access to certain Content, Services, or other portions of the Website may require your registration and creation of a User account. You must understand that the particular portions of the Website for which registration is required is in the City’s sole discretion and may change at any time. By your registration, you agree that all registration information is accurate and complete. It is your responsibility to inform the City of any inaccuracies or changes to that information.
 
@@ -84,7 +84,7 @@ You must acknowledge, understand and agree that your User account is for your in
 
 You must understand that the City and the Website enables Users to register for and maintain accounts as a Service merely for their convenience. You agree that neither you nor any other User has any right to the creation or maintenance of any such account and the City bears no obligation to create or maintain such an account for any User, including you. You agree that the City may refuse to allow the creation a new account and may suspend, terminate, or modify the terms of any existing User account at any time for any reason in its sole discretion, whether or not for violation of these Terms.
 
-#### Section 7: User Content
+## Section 7: User Content
 
 The Website may provide certain Services by which Users can create User Content and submit such Content to the Website. By submitting any Content to the Website, you agree to grant, and warrant that you have all such rights as are legally required to expressly grant, to the City a royalty-free, perpetual, irrevocable, non-exclusive right and license to use, reproduce, modify, adapt, publish, translate, sub-license, create derivative works from, distribute, perform and display such Content, in whole or in part, and to incorporate such Content into other works in any form, medium or technology now known or later developed, throughout the world.
 
@@ -92,33 +92,33 @@ You must not submit to the Website any Content that constitutes or could foresee
 
 The City does not pre-screen Content submitted by you or any User and accepts no obligation to do so, but reserves the absolute right, in its sole discretion, to refuse or remove any Content, whether or not it constitutes Prohibited User Content. You must accept full and exclusive responsibility for all Content that you upload, post or otherwise submit to the Website.
 
-#### Section 8: Third Party Content and links to Third Party Sites
+## Section 8: Third Party Content and links to Third Party Sites
 
 Third Party Content may appear on the Website or may be accessible via links that appear on the Website. The City hereby expressly disclaims any responsibility for, and will assume no liability for, any Third Party Content, including, but not limited to, such Third Party Content that constitutes, or could in the future constitute, Prohibited Content. You must understand that no Third Party Content is endorsed by the City and does not necessarily reflect the beliefs, opinions, or positions of the City any User, and you agree to refrain from attributing any Third Party Content to the City any User.
 
-#### Section 9: Modifications to Website, Content, or Services
+## Section 9: Modifications to Website, Content, or Services
 
 The City reserves the right to create, modify, expand, restrict, suspend, or discontinue, all either temporarily or permanently, the Website, including any Content and Services, at any time in its sole discretion for any reason or no reason at all, and without notice. You must understand, acknowledge and agree that the City disclaims all liability to you or any third party for any such actions related to the Website, including its Content and Services, and you agree to refrain from imposing or taking any action in pursuit of imposing such liability on the City in relation to any such action.
 
-#### Section 10: Termination
+## Section 10: Termination
 
 You agree that the City may, at any time and without notice, terminate or restrict your use of or access to the Website, including any Content and Services, in its sole discretion for any reason, including without limitation, its belief that you have violated or acted inconsistently with the letter or spirit of these Terms, or no reason at all. The provisions of Disclaimer, Limitation of Liability, and Indemnification shall survive such termination.
 
-#### Section 11: Disclaimer
+## Section 11: Disclaimer
 
 You understand and agree that the Website, including all Content and Services, is provided on an as-is, as-available basis and without warranties of any kind either express or implied. To the fullest extent permissible pursuant to applicable law, the owners disclaim all warranties, express or implied, including, but not limited to, implied warranties of merchantability, fitness for a particular purpose and non-infringement of intellectual property. The owners do not warrant that the Website will meet your requirements, that it will be uninterrupted, timely, secure, or error-free, that defects will be corrected, or that the Website or the server(s) that makes the Website or available are free or viruses or other harmful components. The owners do not warrant or make any representations regarding the use of the results of the use of the Content or Services on the Website in terms of its correctness, accuracy, reliability, timeliness, or otherwise. You assume the entire cost for any and all consequences, including, damages to your computer system or any loss that results from the download of any content from the Website. Applicable law may not allow the exclusion of implied warranties, so the above exclusion may not apply to you.
 
 
-#### Section 12: Limitation of liability
+## Section 12: Limitation of liability
 
 Under no circumstances, including but not limited to negligence, will the City be liable for any damages that result from the use of, or the inability to use, the Content on the Website, even if the City or an authorized representative thereof may have been advised of the possibility of such damages, to the full extent allowed by applicable law.
 
 
-#### Section 13: Indemnification
+## Section 13: Indemnification
 
 You agree to indemnify, defend and hold harmless the City, as well as its subsidiaries, affiliates, agents, partners, owners, employees, licensors, licensees, suppliers, and any Third Party Content providers to the Website from and against all claims, losses, expenses, damages and costs, including reasonable attorneys’ fees, resulting from any violation by you of these Terms or from your use of the Website.
 
-#### Section 14: Miscellaneous
+## Section 14: Miscellaneous
 
 <div class='alpha-list'>
 - Entire agreement:
@@ -144,7 +144,7 @@ Términos y Condiciones de Uso de Detroit Home Connect. La Ciudad de Detroit ha 
 
 Estos Términos se actualizaron por última vez el 1 de mayo de 2022 y entran en vigor a partir de esa fecha.
 
-#### Sección 1: Definiciones
+## Sección 1: Definiciones
 
 A los efectos de estos Términos y Condiciones de Uso, las siguientes palabras o frases tienen los significados que se les atribuyen respectivamente según se establece en este documento:
 
@@ -183,21 +183,21 @@ Puede proporcionar enlaces al Sitio Web, ya sea desde otro sitio web, publicacio
 
 Usted comprende que la Ciudad no es una agencia de informes crediticios y que ninguno de los Contenidos ni Servicios proporcionados a través del Sitio Web constituye un "informe del consumidor", según la definición de dicho término en la Ley Federal de Informes Crediticios Justos (FCRA), Título 15 del Código de los Estados Unidos, artículos 1681 y siguientes. El Contenido disponible no debe utilizarse como factor en la toma de decisiones sobre el cobro de deudas de consumidores, ni para determinar su elegibilidad para crédito, seguros, empleo, prestaciones gubernamentales o vivienda, ni para ningún otro propósito autorizado por la FCRA. Usted se compromete a abstenerse de utilizar el Sitio Web, incluyendo sus Contenidos y Servicios, para cualquier propósito autorizado por la FCRA o en relación con la adopción de medidas adversas en relación con una solicitud de un consumidor.
 
-#### Sección 2: Introducción
+## Sección 2: Introducción
 
 ¡Gracias por acceder a Detroit Home Connect! Tenga en cuenta que al acceder al sitio web, usted se convierte en usuario del mismo. Estos Términos constituyen un acuerdo legal vinculante entre la Ciudad y cada usuario del sitio web, incluido usted. Estos Términos rigen el uso por parte de los usuarios de todos los aspectos del sitio web, a menos que se especifique lo contrario en el presente documento. Como usuario, es su responsabilidad leer y comprender estos Términos como condición para su uso del sitio web.
 
-#### Sección 3: Su aceptación de estos Términos
+## Sección 3: Su aceptación de estos Términos
 
 Su acceso al sitio web constituye su aceptación de estos Términos en su totalidad, sin excepción ni reserva. Si no acepta estos Términos, su único recurso es dejar de usar el sitio web de inmediato. La continuidad del funcionamiento del sitio web por parte de la Ciudad para su uso, y su uso continuado del mismo por su parte, constituyen una contraprestación mutua en virtud de este acuerdo.
 
 Estos Términos pueden ser modificados, revisados ​​o actualizados en cualquier momento sin previo aviso. A menos que se indique lo contrario, todas las actualizaciones de estos Términos entrarán en vigor inmediatamente después de su publicación en el Sitio Web. Su acceso y uso continuado del Sitio Web tras cualquier actualización de estos Términos constituye su aceptación y conformidad con estos Términos, según sus actualizaciones.
 
-#### Sección 4: Política de Privacidad
+## Sección 4: Política de Privacidad
 
 El Ayuntamiento se toma muy en serio su privacidad y ha desarrollado una Política de Privacidad que rige integralmente el envío, uso, difusión y protección de la información personal enviada a través del Sitio Web. La Política de Privacidad está disponible [aquí](/privacidad) y se incorpora íntegramente por referencia a estos Términos.
 
-#### Sección 5: Limitaciones de uso
+## Sección 5: Limitaciones de uso
 
 Debe comprender que, a menos que se indique lo contrario, todo el Contenido puede estar protegido por derechos de autor, marcas registradas, marcas de servicio, patentes u otros derechos y leyes de propiedad intelectual que sean propiedad, estén controlados o licenciados por la Ciudad, o por la parte acreditada como creadora o proveedora del Contenido. Usted acepta que puede utilizar el Contenido únicamente para su uso personal o en el curso habitual de su investigación y otros trabajos relacionados, incluyendo la incorporación de partes del Contenido en su propio producto. Al hacerlo, debe mantener intactos todos los avisos de derechos de autor y otros avisos de propiedad intelectual. No debe copiar, distribuir, exhibir, ejecutar, reproducir, republicar, crear obras derivadas, transferir ni vender la totalidad o parte del Contenido, excepto en la medida permitida por las leyes, regulaciones y protecciones de propiedad intelectual aplicables.
 
@@ -215,7 +215,7 @@ Usted puede proporcionar enlaces al Sitio Web, ya sea desde otro sitio web, publ
 
 Usted comprende que la Ciudad no es una agencia de informes crediticios y que ninguno de los Contenidos o Servicios proporcionados a través del sitio web constituyen un "informe del consumidor", según se define dicho término en la Ley Federal de Informes Crediticios Justos (FCRA), Título 15 del Código de los Estados Unidos, sección 1001. 1681 y siguientes. El Contenido disponible no debe utilizarse como factor en la toma de decisiones sobre el cobro de deudas de consumidores, ni para determinar su elegibilidad para crédito, seguros, empleo, prestaciones gubernamentales o vivienda, ni para ningún otro fin autorizado por la FCRA. Usted se compromete a abstenerse de utilizar el Sitio Web, incluyendo su Contenido y Servicios, para ningún fin autorizado por la FCRA o en relación con la adopción de medidas adversas en relación con una solicitud de un consumidor.
 
-#### Sección 6: Cuentas de usuario
+## Sección 6: Cuentas de usuario
 
 El acceso a ciertos Contenidos, Servicios u otras secciones del Sitio Web puede requerir su registro y la creación de una cuenta de usuario. Debe comprender que las secciones específicas del Sitio Web para las que se requiere registro quedan a discreción exclusiva del Ayuntamiento y pueden cambiar en cualquier momento. Al registrarse, usted acepta que toda la información de registro es precisa y completa. Es su responsabilidad informar al Ayuntamiento de cualquier inexactitud o cambio en dicha información.
 
@@ -223,7 +223,7 @@ Debe reconocer, comprender y aceptar que su cuenta de usuario es exclusivamente 
 
 Debe comprender que la Ciudad y el Sitio Web permiten a los Usuarios registrarse y mantener cuentas como un Servicio únicamente para su comodidad. Acepta que ni usted ni ningún otro Usuario tiene derecho a la creación o el mantenimiento de dichas cuentas, y que la Ciudad no tiene la obligación de crearlas ni de mantenerlas para ningún Usuario, incluido usted. Acepta que la Ciudad puede negarse a permitir la creación de una nueva cuenta y puede suspender, cancelar o modificar los términos de cualquier cuenta de Usuario existente en cualquier momento y por cualquier motivo, a su entera discreción, ya sea por incumplimiento o no de estos Términos.
 
-#### Sección 7: Contenido del Usuario
+## Sección 7: Contenido del Usuario
 
 El Sitio Web puede ofrecer ciertos Servicios mediante los cuales los Usuarios pueden crear Contenido del Usuario y enviarlo al Sitio Web. Al enviar cualquier Contenido al Sitio Web, usted acepta otorgar y garantiza que posee todos los derechos legalmente requeridos para otorgar expresamente a la Ciudad un derecho y una licencia libres de regalías, perpetuos, irrevocables y no exclusivos para usar, reproducir, modificar, adaptar, publicar, traducir, sublicenciar, crear obras derivadas, distribuir, ejecutar y exhibir dicho Contenido, total o parcialmente, e incorporarlo a otras obras en cualquier formato, medio o tecnología conocida actualmente o desarrollada posteriormente, en todo el mundo.
 
@@ -231,31 +231,31 @@ No debe enviar al Sitio Web ningún Contenido que constituya o pueda previsiblem
 
 El Ayuntamiento no preselecciona el Contenido enviado por usted o cualquier Usuario y no acepta ninguna obligación de hacerlo, pero se reserva el derecho absoluto, a su entera discreción, de rechazar o eliminar cualquier Contenido, independientemente de que constituya o no Contenido Prohibido del Usuario. Usted debe aceptar la plena y exclusiva responsabilidad por todo el Contenido que cargue, publique o envíe de cualquier otra forma al Sitio Web.
 
-#### Sección 8: Contenido de Terceros y enlaces a Sitios de Terceros
+## Sección 8: Contenido de Terceros y enlaces a Sitios de Terceros
 
 El Contenido de Terceros puede aparecer en el Sitio Web o ser accesible a través de enlaces que aparecen en el Sitio Web. Por la presente, la Ciudad renuncia expresamente a cualquier responsabilidad y no asumirá ninguna responsabilidad por el Contenido de Terceros, incluyendo, entre otros, el Contenido de Terceros que constituya o pueda constituir en el futuro Contenido Prohibido. Debe comprender que ningún Contenido de Terceros cuenta con el respaldo de la Ciudad y no refleja necesariamente las creencias, opiniones o posturas de la Ciudad ni de ningún Usuario, y acepta abstenerse de atribuir ningún Contenido de Terceros a la Ciudad ni a ningún Usuario.
 
-#### Sección 9: Modificaciones al Sitio Web, el Contenido o los Servicios
+## Sección 9: Modificaciones al Sitio Web, el Contenido o los Servicios
 
 La Ciudad se reserva el derecho de crear, modificar, ampliar, restringir, suspender o interrumpir, temporal o permanentemente, el Sitio Web, incluyendo cualquier Contenido y Servicio, en cualquier momento, a su entera discreción, por cualquier motivo o sin motivo alguno, y sin previo aviso. Usted debe comprender, reconocer y aceptar que la Ciudad renuncia a toda responsabilidad ante usted o cualquier tercero por dichas acciones relacionadas con el Sitio web, incluido su Contenido y Servicios, y usted acepta abstenerse de imponer o tomar cualquier acción en busca de imponer dicha responsabilidad a la Ciudad en relación con dicha acción.
 
-#### Sección 10: Terminación
+## Sección 10: Terminación
 
 Usted acepta que la Ciudad podrá, en cualquier momento y sin previo aviso, terminar o restringir su uso o acceso al Sitio Web, incluyendo cualquier Contenido y Servicios, a su entera discreción y por cualquier motivo, incluyendo, sin limitación, la creencia de que usted ha violado o actuado de forma incompatible con la letra o el espíritu de estos Términos, o sin motivo alguno. Las disposiciones de Descargo de Responsabilidad, Limitación de Responsabilidad e Indemnización seguirán vigentes tras dicha terminación.
 
-#### Sección 11: Descargo de Responsabilidad
+## Sección 11: Descargo de Responsabilidad
 
 Usted entiende y acepta que el Sitio Web, incluyendo todo el Contenido y los Servicios, se proporciona tal cual, según disponibilidad, y sin garantías de ningún tipo, ya sean expresas o implícitas. En la máxima medida permitida por la legislación aplicable, los propietarios renuncian a toda garantía, expresa o implícita, incluyendo, sin limitación, las garantías implícitas de comerciabilidad, idoneidad para un fin determinado y no infracción de la propiedad intelectual. Los propietarios no garantizan que el Sitio Web satisfaga sus necesidades, que sea ininterrumpido, puntual, seguro o libre de errores, que los defectos se corrijan, ni que el Sitio Web o el/los servidor(es) que lo hacen disponible estén libres de virus u otros componentes dañinos. Los propietarios no garantizan ni realizan ninguna declaración sobre el uso de los resultados del uso del Contenido o los Servicios del Sitio Web en términos de su exactitud, precisión, fiabilidad, puntualidad, etc. Usted asume el coste total de cualquier consecuencia, incluyendo daños a su sistema informático o cualquier pérdida derivada de la descarga de cualquier contenido del Sitio Web. Es posible que la legislación aplicable no permita la exclusión de garantías implícitas, por lo que la exclusión anterior podría no ser aplicable en su caso.
 
-#### Sección 12: Limitación de responsabilidad
+## Sección 12: Limitación de responsabilidad
 
 Bajo ninguna circunstancia, incluyendo, entre otras, la negligencia, el Ayuntamiento será responsable de los daños que resulten del uso o la imposibilidad de usar el Contenido del Sitio Web, incluso si el Ayuntamiento o un representante autorizado del mismo hubiera sido advertido de la posibilidad de dichos daños, en la máxima medida permitida por la legislación aplicable.
 
-#### Sección 13: Indemnización
+## Sección 13: Indemnización
 
 Usted acepta indemnizar, defender y eximir de responsabilidad al Ayuntamiento, así como a sus subsidiarias, filiales, agentes, socios, propietarios, empleados, licenciantes, licenciatarios, proveedores y cualquier tercero que proporcione Contenido al Sitio Web, frente a cualquier reclamación, pérdida, gasto, daño o costo, incluidos los honorarios razonables de abogados, que resulten de cualquier incumplimiento por su parte de estos Términos o de su uso del Sitio Web.
 
-#### Sección 14: Disposiciones varias
+## Sección 14: Disposiciones varias
 
 <div class='alpha-list'>
 - Acuerdo completo:
@@ -280,7 +280,7 @@ Por correo electrónico: detroithomeconnect@detroitmi.gov
 
 تم تحديث هذه الشروط مؤخرًا، وهي سارية اعتبارًا من: ١ مايو ٢٠٢٢
 
-#### القسم ١: التعريفات
+## القسم ١: التعريفات
 
 لأغراض هذه الشروط والأحكام، تحمل الكلمات أو العبارات التالية المعاني الموضحة أدناه:
 
@@ -321,21 +321,21 @@ Por correo electrónico: detroithomeconnect@detroitmi.gov
 
 يُمكنك توفير روابط للموقع الإلكتروني، سواء من موقع إلكتروني آخر أو منشور على وسائل التواصل الاجتماعي أو أي منشور آخر بأي وسيلة. أنت توافق على أن القيام بذلك في أي حال يخضع لجميع الشروط التالية: (أ) يؤدي الرابط إلى الصفحة الرئيسية للموقع الإلكتروني، الموجودة على "https://homeconnect.detroitmi.gov"؛ (ب) لا تقم بإزالة أو حجب أي جزء من الموقع الإلكتروني، عن طريق التأطير أو غير ذلك، بما في ذلك الإعلانات والروابط لهذه الشروط وإشعارات حقوق النشر أو أي إشعارات أخرى على الموقع الإلكتروني؛ (ج) تقدم إشعارًا كتابيًا مسبقًا إلى المدينة بهذا الرابط عن طريق إرسال بريد إلكتروني إلى: detroithomeconnect@detroitmi.gov؛ (د) تقر بأن المدينة قد تطلب منك الامتناع عن توفير روابط للموقع الإلكتروني أو التوقف عن ذلك في أي وقت ولأي سبب وفقًا لتقديرها الوحيد والمطلق، وتوافق على الامتناع عن توفير روابط للموقع الإلكتروني أو التوقف فورًا عن ذلك بناءً على مثل هذا الطلب من المدينة. أنت تُدرك أن المدينة ليست وكالةً لإعداد تقارير المستهلكين، وأن أيًا من المحتوى أو الخدمات المُقدمة عبر الموقع الإلكتروني لا يُشكل "تقريرًا للمستهلك" كما هو مُعرّف في قانون الإبلاغ الائتماني العادل الفيدرالي (FCRA)، 15 U.S.C. القسم 1681 وما يليه. لا يجوز استخدام المحتوى المُتاح لك كعامل في اتخاذ قرارات تحصيل ديون المستهلكين، أو تحديد أهلية المستهلك للحصول على الائتمان، أو التأمين، أو التوظيف، أو المزايا الحكومية، أو السكن، أو لأي غرض آخر مُصرّح به بموجب قانون الإبلاغ الائتماني العادل. أنت تُوافق على الامتناع عن استخدام الموقع الإلكتروني، بما في ذلك محتواه وخدماته، لأي غرض مُصرّح به بموجب قانون الإبلاغ الائتماني العادل أو فيما يتعلق باتخاذ إجراء سلبي يتعلق بطلب مستهلك.
 
-#### القسم ٢: مقدمة
+## القسم ٢: مقدمة
 
 نشكرك على دخولك إلى ديترويت هوم كونيكت! يُرجى العلم أنه بدخولك إلى الموقع الإلكتروني، تُعتبر مستخدمًا له. تُشكل هذه الشروط اتفاقيةً قانونيةً مُلزمةً بين المدينة وكل مستخدم للموقع، بما فيهم أنت. تُنظم هذه الشروط استخدام المستخدمين لجميع جوانب الموقع الإلكتروني، ما لم يُنص على خلاف ذلك هنا. بصفتك مستخدمًا، تقع على عاتقك مسؤولية قراءة هذه الشروط وفهمها كشرطٍ لاستخدامك للموقع.
 
-#### القسم ٣: موافقتك على هذه الشروط
+## القسم ٣: موافقتك على هذه الشروط
 
 يُشكل دخولك إلى الموقع الإلكتروني موافقتك على الالتزام بهذه الشروط كاملةً دون استثناء أو تحفظ. في حال عدم موافقتك على هذه الشروط، فإن خيارك الوحيد هو التوقف فورًا عن استخدام الموقع. يُعد استمرار المدينة في تشغيل الموقع الإلكتروني لاستخدامك، واستمرار استخدامك له، بمثابة اعتبارٍ مُتبادلٍ بموجب هذه الاتفاقية.
 
 يجوز تعديل هذه الشروط أو تنقيحها أو تحديثها بأي شكلٍ آخر في أي وقت دون إشعارك مُسبقًا. ما لم يُنص على خلاف ذلك، تُصبح جميع تحديثات هذه الشروط سارية المفعول فور نشرها على الموقع الإلكتروني. يُعدّ دخولك إلى الموقع الإلكتروني واستخدامك المستمر له بعد أي تحديث لهذه الشروط بمثابة قبولك وموافقتك عليها، بصيغتها المُحدّثة.
 
-#### القسم 4: سياسة الخصوصية
+## القسم 4: سياسة الخصوصية
 
 تولي المدينة مسألة خصوصيتك اهتمامًا بالغًا، وقد وضعت سياسة خصوصية تُنظّم بشكل شامل عملية إرسال واستخدام ونشر وحماية المعلومات الشخصية المُقدّمة عبر الموقع الإلكتروني. سياسة الخصوصية متاحة [هنا](/privacy) ومُدمجة بالكامل بالرجوع إليها في هذه الشروط.
 
-#### القسم 5: قيود الاستخدام
+## القسم 5: قيود الاستخدام
 
 يجب أن تفهم أنه، ما لم يُنص على خلاف ذلك، قد يكون جميع المحتوى محميًا بحقوق الطبع والنشر، والعلامات التجارية، وعلامات الخدمة، وبراءات الاختراع، أو غيرها من حقوق الملكية والقوانين التي تملكها أو تتحكم بها أو تُرخصها المدينة، أو الجهة المُعتمدة كمُنشئ أو مُقدم للمحتوى. أنت توافق على أنه يجوز لك استخدام المحتوى للاستخدام الشخصي فقط أو في سياق بحثك المعتاد وأعمالك الأخرى ذات الصلة، بما في ذلك دمج أجزاء من المحتوى في منتج عملك الخاص. عند القيام بذلك، يجب عليك الحفاظ على جميع حقوق الطبع والنشر وإشعارات الملكية الأخرى سليمة. يُحظر عليك نسخ أو توزيع أو عرض أو تنفيذ أو إعادة إنتاج أو إعادة نشر أو إنشاء أعمال مشتقة من أو نقل أو بيع كل أو أي جزء من المحتوى، إلا بالقدر المسموح به بموجب جميع قوانين ولوائح وحماية الملكية الفكرية المعمول بها.
 
@@ -353,7 +353,7 @@ Por correo electrónico: detroithomeconnect@detroitmi.gov
 
 أنت تُدرك أن المدينة ليست وكالةً لإعداد تقارير المستهلكين، وأن أيًا من المحتوى أو الخدمات المُقدمة عبر الموقع الإلكتروني لا يُشكل "تقريرًا للمستهلك" كما هو مُعرّف في قانون الإبلاغ الائتماني العادل الفيدرالي (FCRA)، 15 U.S.C. القسم 1681 وما يليه. لا يجوز استخدام المحتوى المُتاح لك كعامل في اتخاذ قرارات تحصيل ديون المستهلكين، أو تحديد أهلية المستهلك للحصول على الائتمان، أو التأمين، أو التوظيف، أو المزايا الحكومية، أو السكن، أو لأي غرض آخر مُصرّح به بموجب قانون الإبلاغ الائتماني العادل. أنت تُوافق على الامتناع عن استخدام الموقع الإلكتروني، بما في ذلك محتواه وخدماته، لأي غرض مُصرّح به بموجب قانون الإبلاغ الائتماني العادل أو فيما يتعلق باتخاذ إجراء سلبي يتعلق بطلب مستهلك.
 
-#### القسم 6: حسابات المستخدمين
+## القسم 6: حسابات المستخدمين
 
 قد يتطلب الوصول إلى محتوى أو خدمات أو أجزاء أخرى من الموقع الإلكتروني تسجيلك وإنشاء حساب مستخدم. يجب أن تفهم أن أجزاء الموقع الإلكتروني التي يتطلب التسجيل فيها تخضع لتقدير المدينة وحدها، وقد تتغير في أي وقت. بتسجيلك، فإنك توافق على دقة واكتمال جميع معلومات التسجيل. وتقع على عاتقك مسؤولية إبلاغ المدينة بأي أخطاء أو تغييرات تطرأ على تلك المعلومات.
 
@@ -361,7 +361,7 @@ Por correo electrónico: detroithomeconnect@detroitmi.gov
 
 يجب أن تفهم أن المدينة والموقع الإلكتروني يُمكّنان المستخدمين من التسجيل في الحسابات والاحتفاظ بها كخدمة لمجرد راحتهم. أنت توافق على أنه لا يحق لك ولا لأي مستخدم آخر إنشاء أو الاحتفاظ بأي حساب من هذا القبيل، وأن المدينة غير مُلزمة بإنشاء أو الاحتفاظ بمثل هذا الحساب لأي مستخدم، بما في ذلك أنت. أنت توافق على أنه يحق للمدينة رفض السماح بإنشاء حساب جديد، ويحق لها تعليق أو إنهاء أو تعديل شروط أي حساب مستخدم موجود في أي وقت ولأي سبب وفقًا لتقديرها الخاص، سواء كان ذلك بسبب انتهاك هذه الشروط أم لا.
 
-#### القسم 7: محتوى المستخدم
+## القسم 7: محتوى المستخدم
 
 قد يوفر الموقع الإلكتروني خدمات معينة تُمكّن المستخدمين من إنشاء محتوى المستخدم وإرساله إليه. بإرسال أي محتوى إلى الموقع الإلكتروني، فإنك توافق على منح المدينة، وتضمن امتلاكك جميع الحقوق المطلوبة قانونًا لمنحها صراحةً، حقًا وترخيصًا دائمًا وغير قابل للإلغاء وغير حصري، معفيًا من حقوق الملكية، لاستخدام هذا المحتوى وإعادة إنتاجه وتعديله وتكييفه ونشره وترجمته وترخيصه من الباطن وإنشاء أعمال مشتقة منه وتوزيعه وتنفيذه وعرضه، كليًا أو جزئيًا، ودمجه في أعمال أخرى بأي شكل أو وسيلة أو تقنية معروفة حاليًا أو تُطور لاحقًا في جميع أنحاء العالم.
 
@@ -369,32 +369,32 @@ Por correo electrónico: detroithomeconnect@detroitmi.gov
 
 لا تقوم المدينة بفحص المحتوى المقدم من قِبلك أو من قِبل أي مستخدم مسبقًا، ولا تقبل أي التزام بذلك، ولكنها تحتفظ بالحق المطلق، وفقًا لتقديرها الخاص، في رفض أو إزالة أي محتوى، سواء كان يُشكل محتوى مستخدم محظورًا أم لا. يجب عليك تحمل المسؤولية الكاملة والحصرية عن جميع المحتوى الذي تُحمّله أو تنشره أو تُرسله بأي شكل آخر إلى الموقع الإلكتروني.
 
-#### القسم 8: محتوى الطرف الثالث وروابط مواقع الطرف الثالث
+## القسم 8: محتوى الطرف الثالث وروابط مواقع الطرف الثالث
 
 قد يظهر محتوى الطرف الثالث على الموقع الإلكتروني أو قد يكون متاحًا عبر الروابط التي تظهر على الموقع الإلكتروني. تُخلي المدينة بموجب هذا صراحةً مسؤوليتها عن أي محتوى تابع لجهة خارجية، ولن تتحمل أي مسؤولية عنه، بما في ذلك، على سبيل المثال لا الحصر، أي محتوى تابع لجهة خارجية يُشكل، أو قد يُشكل، في المستقبل، محتوى محظورًا. يُرجى العلم بأن أي محتوى تابع لجهة خارجية لا تُصادق عليه المدينة، ولا يعكس بالضرورة معتقدات أو آراء أو مواقف أي مستخدم تابع للمدينة، وأنك توافق على الامتناع عن نسب أي محتوى تابع لجهة خارجية إلى أي مستخدم تابع للمدينة.
 
-#### القسم 9: تعديلات على الموقع الإلكتروني أو المحتوى أو الخدمات
+## القسم 9: تعديلات على الموقع الإلكتروني أو المحتوى أو الخدمات
 
 تحتفظ المدينة بالحق في إنشاء أو تعديل أو توسيع أو تقييد أو تعليق أو إيقاف الموقع الإلكتروني، بما في ذلك أي محتوى وخدمات، مؤقتًا أو دائمًا، في أي وقت وفقًا لتقديرها الخاص ولأي سبب أو بدون سبب، ودون إشعار. يجب أن تفهم وتقر وتوافق على أن المدينة تتبرأ من كل المسؤولية تجاهك أو تجاه أي طرف ثالث عن أي إجراءات من هذا القبيل تتعلق بالموقع الإلكتروني، بما في ذلك المحتوى والخدمات، وتوافق على الامتناع عن فرض أو اتخاذ أي إجراء سعياً لفرض مثل هذه المسؤولية على المدينة فيما يتعلق بأي إجراء من هذا القبيل.
 
-#### القسم ١٠: الإنهاء
+## القسم ١٠: الإنهاء
 
 أنت توافق على أنه يحق للمدينة، في أي وقت ودون إشعار، إنهاء أو تقييد استخدامك أو وصولك إلى الموقع الإلكتروني، بما في ذلك أي محتوى وخدمات، وفقًا لتقديرها الخاص ولأي سبب، بما في ذلك على سبيل المثال لا الحصر، اعتقادها بأنك انتهكت أو تصرفت بشكل يتعارض مع نص أو روح هذه الشروط، أو بدون أي سبب على الإطلاق. وتظل أحكام إخلاء المسؤولية، وتحديد المسؤولية، والتعويض سارية المفعول بعد هذا الإنهاء.
 
-#### القسم ١١: إخلاء المسؤولية
+## القسم ١١: إخلاء المسؤولية
 
 أنت تفهم وتوافق على أن الموقع الإلكتروني، بما في ذلك جميع المحتويات والخدمات، يُقدم كما هو وكما هو متاح، ودون أي ضمانات من أي نوع، سواء كانت صريحة أو ضمنية. وإلى أقصى حد يسمح به القانون المعمول به، يتنصل المالكون من جميع الضمانات، سواء كانت صريحة أو ضمنية، بما في ذلك على سبيل المثال لا الحصر، الضمانات الضمنية لقابلية التسويق، والملاءمة لغرض معين، وعدم انتهاك الملكية الفكرية. لا يضمن المالكون تلبية الموقع لمتطلباتكم، أو استمراره دون انقطاع، أو تقديمه في الوقت المناسب، أو أمانه، أو خلوه من الأخطاء، أو تصحيح أي عيوب فيه، أو خلو الموقع أو الخوادم التي تُتيحه من الفيروسات أو أي مكونات ضارة أخرى. لا يضمن المالكون أو يُقدمون أي تعهدات بخصوص استخدام نتائج استخدام المحتوى أو الخدمات على الموقع من حيث صحتها، أو دقتها، أو موثوقيتها، أو توقيتها، أو غير ذلك. تتحملون كامل تكلفة أي عواقب، بما في ذلك الأضرار التي تلحق بجهاز الكمبيوتر لديكم، أو أي خسارة ناتجة عن تنزيل أي محتوى من الموقع. قد لا يسمح القانون المعمول به باستبعاد الضمانات الضمنية، لذا قد لا ينطبق عليكم الاستبعاد المذكور أعلاه.
 
-#### القسم ١٢: تحديد المسؤولية
+## القسم ١٢: تحديد المسؤولية
 
 لا تتحمل المدينة، تحت أي ظرف من الظروف، بما في ذلك على سبيل المثال لا الحصر الإهمال، مسؤولية أي أضرار ناجمة عن استخدام محتوى الموقع الإلكتروني أو عدم القدرة على استخدامه، حتى لو تم إخطار المدينة أو ممثلها المُفوض باحتمالية حدوث مثل هذه الأضرار، وذلك إلى أقصى حد يسمح به القانون المعمول به.
 
 
-#### القسم ١٣: التعويض
+## القسم ١٣: التعويض
 
 أنت توافق على تعويض المدينة، وكذلك شركاتها التابعة وفروعها ووكلائها وشركائها ومالكيها وموظفيها ومرخصيها ومرخصيهم ومورديها وأي مزودي محتوى خارجيين للموقع الإلكتروني، والدفاع عنهم وحمايتهم من جميع المطالبات والخسائر والنفقات والأضرار والتكاليف، بما في ذلك أتعاب المحاماة المعقولة، الناتجة عن أي انتهاك من جانبك لهذه الشروط أو عن استخدامك للموقع الإلكتروني.
 
-#### القسم ١٤: متفرقات
+## القسم ١٤: متفرقات
 
 <div class='alpha-list'>
 - الاتفاقية الكاملة:
@@ -420,7 +420,7 @@ Por correo electrónico: detroithomeconnect@detroitmi.gov
 
 এই শর্তাবলী সম্প্রতি আপডেট করা হয়েছে এবং কার্যকর হয়েছে: ১ মে, ২০২২ তারিখ থেকে।
 
-#### ধারা ১: সংজ্ঞা
+## ধারা ১: সংজ্ঞা
 
 এই ব্যবহারের শর্তাবলীর উদ্দেশ্যে নিম্নলিখিত শব্দ বা বাক্যাংশগুলির অর্থ যথাক্রমে এখানে বর্ণিত অর্থ অনুসারে নির্ধারিত হবে:
 
@@ -461,21 +461,21 @@ Por correo electrónico: detroithomeconnect@detroitmi.gov
 
 আপনি বুঝতে পারছেন যে সিটি কোনও ভোক্তা প্রতিবেদন সংস্থা নয় এবং ওয়েবসাইটের মাধ্যমে প্রদত্ত কোনও সামগ্রী বা পরিষেবা "ভোক্তা প্রতিবেদন" গঠন করে না কারণ এই শব্দটি ফেডারেল ফেয়ার ক্রেডিট রিপোর্টিং অ্যাক্ট (FCRA), 15 U.S.C. ধারা 1681 এবং ধারায় সংজ্ঞায়িত করা হয়েছে। আপনার কাছে উপলব্ধ সামগ্রী অবশ্যই ভোক্তা ঋণ আদায়ের সিদ্ধান্ত নেওয়ার ক্ষেত্রে, ক্রেডিট, বীমা, কর্মসংস্থান, সরকারি সুবিধা, বা আবাসনের জন্য গ্রাহকের যোগ্যতা প্রতিষ্ঠার ক্ষেত্রে, অথবা FCRA-এর অধীনে অনুমোদিত অন্য কোনও উদ্দেশ্যে ব্যবহার করা উচিত নয়। আপনি FCRA-এর অধীনে অনুমোদিত কোনও উদ্দেশ্যে বা কোনও ভোক্তা আবেদনের সাথে সম্পর্কিত কোনও প্রতিকূল পদক্ষেপ নেওয়ার ক্ষেত্রে ওয়েবসাইট, এর সামগ্রী এবং পরিষেবাগুলি সহ, ব্যবহার করা থেকে বিরত থাকতে সম্মত হচ্ছেন।
 
-#### বিভাগ ২: ভূমিকা
+## বিভাগ ২: ভূমিকা
 
 ডেট্রয়েট হোম কানেক্ট অ্যাক্সেস করার জন্য আপনাকে ধন্যবাদ! দয়া করে মনে রাখবেন যে ওয়েবসাইট অ্যাক্সেস করার মাধ্যমে আপনি ওয়েবসাইটের একজন ব্যবহারকারী। এই শর্তাবলী শহর এবং ওয়েবসাইটের প্রতিটি ব্যবহারকারীর মধ্যে একটি আইনি বাধ্যতামূলক চুক্তি গঠন করে, যার মধ্যে আপনিও অন্তর্ভুক্ত। এই শর্তাবলী ওয়েবসাইটের সকল দিকের ব্যবহারকারীদের ব্যবহার নিয়ন্ত্রণ করে, যদি না এখানে অন্যথায় উল্লেখ করা হয়। একজন ব্যবহারকারী হিসেবে, ওয়েবসাইট ব্যবহারের শর্ত হিসেবে এই শর্তাবলী পড়া এবং বোঝা আপনার দায়িত্ব।
 
-#### বিভাগ ৩: এই শর্তাবলীর আপনার গ্রহণযোগ্যতা
+## বিভাগ ৩: এই শর্তাবলীর আপনার গ্রহণযোগ্যতা
 
 ওয়েবসাইট অ্যাক্সেস করার অর্থ হল ব্যতিক্রম বা সংরক্ষণ ছাড়াই এই শর্তাবলী সম্পূর্ণরূপে মেনে চলার জন্য আপনার চুক্তি। আপনি যদি এই শর্তাবলীর সাথে একমত না হন, তাহলে আপনার একমাত্র উপায় হল অবিলম্বে ওয়েবসাইটের ব্যবহার বন্ধ করা। আপনার ব্যবহারের জন্য শহরের ওয়েবসাইটের অব্যাহত কার্যক্রম এবং ওয়েবসাইটের আপনার অব্যাহত ব্যবহার এই চুক্তির অধীনে পারস্পরিক বিবেচনার ভিত্তিতে গঠিত।
 
 এই শর্তাবলী আপনাকে পূর্ব নোটিশ ছাড়াই যেকোনো সময় সংশোধন, সংশোধিত বা অন্যথায় আপডেট করা যেতে পারে। এতে অন্যথায় উল্লেখ না থাকলে, এই শর্তাবলীর সমস্ত আপডেট ওয়েবসাইটে প্রকাশের সাথে সাথেই কার্যকর হবে। এই শর্তাবলীর যেকোনো আপডেটের পরে ওয়েবসাইটে আপনার অ্যাক্সেস এবং অব্যাহত ব্যবহার এই শর্তাবলীর আপডেটের সাথে আপনার সম্মতি এবং সম্মতি গঠন করে।
 
-#### ধারা ৪: গোপনীয়তা নীতি
+## ধারা ৪: গোপনীয়তা নীতি
 
 শহর আপনার গোপনীয়তার বিষয়টিকে অত্যন্ত গুরুত্ব সহকারে নেয় এবং একটি গোপনীয়তা নীতি তৈরি করেছে যা ওয়েবসাইটের মাধ্যমে জমা দেওয়া ব্যক্তিগত তথ্য জমা, ব্যবহার, প্রচার এবং সুরক্ষাকে ব্যাপকভাবে নিয়ন্ত্রণ করে। গোপনীয়তা নীতি [এখানে](/গোপনীয়তা) উপলব্ধ এবং এই শর্তাবলীতে রেফারেন্স অনুসারে সম্পূর্ণরূপে অন্তর্ভুক্ত করা হয়েছে।
 
-#### ধারা ৫: ব্যবহারের সীমাবদ্ধতা
+## ধারা ৫: ব্যবহারের সীমাবদ্ধতা
 
 আপনাকে অবশ্যই বুঝতে হবে যে, অন্যথায় উল্লেখ না করা হলে, সমস্ত সামগ্রী কপিরাইট, ট্রেডমার্ক, পরিষেবা চিহ্ন, পেটেন্ট বা অন্যান্য মালিকানা অধিকার এবং আইন দ্বারা সুরক্ষিত থাকতে পারে যা শহরের মালিকানাধীন, নিয়ন্ত্রিত বা লাইসেন্সপ্রাপ্ত, অথবা সামগ্রীর স্রষ্টা বা সরবরাহকারী হিসাবে কৃতিত্বপ্রাপ্ত পক্ষ দ্বারা। আপনি সম্মত হন যে আপনি কেবলমাত্র আপনার ব্যক্তিগত ব্যবহারের জন্য বা আপনার গবেষণা এবং অন্যান্য সম্পর্কিত কাজের নিয়মিত কোর্সে সামগ্রীটি ব্যবহার করতে পারেন, যার মধ্যে আপনার নিজস্ব কাজের পণ্যে সামগ্রীর কিছু অংশ অন্তর্ভুক্ত করা অন্তর্ভুক্ত। এটি করার সময়, আপনাকে সমস্ত কপিরাইট এবং অন্যান্য মালিকানা বিজ্ঞপ্তি অক্ষত রাখতে হবে। আপনি অবশ্যই সামগ্রীর সমস্ত বা কোনও অংশ অনুলিপি, বিতরণ, প্রদর্শন, সম্পাদন, পুনরুত্পাদন, পুনঃপ্রকাশ, ডেরিভেটিভ কাজ তৈরি, স্থানান্তর বা বিক্রয় করতে পারবেন না, সমস্ত প্রযোজ্য বৌদ্ধিক সম্পত্তি আইন, প্রবিধান এবং সুরক্ষার অধীনে অনুমোদিত পরিমাণ ব্যতীত।
 
@@ -493,7 +493,7 @@ Por correo electrónico: detroithomeconnect@detroitmi.gov
 
 আপনি বুঝতে পারছেন যে সিটি কোনও ভোক্তা প্রতিবেদন সংস্থা নয় এবং ওয়েবসাইটের মাধ্যমে প্রদত্ত কোনও সামগ্রী বা পরিষেবা "ভোক্তা প্রতিবেদন" গঠন করে না কারণ এই শব্দটি ফেডারেল ফেয়ার ক্রেডিট রিপোর্টিং অ্যাক্ট (FCRA), 15 U.S.C. ধারা 1681 এবং ধারায় সংজ্ঞায়িত করা হয়েছে। আপনার কাছে উপলব্ধ সামগ্রী অবশ্যই ভোক্তা ঋণ আদায়ের সিদ্ধান্ত নেওয়ার ক্ষেত্রে, ক্রেডিট, বীমা, কর্মসংস্থান, সরকারি সুবিধা, বা আবাসনের জন্য গ্রাহকের যোগ্যতা প্রতিষ্ঠার ক্ষেত্রে, অথবা FCRA-এর অধীনে অনুমোদিত অন্য কোনও উদ্দেশ্যে ব্যবহার করা উচিত নয়। আপনি FCRA-এর অধীনে অনুমোদিত কোনও উদ্দেশ্যে বা কোনও ভোক্তা আবেদনের সাথে সম্পর্কিত কোনও প্রতিকূল পদক্ষেপ নেওয়ার ক্ষেত্রে ওয়েবসাইট, এর সামগ্রী এবং পরিষেবাগুলি সহ, ব্যবহার করা থেকে বিরত থাকতে সম্মত হচ্ছেন।
 
-#### ধারা ৬: ব্যবহারকারীর অ্যাকাউন্ট
+## ধারা ৬: ব্যবহারকারীর অ্যাকাউন্ট
 
 ওয়েবসাইটের নির্দিষ্ট কিছু বিষয়বস্তু, পরিষেবা বা অন্যান্য অংশে অ্যাক্সেসের জন্য আপনার নিবন্ধন এবং একটি ব্যবহারকারী অ্যাকাউন্ট তৈরির প্রয়োজন হতে পারে। আপনাকে অবশ্যই বুঝতে হবে যে ওয়েবসাইটের যে নির্দিষ্ট অংশগুলির জন্য নিবন্ধন প্রয়োজন তা শহরের নিজস্ব বিবেচনার বিষয় এবং যে কোনও সময় পরিবর্তন হতে পারে। আপনার নিবন্ধনের মাধ্যমে, আপনি সম্মত হন যে সমস্ত নিবন্ধন তথ্য সঠিক এবং সম্পূর্ণ। শহরকে সেই তথ্যের যে কোনও ভুল বা পরিবর্তন সম্পর্কে অবহিত করা আপনার দায়িত্ব।
 
@@ -501,7 +501,7 @@ Por correo electrónico: detroithomeconnect@detroitmi.gov
 
 আপনাকে অবশ্যই বুঝতে হবে যে শহর এবং ওয়েবসাইট ব্যবহারকারীদের কেবল তাদের সুবিধার জন্য পরিষেবা হিসাবে অ্যাকাউন্ট নিবন্ধন এবং রক্ষণাবেক্ষণ করতে সক্ষম করে। আপনি সম্মত হচ্ছেন যে আপনার বা অন্য কোনও ব্যবহারকারীর এই জাতীয় কোনও অ্যাকাউন্ট তৈরি বা রক্ষণাবেক্ষণের কোনও অধিকার নেই এবং আপনার সহ কোনও ব্যবহারকারীর জন্য এই জাতীয় অ্যাকাউন্ট তৈরি বা রক্ষণাবেক্ষণ করার কোনও বাধ্যবাধকতা সিটি বহন করে না। আপনি সম্মত হচ্ছেন যে শহরটি একটি নতুন অ্যাকাউন্ট তৈরির অনুমতি দিতে অস্বীকার করতে পারে এবং যে কোনও কারণে, এই শর্তাবলী লঙ্ঘনের জন্য হোক বা না হোক, যেকোনো সময় বিদ্যমান ব্যবহারকারীর অ্যাকাউন্টের শর্তাবলী স্থগিত, বাতিল বা পরিবর্তন করতে পারে।
 
-#### ধারা ৭: ব্যবহারকারীর বিষয়বস্তু
+## ধারা ৭: ব্যবহারকারীর বিষয়বস্তু
 
 ওয়েবসাইটটি এমন কিছু পরিষেবা প্রদান করতে পারে যার মাধ্যমে ব্যবহারকারীরা ব্যবহারকারীর বিষয়বস্তু তৈরি করতে এবং ওয়েবসাইটে সেই বিষয়বস্তু জমা দিতে পারেন। ওয়েবসাইটে যেকোনো বিষয়বস্তু জমা দেওয়ার মাধ্যমে, আপনি সম্মত হচ্ছেন যে আপনার কাছে শহরকে একটি রয়্যালটি-মুক্ত, চিরস্থায়ী, অপরিবর্তনীয়, অ-এক্সক্লুসিভ অধিকার এবং লাইসেন্স প্রদানের জন্য আইনত প্রয়োজনীয় সমস্ত অধিকার রয়েছে, যা সম্পূর্ণ বা আংশিকভাবে এই ধরনের বিষয়বস্তু ব্যবহার, পুনরুৎপাদন, পরিবর্তন, অভিযোজন, প্রকাশ, অনুবাদ, উপ-লাইসেন্স, এই ধরনের বিষয়বস্তু থেকে তৈরি, বিতরণ, সম্পাদন এবং প্রদর্শন করার জন্য, এবং এই ধরনের বিষয়বস্তুকে বিশ্বজুড়ে এখন পরিচিত বা পরে বিকশিত যেকোনো রূপ, মাধ্যম বা প্রযুক্তিতে অন্যান্য কাজে অন্তর্ভুক্ত করার জন্য।
 
@@ -509,33 +509,33 @@ Por correo electrónico: detroithomeconnect@detroitmi.gov
 
 শহর আপনার বা কোনও ব্যবহারকারীর দ্বারা জমা দেওয়া সামগ্রীর আগে থেকে যাচাই করে না এবং এটি করার কোনও বাধ্যবাধকতা গ্রহণ করে না, তবে কোনও সামগ্রী নিষিদ্ধ ব্যবহারকারীর সামগ্রী হোক বা না হোক, প্রত্যাখ্যান বা অপসারণ করার সম্পূর্ণ অধিকার সংরক্ষণ করে। ওয়েবসাইটে আপনার আপলোড, পোস্ট বা অন্যথায় জমা দেওয়া সমস্ত সামগ্রীর জন্য আপনাকে সম্পূর্ণ এবং একচেটিয়া দায়িত্ব গ্রহণ করতে হবে।
 
-#### ধারা 8: তৃতীয় পক্ষের সামগ্রী এবং তৃতীয় পক্ষের সাইটের লিঙ্ক
+## ধারা 8: তৃতীয় পক্ষের সামগ্রী এবং তৃতীয় পক্ষের সাইটের লিঙ্ক
 
 তৃতীয় পক্ষের সামগ্রী ওয়েবসাইটে প্রদর্শিত হতে পারে বা ওয়েবসাইটে প্রদর্শিত লিঙ্কগুলির মাধ্যমে অ্যাক্সেসযোগ্য হতে পারে। সিটি এতদ্বারা স্পষ্টভাবে যেকোনো তৃতীয় পক্ষের কন্টেন্টের জন্য কোনও দায়িত্ব অস্বীকার করছে এবং এর জন্য কোনও দায়িত্ব গ্রহণ করবে না, যার মধ্যে অন্তর্ভুক্ত, কিন্তু সীমাবদ্ধ নয়, এমন তৃতীয় পক্ষের কন্টেন্ট যা নিষিদ্ধ কন্টেন্ট গঠন করে বা ভবিষ্যতে গঠন করতে পারে। আপনাকে অবশ্যই বুঝতে হবে যে কোনও তৃতীয় পক্ষের কন্টেন্ট সিটি কর্তৃক অনুমোদিত নয় এবং এটি শহরের কোনও ব্যবহারকারীর বিশ্বাস, মতামত বা অবস্থানকে প্রতিফলিত করে না এবং আপনি কোনও তৃতীয় পক্ষের কন্টেন্ট সিটির কোনও ব্যবহারকারীর নামে আরোপ করা থেকে বিরত থাকতে সম্মত হচ্ছেন।
 
-#### ধারা ৯: ওয়েবসাইট, কন্টেন্ট বা পরিষেবার পরিবর্তন
+## ধারা ৯: ওয়েবসাইট, কন্টেন্ট বা পরিষেবার পরিবর্তন
 
 সিটি যেকোনো কারণে বা কোনও কারণ ছাড়াই, যেকোনো সময়, যেকোনো কারণে বা কোনও কারণ ছাড়াই, যেকোনো সময়, যেকোনো বিষয়বস্তু এবং পরিষেবা সহ, ওয়েবসাইট তৈরি, পরিবর্তন, সম্প্রসারণ, সীমাবদ্ধ, স্থগিত বা বন্ধ করার অধিকার সংরক্ষণ করে। আপনাকে অবশ্যই বুঝতে হবে, স্বীকার করতে হবে এবং সম্মত হতে হবে যে ওয়েবসাইটের বিষয়বস্তু এবং পরিষেবা সহ, আপনার বা তৃতীয় পক্ষের প্রতি এই ধরণের যেকোনো পদক্ষেপের জন্য সিটি আপনার সমস্ত দায়বদ্ধতা অস্বীকার করে এবং আপনি এই ধরণের যেকোনো পদক্ষেপের জন্য সিটির উপর এই ধরণের দায় আরোপ করা বা কোনও পদক্ষেপ নেওয়া থেকে বিরত থাকতে সম্মত হন।
 
-#### ধারা ১০: সমাপ্তি
+## ধারা ১০: সমাপ্তি
 
 আপনি সম্মত হচ্ছেন যে সিটি, যেকোনো সময় এবং কোনও নোটিশ ছাড়াই, ওয়েবসাইটের আপনার ব্যবহার বা অ্যাক্সেস, যার মধ্যে যেকোনো বিষয়বস্তু এবং পরিষেবা অন্তর্ভুক্ত, যেকোনো কারণে, সীমাবদ্ধতা ছাড়াই, তার বিশ্বাসের ভিত্তিতে যে আপনি এই শর্তাবলীর অক্ষর বা মূলনীতি লঙ্ঘন করেছেন বা অসঙ্গতিপূর্ণভাবে কাজ করেছেন, অথবা কোনও কারণ ছাড়াই, বন্ধ বা সীমাবদ্ধ করতে পারে। দাবিত্যাগ, দায়বদ্ধতার সীমাবদ্ধতা এবং ক্ষতিপূরণের বিধানগুলি এই ধরনের সমাপ্তি বহাল থাকবে।
 
-#### ধারা ১১: দাবিত্যাগ
+## ধারা ১১: দাবিত্যাগ
 
 আপনি বোঝেন এবং সম্মত হন যে ওয়েবসাইট, যার মধ্যে সমস্ত বিষয়বস্তু এবং পরিষেবা অন্তর্ভুক্ত, যেমন আছে, তেমন উপলব্ধ ভিত্তিতে এবং কোনও ধরণের প্রকাশ্য বা অন্তর্নিহিত ওয়ারেন্টি ছাড়াই সরবরাহ করা হয়। প্রযোজ্য আইন অনুসারে অনুমোদিত সম্পূর্ণ পরিমাণে, মালিকরা সমস্ত প্রকাশ্য বা অন্তর্নিহিত ওয়ারেন্টি অস্বীকার করেন, যার মধ্যে রয়েছে, কিন্তু সীমাবদ্ধ নয়, ব্যবসায়িকতার অন্তর্নিহিত ওয়ারেন্টি, একটি নির্দিষ্ট উদ্দেশ্যে উপযুক্ততা এবং বৌদ্ধিক সম্পত্তির অ-লঙ্ঘন। মালিকরা এই নিশ্চয়তা দিচ্ছেন না যে ওয়েবসাইটটি আপনার প্রয়োজনীয়তা পূরণ করবে, এটি নিরবচ্ছিন্ন, সময়োপযোগী, নিরাপদ, বা ত্রুটিমুক্ত হবে, ত্রুটি সংশোধন করা হবে, অথবা ওয়েবসাইট বা ওয়েবসাইটটি উপলব্ধ করে এমন সার্ভার (গুলি) বিনামূল্যে বা ভাইরাস বা অন্যান্য ক্ষতিকারক উপাদান। মালিকরা ওয়েবসাইটে সামগ্রী বা পরিষেবা ব্যবহারের ফলাফলের সঠিকতা, নির্ভুলতা, নির্ভরযোগ্যতা, সময়োপযোগীতা বা অন্য কোনওভাবে ব্যবহারের বিষয়ে কোনও ওয়্যারেন্টি বা উপস্থাপনা করেন না। আপনার কম্পিউটার সিস্টেমের ক্ষতি বা ওয়েবসাইট থেকে কোনও সামগ্রী ডাউনলোড করার ফলে যে কোনও ক্ষতি সহ যে কোনও এবং সমস্ত পরিণতির জন্য আপনি সম্পূর্ণ খরচ গ্রহণ করেন। প্রযোজ্য আইন অন্তর্নিহিত ওয়ারেন্টি বাদ দেওয়ার অনুমতি নাও দিতে পারে, তাই উপরের বর্জন আপনার ক্ষেত্রে প্রযোজ্য নাও হতে পারে।
 
-#### ধারা ১২: দায়বদ্ধতার সীমাবদ্ধতা
+## ধারা ১২: দায়বদ্ধতার সীমাবদ্ধতা
 
 কোনও পরিস্থিতিতে, অবহেলা সহ কিন্তু সীমাবদ্ধ নয়, ওয়েবসাইটের সামগ্রী ব্যবহার বা ব্যবহার করতে অক্ষমতার ফলে যে কোনও ক্ষতির জন্য শহর দায়ী থাকবে না, এমনকি যদি শহর বা তার কোনও অনুমোদিত প্রতিনিধিকে প্রযোজ্য আইন দ্বারা অনুমোদিত সম্পূর্ণ পরিমাণে এই ধরণের ক্ষতির সম্ভাবনা সম্পর্কে অবহিত করা হয়ে থাকে।
 
-#### ধারা ১৩: ক্ষতিপূরণ
+## ধারা ১৩: ক্ষতিপূরণ
 
 আপনি সম্মত হচ্ছেন যে আপনি এই শর্তাবলী লঙ্ঘনের ফলে বা ওয়েবসাইট ব্যবহারের ফলে সৃষ্ট সমস্ত দাবি, ক্ষতি, খরচ, ক্ষতি এবং খরচ, যুক্তিসঙ্গত আইনজীবীর ফি সহ, সিটি, এর সহায়ক সংস্থা, সহযোগী, এজেন্ট, অংশীদার, মালিক, কর্মচারী, লাইসেন্সদাতা, লাইসেন্সধারী, সরবরাহকারী এবং ওয়েবসাইটের যেকোনো তৃতীয় পক্ষের সামগ্রী সরবরাহকারীকে ক্ষতিপূরণ দেবেন, রক্ষা করবেন এবং ক্ষতিমুক্ত রাখবেন।
 
-#### ধারা ১৪: বিবিধ
+## ধারা ১৪: বিবিধ
 
-#### ধারা ১৪: বিবিধ
+## ধারা ১৪: বিবিধ
 
 <div class='alpha-list'>
 - সম্পূর্ণ চুক্তি:
