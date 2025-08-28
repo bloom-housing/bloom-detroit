@@ -40,12 +40,6 @@ const CustomSiteFooter = () => {
       >
         <div className={`${styles["footer"]} ${styles["copyright"]}`}>
           <div className={styles["copyright-text"]}>{t("footer.copyright")}</div>
-          <div className={styles.links}>
-            <Link href="/feedback">{t("footer.giveFeedback")}</Link>
-            <Link href="/privacy">{t("pageTitle.privacy")}</Link>
-            <Link href="/terms">{t("pageTitle.termsAndConditions")}</Link>
-            <Link href="/accessibility">{t("pageTitle.accessibilityStatement")}</Link>
-          </div>
         </div>
       </MaxWidthLayout>
     </footer>

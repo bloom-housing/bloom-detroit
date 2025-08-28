@@ -25,14 +25,14 @@ export default function HomePage(props: HomePageProps) {
   )
 }
 
-export const getStaticProps: GetStaticProps = async () => {
-  const underConstructionListings = await fetchLimitedUnderConstructionListings(undefined, 3)
-  const jurisdiction = await fetchJurisdictionByName()
+export const getStaticProps: GetStaticProps = () => {
+  // const underConstructionListings = await fetchLimitedUnderConstructionListings(undefined, 3)
+  // const jurisdiction = await fetchJurisdictionByName()
 
   return {
     props: {
-      underConstructionListings: underConstructionListings?.items || [],
-      jurisdiction: jurisdiction,
+      underConstructionListings: [],
+      jurisdiction: {},
     },
     revalidate: Number(process.env.cacheRevalidate),
   }
