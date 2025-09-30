@@ -1,45 +1,45 @@
 UPDATE
-    translations
+  translations
 SET
-    translations = jsonb_set(
-        translations,
-        '{lotteryReleased}',
-        '{
+  translations = jsonb_set(
+    translations,
+    '{lotteryReleased}',
+    '{
         "header": "Lottery results for %{listingName} are ready to be published",
         "adminApprovedStart":
           "Lottery results for %{listingName} have been released for publication. Please go to the listing view in your",
         "adminApprovedEnd":
           "to view the lottery tab and release the lottery results."
         }'
-    )
+  )
 WHERE
-    language = 'en';
+  language = 'en';
 
 UPDATE
-    translations
+  translations
 SET
-    translations = jsonb_set(
-        translations,
-        '{lotteryPublished}',
-        '{
+  translations = jsonb_set(
+    translations,
+    '{lotteryPublished}',
+    '{
         "header": "Lottery results have been published for %{listingName}",
         "resultsPublished": "Lottery results for %{listingName} have been published to applicant accounts."
         }'
-    )
+  )
 WHERE
-    language = 'en';
+  language = 'en';
 
 UPDATE
-    translations
+  translations
 SET
-    translations = jsonb_set(
-        translations,
-        '{lotteryAvailable}',
-        '{
+  translations = jsonb_set(
+    translations,
+    '{lotteryAvailable}',
+    '{
         "header": "New Housing Lottery Results Available",
         "resultsAvailable":
           "Results are available for a housing lottery for %{listingName}. See your housing portal account for more information.",
-        "signIn": "Sign In to View Your Results",
+        "signIn": "Sign in to view your results",
         "whatHappensHeader": "What happens next?",
         "whatHappensContent":
           "The property manager will contact applicants in rank order. If the property manager contacts you, they will ask you to provide documentation to support what you answered in the application. That documentation could include paystubs, for example. They might also need to gather more information by asking you to complete a supplemental application.",
@@ -50,17 +50,17 @@ SET
           "If you want to learn about how lotteries work, please see the lottery section of the",
         "otherOpportunities4": "Housing Portal Help Center"
         }'
-    )
+  )
 WHERE
-    language = 'en';
+  language = 'en';
 
 UPDATE
-    translations
+  translations
 SET
-    translations = jsonb_set(
-        translations,
-        '{lotteryAvailable}',
-        '{
+  translations = jsonb_set(
+    translations,
+    '{lotteryAvailable}',
+    '{
         "header": "Nuevos resultados de la lotería de vivienda disponibles",
         "resultsAvailable":
           "Los resultados están disponibles para una lotería de vivienda para %{listingName}. Consulte su cuenta del portal de vivienda para obtener más información.",
@@ -75,17 +75,17 @@ SET
           "Si desea obtener información sobre cómo funcionan las loterías, consulte la sección de lotería del",
         "otherOpportunities4": "Housing Portal Centro de ayuda"
         }'
-    )
+  )
 WHERE
-    language = 'es';
+  language = 'es';
 
 UPDATE
-    translations
+  translations
 SET
-    translations = jsonb_set(
-        translations,
-        '{lotteryAvailable}',
-        '{
+  translations = jsonb_set(
+    translations,
+    '{lotteryAvailable}',
+    '{
         "header": "نتائج يانصيب الإسكان الجديدة متاحة الآن",
         "resultsAvailable":
           "النتائج متاحة الآن ليانصيب الإسكان لـ %{listingName}. راجع حساب بوابة الإسكان الخاصة بك لمزيد من المعلومات.",
@@ -100,17 +100,17 @@ SET
           "إذا كنت تريد التعرف على كيفية عمل اليانصيب، يرجى الاطلاع على قسم اليانصيب في",
         "otherOpportunities4": "مركز مساعدة بوابة الإسكان"
         }'
-    )
+  )
 WHERE
-    language = 'ar';
+  language = 'ar';
 
 UPDATE
-    translations
+  translations
 SET
-    translations = jsonb_set(
-        translations,
-        '{lotteryAvailable}',
-        '{
+  translations = jsonb_set(
+    translations,
+    '{lotteryAvailable}',
+    '{
         "header": "নতুন হাউজিং লটারির ফলাফল পাওয়া যাচ্ছে",
         "resultsAvailable":
           "%{listingName} এর জন্য একটি আবাসন লটারির ফলাফল পাওয়া যাচ্ছে। আরও তথ্যের জন্য আপনার আবাসন পোর্টাল অ্যাকাউন্টটি দেখুন।",
@@ -125,6 +125,6 @@ SET
           "লটারি কীভাবে কাজ করে তা জানতে চাইলে, অনুগ্রহ করে লটারি বিভাগটি দেখুন",
         "otherOpportunities4": "হাউজিং পোর্টাল সহায়তা কেন্দ্র"
         }'
-    )
+  )
 WHERE
-    language = 'bn';
+  language = 'bn';
